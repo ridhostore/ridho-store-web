@@ -19,7 +19,7 @@
            1. ROOT VARIABLES & DESIGN TOKENS
            ========================================= */
         :root {
-            --bg-deep: #050505; /* Sedikit lebih terang dari pure black untuk fallback */
+            --bg-deep: #050505; 
             --bg-surface-1: #0A0A0A;
             --bg-surface-2: #121212;
             --bg-surface-3: #1E1E1E;
@@ -62,8 +62,7 @@
         body { 
             /* UPDATED BACKGROUND: Radial Gradient (Spotlight Effect) */
             background: radial-gradient(circle at 50% 0%, #1f2024 0%, #000000 85%);
-            background-attachment: fixed; /* Agar background tetap saat discroll (Parallax feel) */
-            
+            background-attachment: fixed;
             color: var(--text-main); 
             font-family: 'Plus Jakarta Sans', sans-serif; 
             line-height: 1.6; 
@@ -115,44 +114,23 @@
         .nav-links .nav-link::after { content: ''; position: absolute; bottom: 0; left: 50%; width: 0; height: 2px; background: var(--gold-primary); transition: var(--transition-fast); transform: translateX(-50%); }
         .nav-links .nav-link:hover::after { width: 20px; }
         
-        /* --- MOBILE NAV FIXED (UPDATED FOR BETTER LAYOUT) --- */
+        /* Mobile Nav Fixed */
         .mobile-nav { 
-            position: fixed; 
-            bottom: 0; 
-            left: 0; 
-            width: 100%; 
-            background: #000000; /* Solid Black Background */
-            border-top: 1px solid rgba(255,255,255,0.15); 
-            padding: 12px 0; 
-            display: none; 
-            justify-content: space-around; 
-            align-items: center; 
-            z-index: 1001; 
-            box-shadow: 0 -5px 20px rgba(0,0,0,0.8);
-            /* Handle iPhone Safe Area */
+            position: fixed; bottom: 0; left: 0; width: 100%; 
+            background: #000000; border-top: 1px solid rgba(255,255,255,0.15); 
+            padding: 12px 0; display: none; justify-content: space-around; 
+            align-items: center; z-index: 1001; box-shadow: 0 -5px 20px rgba(0,0,0,0.8);
             padding-bottom: env(safe-area-inset-bottom, 12px);
         }
 
         .mobile-nav-item { 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            justify-content: center;
-            color: var(--text-secondary); 
-            font-size: 0.7rem; 
-            gap: 4px; 
-            transition: 0.3s; 
-            flex: 1; /* Distribute space evenly */
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            color: var(--text-secondary); font-size: 0.7rem; gap: 4px; 
+            transition: 0.3s; flex: 1; 
         }
 
-        .mobile-nav-item i { 
-            font-size: 1.3rem; 
-            margin-bottom: 2px; 
-        }
-
-        .mobile-nav-item.active, .mobile-nav-item:hover { 
-            color: var(--gold-primary); 
-        }
+        .mobile-nav-item i { font-size: 1.3rem; margin-bottom: 2px; }
+        .mobile-nav-item.active, .mobile-nav-item:hover { color: var(--gold-primary); }
 
         /* =========================================
            5. HERO
@@ -201,23 +179,60 @@
         .remove-item { color: #ff4d4d; cursor: pointer; padding: 5px; }
 
         /* =========================================
-           8. ORDER & PAYMENT
+           8. PAYMENT
            ========================================= */
         .payment-card { background: var(--bg-surface-2); padding: 20px; border-radius: 12px; display: flex; align-items: center; justify-content: space-between; border: 1px solid rgba(255,255,255,0.05); margin-bottom: 15px; }
         .copy-btn { background: transparent; border: 1px solid var(--text-muted); color: var(--text-secondary); padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; transition: 0.2s; }
         .copy-btn:hover { border-color: #FFF; color: #FFF; }
-        .order-frame-wrapper { background: #FFF; border-radius: 20px; overflow: hidden; position: relative; min-height: 800px; }
-        .skeleton-loader { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #f0f0f0; z-index: 10; display: flex; justify-content: center; align-items: center; flex-direction: column; }
+
+        /* =========================================
+           9. ORDER FORM (PAPER WRAPPER)
+           ========================================= */
+        .order-paper-wrapper {
+            background-color: #FFFFFF;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            border: 4px solid rgba(255, 215, 0, 0.3);
+            position: relative;
+        }
+
+        .order-header {
+            background: #F8F9FA;
+            padding: 25px 20px;
+            text-align: center;
+            border-bottom: 2px dashed #E0E0E0;
+        }
+
+        .iframe-container {
+            position: relative;
+            background: #fff;
+            min-height: 500px;
+        }
+
+        .skeleton-loader {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: #ffffff;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        .blink { animation: blinker 1.5s linear infinite; }
+        @keyframes blinker { 50% { opacity: 0.5; } }
         
         /* =========================================
-           9. TESTIMONIALS & INSTAGRAM BUTTON
+           10. TESTIMONIALS & INSTAGRAM BUTTON
            ========================================= */
         .swiper { width: 100%; padding-bottom: 50px; }
         .swiper-slide { background: var(--bg-surface-2); border-radius: 20px; padding: 30px; border: 1px solid rgba(255,255,255,0.05); height: auto; }
         .swiper-pagination-bullet { background: #FFF; opacity: 0.3; }
         .swiper-pagination-bullet-active { background: var(--gold-primary); opacity: 1; }
 
-        /* Instagram Official Button Styles (FIXED LOCATION) */
+        /* Instagram Button */
         .cta-instagram-wrapper { margin-top: 3rem; position: relative; z-index: 2; }
         .btn-ig-official { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 16px 32px; background: rgba(20, 20, 20, 0.6); border-radius: 50px; color: #FFF; text-decoration: none; overflow: hidden; backdrop-filter: blur(10px); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: 1px solid rgba(255, 255, 255, 0.1); }
         .btn-ig-official::before { content: ""; position: absolute; inset: 0; border-radius: 50px; padding: 2px; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0.6; transition: opacity 0.4s ease; }
@@ -230,7 +245,7 @@
         .ig-main-text { font-weight: 700; font-size: 1rem; color: #FFF; }
 
         /* =========================================
-           10. MEDIA QUERIES
+           11. MEDIA QUERIES
            ========================================= */
         @media (max-width: 991px) {
             .hero-section { text-align: center; flex-direction: column; justify-content: center; padding-top: 100px; }
@@ -246,6 +261,11 @@
             #order { padding-bottom: 100px; }
             .pricing-controls { justify-content: flex-start; overflow-x: auto; padding-bottom: 10px; white-space: nowrap; }
             
+            /* Order Wrapper Mobile */
+            .order-paper-wrapper { border-radius: 16px; border-width: 2px; }
+            .order-header h5 { font-size: 1.1rem; }
+            iframe { max-width: 100% !important; overflow-x: hidden !important; }
+
             /* Hide floating cart on mobile because it's now in the bottom nav */
             .cart-overlay { display: none !important; }
         }
@@ -392,7 +412,7 @@
                             <img src="https://ui-avatars.com/api/?name=Andi+P&background=FFD700&color=000" class="rounded-circle me-3" width="40" alt="User">
                             <div>
                                 <h6 class="mb-0 text-white">David Pratama</h6>
-                                <small class="mb-0 text-white">Owner Olshop Sepatu</small>
+                                <small class="text-secondary">Owner Olshop Sepatu</small>
                             </div>
                         </div>
                     </div>
@@ -405,7 +425,7 @@
                             <img src="https://ui-avatars.com/api/?name=Siska+L&background=FFD700&color=000" class="rounded-circle me-3" width="40" alt="User">
                             <div>
                                 <h6 class="mb-0 text-white">Siska Kol</h6>
-                                <small class="mb-0 text-white">Content Creator</small>
+                                <small class="text-secondary">Content Creator</small>
                             </div>
                         </div>
                     </div>
@@ -418,7 +438,7 @@
                             <img src="https://ui-avatars.com/api/?name=Budi+S&background=FFD700&color=000" class="rounded-circle me-3" width="40" alt="User">
                             <div>
                                 <h6 class="mb-0 text-white">Budi Santoso</h6>
-                                <small class="mb-0 text-white">UMKM Kuliner</small>
+                                <small class="text-secondary">UMKM Kuliner</small>
                             </div>
                         </div>
                     </div>
@@ -526,27 +546,47 @@
             <div class="section-header">
                 <span class="section-label">TAHAP TERAKHIR</span>
                 <h2>Formulir Pemesanan</h2>
+                <p>Silakan isi data lengkap. Data akan otomatis masuk ke sistem kami.</p>
             </div>
             
             <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="order-frame-wrapper shadow-soft">
-                        <div id="iframe-loader" class="skeleton-loader">
-                            <div class="spinner-border text-secondary mb-3" role="status"></div>
-                            <span class="text-muted fw-bold">Memuat Formulir Aman...</span>
-                        </div>
+                <div class="col-lg-8 col-md-10">
+                    <div class="order-paper-wrapper animate__animated animate__fadeInUp">
                         
-                        <iframe 
-                            src="https://forms.gle/DQYvEt3YBNaFjBpC8" 
-                            width="100%" 
-                            height="950" 
-                            frameborder="0" 
-                            marginheight="0" 
-                            marginwidth="0"
-                            onload="document.getElementById('iframe-loader').style.display='none';">
-                            Memuat...
-                        </iframe>
+                        <div class="order-header">
+                            <div class="d-flex align-items-center justify-content-center gap-2 mb-2">
+                                <i class="bi bi-patch-check-fill text-primary"></i>
+                                <span class="fw-bold text-dark tracking-wide">OFFICIAL FORM</span>
+                            </div>
+                            <h5 class="m-0 text-dark fw-bold">Data Pemesanan & Pembayaran</h5>
+                            <small class="text-muted">Pastikan bukti transfer sudah siap diupload.</small>
+                        </div>
+
+                        <div class="iframe-container">
+                            <div id="form-loader" class="skeleton-loader">
+                                <div class="spinner-border text-primary mb-3" role="status"></div>
+                                <span class="text-muted small fw-bold blink">Menghubungkan ke Server...</span>
+                            </div>
+
+                            <iframe 
+                                id="gform"
+                                src="https://docs.google.com/forms/d/e/1FAIpQLSesAKeDg2Uh1dQTELBuMghZrT31yJV6B1rpGQHrYnvRZsAE0w/viewform?embedded=true" 
+                                width="100%" 
+                                height="1350" 
+                                frameborder="0" 
+                                marginheight="0" 
+                                marginwidth="0"
+                                onload="document.getElementById('form-loader').style.display='none';">
+                                Memuat formulir...
+                            </iframe>
+                            
+                        </div>
                     </div>
+                    
+                    <div class="text-center mt-4 opacity-50">
+                        <small class="text-white"><i class="bi bi-lock-fill me-1"></i> Data Anda terenkripsi aman oleh Google Security.</small>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -802,4 +842,3 @@
     </script>
 </body>
 </html>
-
