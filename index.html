@@ -105,15 +105,36 @@
         /* =========================================
            4. NAVIGATION
            ========================================= */
+        /* --- BRAND LOGO ENHANCEMENT --- */
+        .brand-logo { 
+            font-family: 'Syncopate', sans-serif; 
+            font-weight: 800; 
+            font-size: 1.5rem; 
+            color: #FFF; 
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.2); 
+        }
+        
+        .brand-logo .text-gold {
+            background: linear-gradient(to bottom, #FFD700 0%, #FDB931 50%, #C5A000 100%);
+            -webkit-background-clip: text; 
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+            filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.4));
+        }
+
         .navbar-desktop { position: fixed; top: 0; left: 0; width: 100%; padding: 1.5rem 0; z-index: var(--z-index-fixed); transition: var(--transition-smooth); background: rgba(0,0,0,0); }
         .navbar-desktop.scrolled { padding: 1rem 0; background: rgba(5, 5, 5, 0.85); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .brand-logo { font-family: 'Syncopate', sans-serif; font-weight: 700; font-size: 1.4rem; color: #FFF; letter-spacing: 1px; }
+        
         .nav-links .nav-link { color: var(--text-secondary) !important; font-weight: 500; font-size: 0.95rem; padding: 0.5rem 1rem; position: relative; }
         .nav-links .nav-link:hover, .nav-links .nav-link.active { color: var(--gold-primary) !important; }
         .nav-links .nav-link::after { content: ''; position: absolute; bottom: 0; left: 50%; width: 0; height: 2px; background: var(--gold-primary); transition: var(--transition-fast); transform: translateX(-50%); }
         .nav-links .nav-link:hover::after { width: 20px; }
         
-        /* --- MOBILE NAV (BOTTOM) --- */
+        /* Mobile Nav Fixed */
         .mobile-nav { 
             position: fixed; bottom: 0; left: 0; width: 100%; 
             background: #000000; border-top: 1px solid rgba(255,255,255,0.15); 
@@ -250,7 +271,10 @@
         /* Instagram Button */
         .cta-instagram-wrapper { margin-top: 3rem; position: relative; z-index: 2; }
         .btn-ig-official { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 16px 32px; background: rgba(20, 20, 20, 0.6); border-radius: 50px; color: #FFF; text-decoration: none; overflow: hidden; backdrop-filter: blur(10px); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .btn-ig-official::before { content: ""; position: absolute; inset: 0; border-radius: 50px; padding: 2px; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0.6; transition: opacity 0.4s ease; }
+        .btn-ig-official::before { content: ""; position: absolute; inset: 0; border-radius: 50px; padding: 2px; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0.6; transition: opacity 0.4s ease; 
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        }
         .ig-icon-box { width: 38px; height: 38px; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: white; box-shadow: 0 4px 10px rgba(220, 39, 67, 0.4); }
         .btn-ig-official:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 15px 35px rgba(220, 39, 67, 0.25); background: rgba(30, 30, 30, 0.9); }
         .btn-ig-official:hover::before { opacity: 1; }
@@ -482,7 +506,7 @@
                     <i class="bi bi-arrow-right text-white opacity-50 ms-2"></i>
                 </a>
                 
-                <p class="mt-3 text-muted small" style="font-size: 0.75rem;">
+                <p class="mt-3 text-secondary small" style="font-size: 0.75rem;">
                     <i class="bi bi-info-circle me-1"></i> Klik untuk melihat Highlight "Testimoni" secara langsung
                 </p>
             </div>
@@ -565,171 +589,206 @@
 
     <section id="order" class="py-5 bg-surface-1">
         <div class="container py-5">
-            <div class="section-header">
-                <span class="section-label">TAHAP TERAKHIR</span>
-                <h2>Formulir Pemesanan</h2>
-                <p>Silakan isi data lengkap. Data akan otomatis masuk ke sistem kami.</p>
+            <div class="section-header text-center mb-5">
+                <span class="section-label text-gold small fw-bold letter-spacing-2">TAHAP TERAKHIR</span>
+                <h2 class="text-white">Formulir Pemesanan</h2>
+                <p class="text-secondary">Isi form di bawah. Data otomatis masuk sistem & terhubung ke WhatsApp Admin.</p>
             </div>
             
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-md-10">
-                    <div class="order-paper-wrapper animate__animated animate__fadeInUp">
+                    <div class="card bg-surface-2 border border-secondary border-opacity-25 rounded-4 p-4 shadow-soft">
                         
-                        <div class="order-header">
-                            <div class="d-flex align-items-center justify-content-center gap-2 mb-2">
-                                <i class="bi bi-patch-check-fill text-primary"></i>
-                                <span class="fw-bold text-dark tracking-wide">OFFICIAL FORM</span>
-                            </div>
-                            <h5 class="m-0 text-dark fw-bold">Data Pemesanan & Pembayaran</h5>
-                            <small class="text-muted">Pastikan bukti transfer sudah siap diupload.</small>
+                        <div id="loadingOverlay" style="display:none; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:10; border-radius:16px; flex-direction:column; justify-content:center; align-items:center;">
+                            <div class="spinner-border text-gold mb-3" role="status"></div>
+                            <span class="text-white small letter-spacing-2">MENGIRIM DATA...</span>
                         </div>
 
-                        <div class="iframe-container">
-                            <div id="form-loader" class="skeleton-loader">
-                                <div class="spinner-border text-primary mb-3" role="status"></div>
-                                <span class="text-muted small fw-bold blink">Menghubungkan ke Server...</span>
+                        <form id="nativeOrderForm" onsubmit="submitOrder(event)">
+                            
+                            <div class="mb-4">
+                                <label class="text-gold small mb-2 text-uppercase fw-bold">Pilih Layanan</label>
+                                <select class="form-select bg-dark text-white border-secondary" id="inputService" required onchange="calcTotal()">
+                                    <option value="" selected disabled>-- Pilih Paket --</option>
+                                    </select>
                             </div>
 
-                            <iframe 
-                                id="gform"
-                                src="https://docs.google.com/forms/d/e/1FAIpQLSesAKeDg2Uh1dQTELBuMghZrT31yJV6B1rpGQHrYnvRZsAE0w/viewform?embedded=true"
-                                width="100%" 
-                                height="1350" 
-                                frameborder="0" 
-                                marginheight="0" 
-                                marginwidth="0"
-                                onload="document.getElementById('form-loader').style.display='none';">
-                                Memuat formulir...
-                            </iframe>
-                        </div>
-                    </div>
-                    
-                    <div class="text-center mt-4 opacity-50">
-                        <small class="text-white"><i class="bi bi-lock-fill me-1"></i> Data Anda terenkripsi aman oleh Google Security.</small>
-                    </div>
+                            <div class="mb-4">
+                                <label class="text-secondary small mb-2 text-uppercase fw-bold">Target (Username / Link)</label>
+                                <input type="text" class="form-control bg-dark text-white border-secondary p-3" id="inputTarget" placeholder="Contoh: @ridho.store atau Link Postingan" required>
+                            </div>
 
+                            <div class="row">
+                                <div class="col-6 mb-4">
+                                    <label class="text-secondary small mb-2 text-uppercase fw-bold">Jumlah</label>
+                                    <input type="number" class="form-control bg-dark text-white border-secondary p-3" id="inputQuantity" placeholder="Min: 100" min="100" required oninput="calcTotal()">
+                                </div>
+                                <div class="col-6 mb-4">
+                                    <label class="text-secondary small mb-2 text-uppercase fw-bold">Total Harga</label>
+                                    <input type="text" class="form-control bg-black text-gold border-gold fw-bold p-3" id="displayTotal" value="Rp 0" readonly>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="text-secondary small mb-2 text-uppercase fw-bold">Metode Pembayaran</label>
+                                <select class="form-select bg-dark text-white border-secondary p-3" id="inputPayment" required>
+                                    <option value="QRIS">QRIS (All Payment)</option>
+                                    <option value="DANA">DANA</option>
+                                    <option value="GOPAY">GOPAY</option>
+                                    <option value="BCA">Transfer Bank (BCA)</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="text-secondary small mb-2 text-uppercase fw-bold">Nomor WhatsApp Anda</label>
+                                <input type="tel" class="form-control bg-dark text-white border-secondary p-3" id="inputWhatsapp" placeholder="08xxxxxxxx" required>
+                            </div>
+
+                            <div class="alert alert-warning bg-opacity-10 border-warning text-warning small d-flex align-items-center">
+                                <i class="bi bi-info-circle-fill me-2"></i>
+                                <span>Setelah klik Order, kirim bukti transfer ke WhatsApp Admin.</span>
+                            </div>
+
+                            <button type="submit" class="btn btn-custom btn-gold w-100 py-3 fw-bold mt-2 shadow-glow">
+                                <i class="bi bi-send-fill me-2"></i> ORDER SEKARANG
+                            </button>
+                            
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-5 bg-black border-top border-secondary border-opacity-25 text-center">
-        <div class="container">
-            <h3 class="brand-logo mb-3">RIDHO<span class="text-gold">STORE</span></h3>
-            <p class="text-secondary small mx-auto mb-4" style="max-width: 500px;">
-                Platform Social Media Marketing terpercaya membantu UMKM dan Kreator Indonesia berkembang sejak 2022.
-            </p>
-            <div class="d-flex justify-content-center gap-3 mb-4">
-                <a href="#" class="btn btn-icon-only btn-glass d-flex align-items-center justify-content-center"><i class="bi bi-instagram"></i></a>
-                <a href="#" class="btn btn-icon-only btn-glass d-flex align-items-center justify-content-center"><i class="bi bi-tiktok"></i></a>
-                <a href="https://wa.me/6287879842395" class="btn btn-icon-only btn-glass d-flex align-items-center justify-content-center"><i class="bi bi-whatsapp"></i></a>
-            </div>
-            <small class="text-muted d-block">&copy; 2026 Ridho Store. All rights reserved.</small>
-        </div>
-    </footer>
-
-    <div class="cart-overlay animate__animated animate__bounceIn" id="cart-overlay">
-        <div class="cart-trigger" onclick="openCart()">
-            <i class="bi bi-calculator-fill fs-4 text-dark"></i>
-            <div class="cart-count" id="cart-count-badge">0</div>
-        </div>
-    </div>
-
-    <div class="backdrop" id="backdrop" onclick="closeCart()"></div>
-    <div class="cart-modal" id="cart-modal">
-        <div class="d-flex justify-content-between align-items-center border-bottom border-secondary border-opacity-25 pb-3">
-            <h5 class="text-white m-0">Estimasi Biaya</h5>
-            <button class="btn-close btn-close-white" onclick="closeCart()"></button>
-        </div>
-        
-        <div class="cart-items-container" id="cart-items">
-            <p class="text-center text-muted py-4 small">Belum ada layanan dipilih.</p>
-        </div>
-
-        <div class="border-top border-secondary border-opacity-25 pt-3">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <span class="text-secondary">Total Estimasi:</span>
-                <span class="h4 text-gold mb-0" id="cart-total">Rp 0</span>
-            </div>
-            <div class="d-grid gap-2">
-                <button class="btn btn-custom btn-gold w-100" onclick="copyCartTotal()">
-                    <i class="bi bi-clipboard-check me-2"></i> Salin Total & Bayar
-                </button>
-                <small class="text-center text-muted" style="font-size: 0.7rem;">*Total ini hanya estimasi. Salin nominal untuk transfer.</small>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    
     <script>
         // =========================================
-        // 1. DATA CENTER (No Hardcoding)
+        // 1. DATA CENTER (UPDATED: Price per 1000)
         // =========================================
         const servicesData = [
-            // INSTAGRAM
-            { id: 1, category: 'instagram', name: 'IG Followers Mix (Less Drop)', desc: '100 Followers', price: 2500 },
-            { id: 2, category: 'instagram', name: 'IG Followers Mix (Less Drop)', desc: '500 Followers', price: 12500 },
-            { id: 3, category: 'instagram', name: 'IG Followers Mix (Less Drop)', desc: '1000 Followers', price: 25000 },
-            { id: 4, category: 'instagram', name: 'IG Followers Indo (High Quality)', desc: '100 Followers', price: 6000 },
-            { id: 5, category: 'instagram', name: 'IG Likes (Non-Drop)', desc: '100 Likes', price: 3500 },
-            { id: 6, category: 'instagram', name: 'IG Views (Reels/Video)', desc: '1000 Views', price: 2000 },
-            
-            // TIKTOK
-            { id: 7, category: 'tiktok', name: 'TikTok Followers (Global)', desc: '100 Followers', price: 3000 },
-            { id: 8, category: 'tiktok', name: 'TikTok Followers (Global)', desc: '1000 Followers', price: 30000 },
-            { id: 9, category: 'tiktok', name: 'TikTok Likes (Fast)', desc: '100 Likes', price: 2000 },
-            { id: 10, category: 'tiktok', name: 'TikTok Views (FYP Booster)', desc: '5000 Views', price: 2000 },
-            { id: 11, category: 'tiktok', name: 'TikTok Views (FYP Booster)', desc: '25k Views', price: 10000 },
-            
-            // SHOPEE
-            { id: 12, category: 'shopee', name: 'Shopee Followers Toko', desc: '100 Followers', price: 5000 },
-            { id: 13, category: 'shopee', name: 'Shopee Product Likes', desc: '100 Likes', price: 4000 }
+            { id: 1, category: 'instagram', name: 'IG Followers Mix (Less Drop)', price: 25000 },
+            { id: 2, category: 'instagram', name: 'IG Followers Indo (Real)', price: 60000 },
+            { id: 3, category: 'instagram', name: 'IG Likes (Non-Drop)', price: 35000 },
+            { id: 4, category: 'instagram', name: 'IG Views (Reels)', price: 2000 },
+            { id: 5, category: 'tiktok', name: 'TikTok Followers', price: 30000 },
+            { id: 6, category: 'tiktok', name: 'TikTok Likes', price: 20000 },
+            { id: 7, category: 'tiktok', name: 'TikTok Views (FYP)', price: 1000 },
+            { id: 8, category: 'shopee', name: 'Shopee Followers Toko', price: 50000 },
+            { id: 9, category: 'shopee', name: 'Shopee Likes Produk', price: 40000 }
         ];
 
-        let cart = [];
+        let cart = []; // Required for compatibility with existing cart functions
 
-        // =========================================
-        // 2. INITIALIZATION
-        // =========================================
-        window.addEventListener('load', () => {
-            // Hide Preloader
-            setTimeout(() => {
-                document.getElementById('preloader').style.opacity = '0';
-                setTimeout(() => { document.getElementById('preloader').style.display = 'none'; }, 500);
-            }, 800);
+        // --- 1. DATA LAYANAN ---
+        document.addEventListener("DOMContentLoaded", function() {
+            // -- ANTI STUCK PRELOADER --
+            function hidePreloader() {
+                const p = document.getElementById('preloader');
+                if(p) { p.style.opacity=0; setTimeout(()=>{p.style.display='none'},500); }
+            }
+            window.addEventListener('load', hidePreloader);
+            setTimeout(hidePreloader, 3000); // Force hide after 3s
 
-            // Render All Services Initially
-            renderServices('all');
-
-            // Init Swiper
-            new Swiper(".mySwiper", {
-                slidesPerView: 1,
-                spaceBetween: 30,
-                pagination: { el: ".swiper-pagination", clickable: true },
-                autoplay: { delay: 3000, disableOnInteraction: false },
-                breakpoints: {
-                    768: { slidesPerView: 2 },
-                    1024: { slidesPerView: 3 },
-                },
+            // -- POPULATE SERVICE --
+            const select = document.getElementById('inputService');
+            select.innerHTML = '<option value="" selected disabled>-- Pilih Paket --</option>';
+            
+            servicesData.forEach(item => {
+                const option = document.createElement('option');
+                option.value = `${item.name}`; 
+                option.setAttribute('data-price', item.price);
+                option.textContent = `${item.category.toUpperCase()} - ${item.name} (${formatRupiah(item.price)}/1k)`;
+                select.appendChild(option);
             });
+
+            // Initialize services display
+            renderServices('all');
         });
 
-        // Navbar Scroll Effect
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('.navbar-desktop');
-            if (window.scrollY > 50) nav.classList.add('scrolled');
-            else nav.classList.remove('scrolled');
-        });
-
-        // =========================================
-        // 3. SERVICE LOGIC
-        // =========================================
-        function formatRupiah(num) {
-            return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(num);
+        // --- 2. HITUNG HARGA ---
+        function calcTotal() {
+            const serviceSelect = document.getElementById('inputService');
+            const qtyInput = document.getElementById('inputQuantity');
+            
+            if(serviceSelect.selectedIndex > 0 && qtyInput.value) {
+                const pricePerK = serviceSelect.options[serviceSelect.selectedIndex].getAttribute('data-price');
+                const qty = qtyInput.value;
+                const total = (pricePerK / 1000) * qty;
+                document.getElementById('displayTotal').value = formatRupiah(Math.ceil(total));
+            } else {
+                document.getElementById('displayTotal').value = 'Rp 0';
+            }
         }
 
+        // --- 3. SUBMIT ORDER ---
+        function submitOrder(e) {
+            e.preventDefault(); 
+
+            document.getElementById('loadingOverlay').style.display = 'flex';
+
+            // --- SETTINGAN GOOGLE FORM (SUDAH DIUPDATE) ---
+            const GFORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSesAKeDg2Uh1dQTELBuMghZrT31yJV6B1rpGQHrYnvRZsAE0w/formResponse'; 
+            
+            const formMap = {
+                // ID ini diambil dari link yang kamu kirim:
+                service:  'entry.398242453',  // ID Layanan
+                target:   'entry.1311683536', // ID Target
+                quantity: 'entry.1805710612', // ID Jumlah
+                total:    'entry.2074942859', // ID Total Harga
+                payment:  'entry.371390371',  // ID Metode Pembayaran
+                whatsapp: 'entry.1404986427'  // ID Nomor WhatsApp
+            };
+
+            const data = {
+                service: document.getElementById('inputService').value,
+                target: document.getElementById('inputTarget').value,
+                quantity: document.getElementById('inputQuantity').value,
+                // NEW: Send clean number for total (removes "Rp" and dots)
+                total: document.getElementById('displayTotal').value.replace(/\D/g, ''),
+                payment: document.getElementById('inputPayment').value,
+                whatsapp: document.getElementById('inputWhatsapp').value
+            };
+
+            const formData = new FormData();
+            formData.append(formMap.service, data.service);
+            formData.append(formMap.target, data.target);
+            formData.append(formMap.quantity, data.quantity);
+            formData.append(formMap.total, data.total);
+            formData.append(formMap.payment, data.payment);
+            formData.append(formMap.whatsapp, data.whatsapp);
+
+            fetch(GFORM_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                body: formData
+            }).then(() => {
+                document.getElementById('loadingOverlay').style.display = 'none';
+                
+                const adminWA = "6287879842395"; // Nomor WA Admin
+                const textWA = `
+*Halo Admin Ridho Store!* 👋
+Saya sudah isi form order, ini detailnya:
+
+📦 *Layanan:* ${data.service}
+🎯 *Target:* ${data.target}
+🔢 *Jumlah:* ${data.quantity}
+💰 *Total:* Rp ${new Intl.NumberFormat('id-ID').format(data.total)}
+💳 *Bayar Via:* ${data.payment}
+📱 *No WA:* ${data.whatsapp}
+
+Mohon diproses, bukti transfer saya lampirkan dibawah ini 👇
+                `.trim();
+
+                window.location.href = `https://wa.me/${adminWA}?text=${encodeURIComponent(textWA)}`;
+                
+                document.getElementById('nativeOrderForm').reset();
+                document.getElementById('displayTotal').value = 'Rp 0';
+            }).catch(err => {
+                alert("Gagal mengirim data. Cek koneksi internet.");
+                document.getElementById('loadingOverlay').style.display = 'none';
+            });
+        }
+        
+        // --- 4. RENDER SERVICES (Visual Price List) ---
         function filterServices(category, btnElement) {
             // Active Tab UI
             if(btnElement) {
@@ -756,110 +815,68 @@
                             <div class="price-header">
                                 <span class="badge bg-secondary mb-2 text-uppercase" style="font-size:0.6rem;">${item.category}</span>
                                 <div class="service-name">${item.name}</div>
-                                <span class="service-meta">${item.desc}</span>
+                                <span class="service-meta">Harga per 1.000 Pcs</span>
                             </div>
                             <span class="price-tag">${formatRupiah(item.price)}</span>
                         </div>
-                        <button class="add-cart-btn" onclick="addToCart(${item.id})">
-                            <i class="bi bi-plus-circle me-1"></i> Tambah
-                        </button>
+                        <a href="#order" class="add-cart-btn d-block text-center" style="text-decoration:none;">
+                            <i class="bi bi-cart-plus me-1"></i> Order
+                        </a>
                     </div>
                 `;
                 container.appendChild(card);
             });
         }
 
-        // =========================================
-        // 4. CART / CALCULATOR LOGIC
-        // =========================================
-        function addToCart(id) {
-            const item = servicesData.find(s => s.id === id);
-            cart.push(item);
-            updateCartUI();
-            
-            // Show toast or feedback
-            const btn = event.target.closest('button');
-            const originalText = btn.innerHTML;
-            btn.innerHTML = '<i class="bi bi-check-circle-fill"></i> Masuk!';
-            btn.classList.add('added');
-            setTimeout(() => {
-                btn.innerHTML = originalText;
-                btn.classList.remove('added');
-            }, 1000);
-
-            // Show floating button if hidden (only on desktop now)
-            if(window.innerWidth > 768) {
-                document.getElementById('cart-overlay').style.display = 'block';
-            }
+        // Helper Format Rupiah
+        function formatRupiah(num) {
+            return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(num);
         }
-
-        function removeFromCart(index) {
-            cart.splice(index, 1);
-            updateCartUI();
-        }
-
-        function updateCartUI() {
-            // Update Badges
-            const count = cart.length;
-            document.getElementById('cart-count-badge').innerText = count;
-            
-            // Mobile Nav Badge
-            const mobBadge = document.getElementById('mobile-cart-count');
-            if(count > 0) {
-                mobBadge.innerText = count;
-                mobBadge.style.display = 'flex';
-            } else {
-                mobBadge.style.display = 'none';
-            }
-
-            // Update List
-            const list = document.getElementById('cart-items');
-            if (count === 0) {
-                list.innerHTML = '<p class="text-center text-muted py-4 small">Belum ada layanan dipilih.</p>';
-            } else {
-                list.innerHTML = '';
-                let total = 0;
-                cart.forEach((item, index) => {
-                    total += item.price;
-                    list.innerHTML += `
-                        <div class="cart-item">
-                            <div>
-                                <div class="fw-bold text-white small">${item.name}</div>
-                                <div class="text-muted small" style="font-size:0.75rem;">${item.desc}</div>
-                            </div>
-                            <div class="d-flex align-items-center gap-3">
-                                <span class="text-gold small">${formatRupiah(item.price)}</span>
-                                <i class="bi bi-trash remove-item" onclick="removeFromCart(${index})"></i>
-                            </div>
-                        </div>
-                    `;
-                });
-                document.getElementById('cart-total').innerText = formatRupiah(total);
-            }
-        }
-
-        function openCart() {
-            document.getElementById('cart-modal').classList.add('active');
-            document.getElementById('backdrop').classList.add('active');
-        }
-
-        function closeCart() {
-            document.getElementById('cart-modal').classList.remove('active');
-            document.getElementById('backdrop').classList.remove('active');
-        }
-
-        function copyCartTotal() {
-            const totalText = document.getElementById('cart-total').innerText;
-            navigator.clipboard.writeText(totalText);
-            alert(`Total ${totalText} berhasil disalin! Silakan transfer dan isi formulir.`);
-            closeCart();
-            document.getElementById('order').scrollIntoView({behavior: 'smooth'});
-        }
-
+        
+        // Helper Copy
         function copyToClipboard(text) {
             navigator.clipboard.writeText(text);
             alert('Nomor tersalin: ' + text);
         }
+
+        // Helper Cart (Dummy functions to prevent errors if elements exist)
+        function openCart() { document.getElementById('cart-modal').classList.add('active'); document.getElementById('backdrop').classList.add('active'); }
+        function closeCart() { document.getElementById('cart-modal').classList.remove('active'); document.getElementById('backdrop').classList.remove('active'); }
+        function copyCartTotal() { /* Not used in simplified version */ }
+        function addToCart(id) { /* Not used in simplified version */ }
+        function removeFromCart(index) { /* Not used in simplified version */ }
+        function updateCartUI() { /* Not used in simplified version */ }
+
     </script>
+
+    <footer class="py-5 bg-black border-top border-secondary border-opacity-25 text-center">
+        <div class="container">
+            <h3 class="brand-logo mb-3">RIDHO<span class="text-gold">STORE</span></h3>
+            <p class="text-secondary small mx-auto mb-4" style="max-width: 500px;">
+                Platform Social Media Marketing terpercaya membantu UMKM dan Kreator Indonesia berkembang sejak 2022.
+            </p>
+            <div class="d-flex justify-content-center gap-3 mb-4">
+                <a href="https://instagram.com/ridho.store17" class="btn btn-icon-only btn-glass d-flex align-items-center justify-content-center"><i class="bi bi-instagram"></i></a>
+                <a href="https://wa.me/6287879842395" class="btn btn-icon-only btn-glass d-flex align-items-center justify-content-center"><i class="bi bi-whatsapp"></i></a>
+            </div>
+            <small class="text-secondary d-block">&copy; 2026 Ridho Store. All rights reserved.</small>
+        </div>
+    </footer>
+
+    <div class="cart-overlay animate__animated animate__bounceIn" id="cart-overlay" style="display:none;"></div>
+    <div class="backdrop" id="backdrop" onclick="closeCart()"></div>
+    <div class="cart-modal" id="cart-modal">
+        <div class="d-flex justify-content-between align-items-center border-bottom border-secondary border-opacity-25 pb-3">
+            <h5 class="text-white m-0">Hitung Cepat</h5>
+            <button class="btn-close btn-close-white" onclick="closeCart()"></button>
+        </div>
+        <div class="p-3 text-center">
+            <p class="text-muted small">Silakan langsung gunakan Formulir Pemesanan di bawah untuk menghitung harga otomatis.</p>
+            <a href="#order" class="btn btn-gold w-100" onclick="closeCart()">Ke Form Order</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 </body>
 </html>
