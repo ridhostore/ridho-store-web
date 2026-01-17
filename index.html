@@ -69,6 +69,16 @@
             position: relative; 
         }
 
+        /* PARTICLES CONTAINER */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            z-index: -1; /* Behind content */
+            top: 0; left: 0;
+        }
+
         body::before { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: -1; }
         h1, h2, h3, h4, h5, h6 { color: #FFFFFF; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 1rem; }
         h1 { font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.1; }
@@ -77,15 +87,127 @@
         p { color: var(--text-secondary); margin-bottom: 1.5rem; }
         a { text-decoration: none; color: inherit; transition: var(--transition-fast); }
         ul { list-style: none; padding: 0; margin: 0; }
-        .text-gradient-gold { background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; }
+        
+        .text-gradient-gold { 
+            background: var(--gold-gradient); 
+            -webkit-background-clip: text; 
+            background-clip: text;
+            -webkit-text-fill-color: transparent; 
+            display: inline-block; 
+        }
+        
         .text-high-contrast { color: #FFFFFF !important; }
         .bg-glass { background: rgba(20, 20, 20, 0.6); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur); border: var(--border-glass); }
         .z-index-fixed { z-index: 1000; }
         .z-index-modal { z-index: 9999; }
 
         /* =========================================
-           3. UI COMPONENTS
+           3. UI COMPONENTS & NEW FEATURES
            ========================================= */
+        
+        /* -- NEW: FAKE NOTIFICATION -- */
+        .fake-notification {
+            position: fixed;
+            bottom: 80px; /* Above mobile nav */
+            left: 20px;
+            background: rgba(20, 20, 20, 0.9);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 12px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            z-index: 999;
+            width: 320px;
+            transform: translateX(-150%); /* Hidden initially */
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(10px);
+        }
+
+        .fake-notification.show { transform: translateX(0); }
+
+        .notif-img { width: 45px; height: 45px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold-primary); }
+        .notif-content h6 { font-size: 0.85rem; margin: 0; color: #FFF; font-weight: 700; }
+        .notif-content p { font-size: 0.75rem; margin: 0; color: var(--text-secondary); line-height: 1.2; }
+        .notif-time { font-size: 0.65rem; color: var(--text-muted); display: block; margin-top: 3px; }
+
+        /* -- NEW: COUNTDOWN TIMER -- */
+        .flash-sale-banner {
+            background: linear-gradient(90deg, #b91d1d 0%, #8b0000 100%);
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 5px 15px rgba(185, 29, 29, 0.3);
+        }
+        .countdown-box span {
+            background: rgba(0,0,0,0.3);
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 1rem;
+            margin: 0 2px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* -- NEW: SEARCH BAR -- */
+        .search-container {
+            position: relative;
+            margin-bottom: 30px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .search-input {
+            width: 100%;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #fff;
+            padding: 15px 20px 15px 45px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+        .search-input:focus {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--gold-primary);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.1);
+            outline: none;
+        }
+        .search-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+        }
+
+        /* -- NEW: SERVER STATUS -- */
+        .server-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0,255,0,0.1);
+            border: 1px solid rgba(0,255,0,0.2);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            color: #4ade80;
+            margin-top: 15px;
+        }
+        .status-dot {
+            width: 8px; height: 8px;
+            background-color: #4ade80;
+            border-radius: 50%;
+            animation: blinkStatus 1.5s infinite;
+        }
+        @keyframes blinkStatus { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+
+        /* BUTTONS & CARDS (Existing) */
         .btn-custom { display: inline-flex; align-items: center; justify-content: center; padding: 14px 28px; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; border-radius: var(--border-radius-pill); border: none; cursor: pointer; transition: var(--transition-smooth); position: relative; overflow: hidden; }
         .btn-gold { background: var(--gold-gradient); color: #000; box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3); }
         .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5); color: #000; }
@@ -314,10 +436,21 @@
     </style>
 </head>
 <body id="top">
+    
+    <div id="particles-js"></div>
 
     <div id="preloader" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#000;z-index:99999;display:flex;justify-content:center;align-items:center;flex-direction:column;">
         <div class="spinner-border text-warning" role="status" style="width: 3rem; height: 3rem;"></div>
         <p class="mt-3 text-white letter-spacing-2 small fw-bold">MEMUAT TOKO...</p>
+    </div>
+
+    <div class="fake-notification" id="fakeNotif">
+        <img src="https://ui-avatars.com/api/?name=User&background=random" class="notif-img" id="notifImg" alt="User">
+        <div class="notif-content">
+            <h6 id="notifName">Budi dari Jakarta</h6>
+            <p id="notifAction">Baru saja membeli 1000 Followers IG</p>
+            <span class="notif-time">1 menit yang lalu</span>
+        </div>
     </div>
 
     <div class="mobile-top-bar">
@@ -364,6 +497,13 @@
             <i class="bi bi-bag-check-fill"></i>
             <span>Order</span>
         </a>
+    </div>
+
+    <div class="flash-sale-banner">
+        <div class="container">
+            🔥 PROMO TERBATAS! Harga Spesial Berakhir dalam: 
+            <span class="countdown-box" id="countdownTimer">00:00:00</span>
+        </div>
     </div>
 
     <section id="hero" class="hero-section">
@@ -506,7 +646,7 @@
                     <i class="bi bi-arrow-right text-white opacity-50 ms-2"></i>
                 </a>
                 
-                <p class="mt-3 text-secondary small" style="font-size: 0.75rem;">
+                <p class="mt-3 text-muted small" style="font-size: 0.75rem;">
                     <i class="bi bi-info-circle me-1"></i> Klik untuk melihat Highlight "Testimoni" secara langsung
                 </p>
             </div>
@@ -520,6 +660,11 @@
                 <span class="section-label">KATALOG LENGKAP</span>
                 <h2>Pilih Layanan</h2>
                 <p>Gunakan filter di bawah untuk menemukan layanan sesuai platform.</p>
+            </div>
+
+            <div class="search-container animate__animated animate__fadeIn">
+                <i class="bi bi-search search-icon"></i>
+                <input type="text" id="serviceSearch" class="search-input" placeholder="Cari layanan (Contoh: Followers, Likes, TikTok)..." onkeyup="searchServices()">
             </div>
 
             <div class="pricing-controls">
@@ -702,6 +847,11 @@
 
             // Initialize services display
             renderServices('all');
+
+            // --- START NEW FEATURES ---
+            startFakeNotif();
+            startCountdown();
+            loadParticles();
         });
 
         // --- 2. HITUNG HARGA ---
@@ -729,20 +879,18 @@
             const GFORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSesAKeDg2Uh1dQTELBuMghZrT31yJV6B1rpGQHrYnvRZsAE0w/formResponse'; 
             
             const formMap = {
-                // ID ini diambil dari link yang kamu kirim:
-                service:  'entry.398242453',  // ID Layanan
-                target:   'entry.1311683536', // ID Target
-                quantity: 'entry.1805710612', // ID Jumlah
-                total:    'entry.2074942859', // ID Total Harga
-                payment:  'entry.371390371',  // ID Metode Pembayaran
-                whatsapp: 'entry.1404986427'  // ID Nomor WhatsApp
+                service:  'entry.398242453',  
+                target:   'entry.1311683536', 
+                quantity: 'entry.1805710612', 
+                total:    'entry.2074942859', 
+                payment:  'entry.371390371',  
+                whatsapp: 'entry.1404986427'  
             };
 
             const data = {
                 service: document.getElementById('inputService').value,
                 target: document.getElementById('inputTarget').value,
                 quantity: document.getElementById('inputQuantity').value,
-                // NEW: Send clean number for total (removes "Rp" and dots)
                 total: document.getElementById('displayTotal').value.replace(/\D/g, ''),
                 payment: document.getElementById('inputPayment').value,
                 whatsapp: document.getElementById('inputWhatsapp').value
@@ -763,7 +911,7 @@
             }).then(() => {
                 document.getElementById('loadingOverlay').style.display = 'none';
                 
-                const adminWA = "6287879842395"; // Nomor WA Admin
+                const adminWA = "6287879842395"; 
                 const textWA = `
 *Halo Admin Ridho Store!* 👋
 Saya sudah isi form order, ini detailnya:
@@ -790,7 +938,6 @@ Mohon diproses, bukti transfer saya lampirkan dibawah ini 👇
         
         // --- 4. RENDER SERVICES (Visual Price List) ---
         function filterServices(category, btnElement) {
-            // Active Tab UI
             if(btnElement) {
                 document.querySelectorAll('.platform-tab').forEach(el => el.classList.remove('active'));
                 btnElement.classList.add('active');
@@ -800,11 +947,15 @@ Mohon diproses, bukti transfer saya lampirkan dibawah ini 👇
 
         function renderServices(filter) {
             const container = document.getElementById('service-container');
-            container.innerHTML = ''; // Clear existing
+            container.innerHTML = ''; 
 
-            const filteredData = filter === 'all' 
-                ? servicesData 
-                : servicesData.filter(item => item.category === filter);
+            const searchText = document.getElementById('serviceSearch') ? document.getElementById('serviceSearch').value.toLowerCase() : '';
+
+            const filteredData = servicesData.filter(item => {
+                const matchCategory = filter === 'all' || item.category === filter;
+                const matchSearch = item.name.toLowerCase().includes(searchText);
+                return matchCategory && matchSearch;
+            });
 
             filteredData.forEach(item => {
                 const card = document.createElement('div');
@@ -828,6 +979,81 @@ Mohon diproses, bukti transfer saya lampirkan dibawah ini 👇
             });
         }
 
+        // --- NEW FEATURE 1: LIVE SEARCH ---
+        function searchServices() {
+            const activeTab = document.querySelector('.platform-tab.active');
+            const category = activeTab ? activeTab.getAttribute('data-target') : 'all';
+            renderServices(category);
+        }
+
+        // --- NEW FEATURE 2: FAKE NOTIFICATIONS ---
+        function startFakeNotif() {
+            const names = ["Andi", "Siska", "Budi", "Dewi", "Rizky", "Putri", "Agus", "Sari"];
+            const cities = ["Jakarta", "Surabaya", "Bandung", "Medan", "Bali", "Makassar", "Jogja"];
+            const items = ["1000 Followers IG", "5000 Views TikTok", "100 Likes IG", "Shopee Followers"];
+            const notif = document.getElementById('fakeNotif');
+
+            setInterval(() => {
+                // Hide first
+                notif.classList.remove('show');
+                
+                setTimeout(() => {
+                    // Update Content
+                    const randomName = names[Math.floor(Math.random() * names.length)];
+                    const randomCity = cities[Math.floor(Math.random() * cities.length)];
+                    const randomItem = items[Math.floor(Math.random() * items.length)];
+                    
+                    document.getElementById('notifName').innerText = `${randomName} dari ${randomCity}`;
+                    document.getElementById('notifAction').innerText = `Baru saja membeli ${randomItem}`;
+                    document.getElementById('notifImg').src = `https://ui-avatars.com/api/?name=${randomName}&background=random`;
+                    
+                    // Show again
+                    notif.classList.add('show');
+                }, 1000); // Wait for hide animation
+
+            }, 8000); // Loop every 8 seconds
+        }
+
+        // --- NEW FEATURE 3: COUNTDOWN TIMER ---
+        function startCountdown() {
+            // Set countdown for 2 hours from now (simulated urgency)
+            let timeInSecs = 2 * 60 * 60 + 45 * 60 + 10; // 02:45:10
+            
+            setInterval(() => {
+                timeInSecs--;
+                if(timeInSecs < 0) timeInSecs = 2 * 60 * 60; // Reset loop
+
+                const h = Math.floor(timeInSecs / 3600).toString().padStart(2,'0');
+                const m = Math.floor((timeInSecs % 3600) / 60).toString().padStart(2,'0');
+                const s = Math.floor(timeInSecs % 60).toString().padStart(2,'0');
+                
+                document.getElementById('countdownTimer').innerText = `${h}:${m}:${s}`;
+            }, 1000);
+        }
+
+        // --- NEW FEATURE 4: PARTICLES BACKGROUND ---
+        function loadParticles() {
+            if(window.particlesJS) {
+                particlesJS("particles-js", {
+                    "particles": {
+                        "number": { "value": 50, "density": { "enable": true, "value_area": 800 } },
+                        "color": { "value": "#ffffff" },
+                        "shape": { "type": "circle" },
+                        "opacity": { "value": 0.2, "random": true },
+                        "size": { "value": 3, "random": true },
+                        "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.1, "width": 1 },
+                        "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
+                    },
+                    "interactivity": {
+                        "detect_on": "canvas",
+                        "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
+                        "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 0.3 } } }
+                    },
+                    "retina_detect": true
+                });
+            }
+        }
+
         // Helper Format Rupiah
         function formatRupiah(num) {
             return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(num);
@@ -839,15 +1065,14 @@ Mohon diproses, bukti transfer saya lampirkan dibawah ini 👇
             alert('Nomor tersalin: ' + text);
         }
 
-        // Helper Cart (Dummy functions to prevent errors if elements exist)
+        // Helper Cart (Dummy functions)
         function openCart() { document.getElementById('cart-modal').classList.add('active'); document.getElementById('backdrop').classList.add('active'); }
         function closeCart() { document.getElementById('cart-modal').classList.remove('active'); document.getElementById('backdrop').classList.remove('active'); }
-        function copyCartTotal() { /* Not used in simplified version */ }
-        function addToCart(id) { /* Not used in simplified version */ }
-        function removeFromCart(index) { /* Not used in simplified version */ }
-        function updateCartUI() { /* Not used in simplified version */ }
+        function copyCartTotal() { }
 
     </script>
+    
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
     <footer class="py-5 bg-black border-top border-secondary border-opacity-25 text-center">
         <div class="container">
@@ -855,11 +1080,18 @@ Mohon diproses, bukti transfer saya lampirkan dibawah ini 👇
             <p class="text-secondary small mx-auto mb-4" style="max-width: 500px;">
                 Platform Social Media Marketing terpercaya membantu UMKM dan Kreator Indonesia berkembang sejak 2022.
             </p>
-            <div class="d-flex justify-content-center gap-3 mb-4">
-                <a href="https://instagram.com/ridho.store17" class="btn btn-icon-only btn-glass d-flex align-items-center justify-content-center"><i class="bi bi-instagram"></i></a>
+            
+            <div class="server-status">
+                <div class="status-dot"></div>
+                <span>Server Status: Operational / Fast Speed ⚡</span>
+            </div>
+
+            <div class="d-flex justify-content-center gap-3 my-4">
+                <a href="#" class="btn btn-icon-only btn-glass d-flex align-items-center justify-content-center"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="btn btn-icon-only btn-glass d-flex align-items-center justify-content-center"><i class="bi bi-tiktok"></i></a>
                 <a href="https://wa.me/6287879842395" class="btn btn-icon-only btn-glass d-flex align-items-center justify-content-center"><i class="bi bi-whatsapp"></i></a>
             </div>
-            <small class="text-secondary d-block">&copy; 2026 Ridho Store. All rights reserved.</small>
+            <small class="text-muted d-block">&copy; 2026 Ridho Store. All rights reserved.</small>
         </div>
     </footer>
 
