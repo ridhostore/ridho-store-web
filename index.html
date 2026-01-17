@@ -3,531 +3,586 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Ridho Store - Panel SMM Premium. Jual Followers Instagram, TikTok Likes, Shopee Terbaik.">
-    <meta name="theme-color" content="#050505">
+    <meta name="description" content="Ridho Store - Panel SMM Termurah dan Terpercaya. Jual Followers Instagram, TikTok Likes, Shopee, dan Layanan Sosmed Lainnya. Proses Instan.">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Ridho Store | Premium Digital Branding Solution</title>
     
-    <title>Ridho Store | Exclusive Digital Branding</title>
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syncopate:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
     <style>
         /* =========================================
-           1. PREMIUM DESIGN TOKENS
+           1. ROOT VARIABLES & DESIGN TOKENS
            ========================================= */
         :root {
-            --bg-body: #050505;
-            --bg-card: #0F0F0F;
-            --bg-glass: rgba(20, 20, 20, 0.65);
-            --bg-glass-heavy: rgba(10, 10, 10, 0.9);
-            
-            /* Luxury Gold Gradient (Metallic) */
-            --gold-gradient: linear-gradient(135deg, #d4af37 0%, #f7ef8a 50%, #c5a028 100%);
-            --gold-text: #f7ef8a;
-            
-            /* Brand Colors */
-            --brand-ig: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            --bg-deep: #000000;
+            --bg-surface-1: #0A0A0A;
+            --bg-surface-2: #121212;
+            --bg-surface-3: #1E1E1E;
+            --bg-surface-glass: rgba(18, 18, 18, 0.7);
+            --gold-light: #FFE57F;
+            --gold-primary: #FFD700;
+            --gold-dark: #C5A000;
+            --gold-gradient: linear-gradient(135deg, #FFD700 0%, #FDB931 50%, #C5A000 100%);
+            --brand-ig: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
             --brand-tt: #00f2ea;
-            --brand-sp: #ee4d2d;
-
-            /* Spacing & Borders */
-            --radius-sm: 12px;
-            --radius-md: 20px;
-            --radius-lg: 32px;
-            --glass-border: 1px solid rgba(255, 255, 255, 0.08);
-            
-            /* Effects */
-            --blur: blur(16px);
-            --shadow-glow: 0 0 25px rgba(212, 175, 55, 0.15);
+            --brand-sp: #EE4D2D;
+            --text-main: #F8F9FA;
+            --text-secondary: #B0B3B8;
+            --text-muted: #6C757D;
+            --text-gold: #FFD700;
+            --spacing-xs: 0.25rem;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 4rem;
+            --border-radius-sm: 8px;
+            --border-radius-md: 16px;
+            --border-radius-lg: 24px;
+            --border-radius-pill: 50px;
+            --glass-blur: blur(16px);
+            --border-glass: 1px solid rgba(255, 255, 255, 0.08);
+            --border-active: 1px solid rgba(255, 215, 0, 0.5);
+            --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.5);
+            --shadow-glow: 0 0 20px rgba(255, 215, 0, 0.15);
+            --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         /* =========================================
-           2. CORE RESET & TYPOGRAPHY
+           2. GLOBAL RESET & BASE STYLES
            ========================================= */
-        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; outline: none; }
-        
-        body { 
-            background-color: var(--bg-body); 
-            color: #ffffff; 
-            font-family: 'Outfit', sans-serif; 
-            overflow-x: hidden; 
-            padding-bottom: 80px; /* Space for mobile nav */
-        }
-
-        /* Noise Texture Overlay (High-End Feel) */
-        body::after {
-            content: "";
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
-            pointer-events: none; z-index: 9999;
-        }
-
-        h1, h2, h3, h4 { color: #fff; font-weight: 700; letter-spacing: -0.02em; }
-        h1 { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: clamp(2.5rem, 8vw, 4.5rem); line-height: 1.1; }
-        h2 { font-size: clamp(1.8rem, 5vw, 3rem); }
-        p { color: #a0a0a0; font-weight: 300; line-height: 1.7; }
-        
-        .text-gold { background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: bold; }
-        .text-italic-luxury { font-family: 'Playfair Display', serif; font-style: italic; color: var(--gold-text); }
+        *, *::before, *::after { box-sizing: border-box; outline: none; -webkit-tap-highlight-color: transparent; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { background-color: var(--bg-deep); color: var(--text-main); font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.6; overflow-x: hidden; position: relative; }
+        body::before { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: -1; }
+        h1, h2, h3, h4, h5, h6 { color: #FFFFFF; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 1rem; }
+        h1 { font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.1; }
+        h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); }
+        h3 { font-size: 1.5rem; }
+        p { color: var(--text-secondary); margin-bottom: 1.5rem; }
+        a { text-decoration: none; color: inherit; transition: var(--transition-fast); }
+        ul { list-style: none; padding: 0; margin: 0; }
+        .text-gradient-gold { background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; }
+        .text-high-contrast { color: #FFFFFF !important; }
+        .bg-glass { background: rgba(20, 20, 20, 0.6); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur); border: var(--border-glass); }
+        .z-index-fixed { z-index: 1000; }
+        .z-index-modal { z-index: 9999; }
 
         /* =========================================
            3. UI COMPONENTS
            ========================================= */
-        /* Buttons */
-        .btn-main {
-            background: var(--gold-gradient);
-            color: #000;
-            padding: 14px 32px;
-            border-radius: 50px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border: none;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
-            display: inline-flex;
-            align-items: center;
+        .btn-custom { display: inline-flex; align-items: center; justify-content: center; padding: 14px 28px; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; border-radius: var(--border-radius-pill); border: none; cursor: pointer; transition: var(--transition-smooth); position: relative; overflow: hidden; }
+        .btn-gold { background: var(--gold-gradient); color: #000; box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3); }
+        .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5); color: #000; }
+        .btn-glass { background: rgba(255, 255, 255, 0.1); color: #FFF; border: 1px solid rgba(255, 255, 255, 0.2); }
+        .btn-glass:hover { background: rgba(255, 255, 255, 0.2); border-color: #FFF; transform: translateY(-2px); }
+        .btn-icon-only { padding: 0; width: 45px; height: 45px; border-radius: 50%; }
+        
+        .feature-card { background: var(--bg-surface-2); border: var(--border-glass); border-radius: var(--border-radius-md); padding: 2rem; height: 100%; transition: var(--transition-smooth); position: relative; overflow: hidden; }
+        .feature-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: var(--gold-gradient); opacity: 0; transition: var(--transition-fast); }
+        .feature-card:hover { transform: translateY(-5px); background: var(--bg-surface-3); box-shadow: var(--shadow-glow); }
+        .feature-card:hover::before { opacity: 1; }
+        .feature-icon-box { width: 60px; height: 60px; border-radius: 12px; background: rgba(255, 215, 0, 0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; color: var(--gold-primary); font-size: 1.5rem; }
+        
+        .section-header { text-align: center; margin-bottom: 4rem; max-width: 700px; margin-left: auto; margin-right: auto; }
+        .section-label { font-size: 0.8rem; font-weight: 800; color: var(--gold-primary); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; display: block; }
+
+        /* =========================================
+           4. NAVIGATION
+           ========================================= */
+        .navbar-desktop { position: fixed; top: 0; left: 0; width: 100%; padding: 1.5rem 0; z-index: var(--z-index-fixed); transition: var(--transition-smooth); background: rgba(0,0,0,0); }
+        .navbar-desktop.scrolled { padding: 1rem 0; background: rgba(5, 5, 5, 0.85); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .brand-logo { font-family: 'Syncopate', sans-serif; font-weight: 700; font-size: 1.4rem; color: #FFF; letter-spacing: 1px; }
+        .nav-links .nav-link { color: var(--text-secondary) !important; font-weight: 500; font-size: 0.95rem; padding: 0.5rem 1rem; position: relative; }
+        .nav-links .nav-link:hover, .nav-links .nav-link.active { color: var(--gold-primary) !important; }
+        .nav-links .nav-link::after { content: ''; position: absolute; bottom: 0; left: 50%; width: 0; height: 2px; background: var(--gold-primary); transition: var(--transition-fast); transform: translateX(-50%); }
+        .nav-links .nav-link:hover::after { width: 20px; }
+        
+        /* --- MOBILE NAV FIXED (UPDATED FOR BETTER LAYOUT) --- */
+        .mobile-nav { 
+            position: fixed; 
+            bottom: 0; 
+            left: 0; 
+            width: 100%; 
+            background: #000000; /* Solid Black Background */
+            border-top: 1px solid rgba(255,255,255,0.15); 
+            padding: 12px 0; 
+            display: none; 
+            justify-content: space-around; 
+            align-items: center; 
+            z-index: 1001; 
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.8);
+            /* Handle iPhone Safe Area */
+            padding-bottom: env(safe-area-inset-bottom, 12px);
+        }
+
+        .mobile-nav-item { 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
             justify-content: center;
-            gap: 10px;
+            color: var(--text-secondary); 
+            font-size: 0.7rem; 
+            gap: 4px; 
+            transition: 0.3s; 
+            flex: 1; /* Distribute space evenly */
         }
-        .btn-main:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.5); color: #000; }
-        
-        .btn-glass {
-            background: rgba(255,255,255,0.05);
-            border: var(--glass-border);
-            color: #fff;
-            padding: 14px 32px;
-            border-radius: 50px;
-            backdrop-filter: var(--blur);
-            font-weight: 600;
-            transition: 0.3s;
-        }
-        .btn-glass:hover { background: rgba(255,255,255,0.15); color: #fff; border-color: #fff; }
 
-        /* Cards */
-        .card-premium {
-            background: var(--bg-card);
-            border: var(--glass-border);
-            border-radius: var(--radius-md);
-            padding: 24px;
-            position: relative;
-            transition: all 0.4s ease;
-            height: 100%;
+        .mobile-nav-item i { 
+            font-size: 1.3rem; 
+            margin-bottom: 2px; 
         }
-        .card-premium:hover {
-            transform: translateY(-5px);
-            border-color: #d4af37;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-        }
-        
-        /* Navigation (Desktop) */
-        .navbar-custom {
-            padding: 20px 0;
-            position: fixed; top: 0; width: 100%; z-index: 1000;
-            transition: 0.3s;
-            background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
-        }
-        .navbar-custom.scrolled {
-            background: rgba(5, 5, 5, 0.9);
-            backdrop-filter: blur(20px);
-            padding: 15px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-        .brand { font-size: 1.5rem; font-weight: 800; color: #fff; letter-spacing: 1px; text-decoration: none; }
-        
-        /* Navigation (Mobile Bottom Bar) */
-        .mobile-dock {
-            position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
-            width: 90%; max-width: 400px;
-            background: rgba(20, 20, 20, 0.85);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255,255,255,0.15);
-            border-radius: 50px;
-            display: flex; justify-content: space-around; align-items: center;
-            padding: 12px 20px;
-            z-index: 9999;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            display: none; /* Shown via media query */
-        }
-        .dock-item {
-            display: flex; flex-direction: column; align-items: center; justify-content: center;
-            color: #888; text-decoration: none; transition: 0.3s; font-size: 10px; font-weight: 500;
-        }
-        .dock-item i { font-size: 20px; margin-bottom: 3px; }
-        .dock-item.active, .dock-item:hover { color: #d4af37; transform: translateY(-2px); }
-        .cart-badge {
-            background: #d4af37; color: #000; font-size: 9px; font-weight: bold;
-            width: 16px; height: 16px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            position: absolute; top: -5px; right: 0;
+
+        .mobile-nav-item.active, .mobile-nav-item:hover { 
+            color: var(--gold-primary); 
         }
 
         /* =========================================
-           4. SECTIONS
+           5. HERO
            ========================================= */
-        
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex; align-items: center; justify-content: center;
-            position: relative; text-align: center;
-            padding-top: 80px;
-        }
-        .hero-glow {
-            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            width: 300px; height: 300px;
-            background: var(--gold-gradient);
-            filter: blur(150px); opacity: 0.15;
-            z-index: -1;
-            animation: pulse 5s infinite ease-in-out;
-        }
-        @keyframes pulse { 0%, 100% { opacity: 0.15; transform: translate(-50%, -50%) scale(1); } 50% { opacity: 0.25; transform: translate(-50%, -50%) scale(1.2); } }
-
-        /* Stats Cards */
-        .stat-box {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 15px; padding: 15px 25px;
-            display: inline-block; margin: 10px; backdrop-filter: blur(5px);
-        }
-
-        /* Pricing Section */
-        .tabs-wrapper {
-            overflow-x: auto; white-space: nowrap; padding-bottom: 10px; margin-bottom: 20px;
-            -webkit-overflow-scrolling: touch;
-            display: flex; justify-content: center; gap: 10px;
-        }
-        .tab-btn {
-            background: transparent; border: 1px solid rgba(255,255,255,0.2);
-            color: #fff; padding: 10px 24px; border-radius: 30px;
-            font-size: 14px; cursor: pointer; transition: 0.3s;
-        }
-        .tab-btn.active {
-            background: #fff; color: #000; border-color: #fff; font-weight: 700;
-        }
-        .tab-btn.active[data-filter="instagram"] { background: var(--brand-ig); color: #fff; border: none; }
-        .tab-btn.active[data-filter="tiktok"] { background: var(--brand-tt); color: #000; border: none; }
-        
-        .price-card {
-            background: #111; border: 1px solid #222; border-radius: 16px;
-            padding: 20px; height: 100%; display: flex; flex-direction: column; justify-content: space-between;
-        }
-        .price-val { font-size: 1.4rem; font-weight: 700; color: #d4af37; margin: 10px 0; }
-        .add-btn {
-            width: 100%; background: #222; border: none; color: #fff; padding: 10px;
-            border-radius: 8px; font-weight: 600; cursor: pointer; transition: 0.2s;
-        }
-        .add-btn:hover { background: #d4af37; color: #000; }
-
-        /* Order Form (Iframe) */
-        .iframe-container {
-            position: relative; width: 100%; overflow: hidden;
-            background: #fff; border-radius: 20px;
-            /* Height handled by JS or fixed min-height */
-            min-height: 80vh; 
-        }
-
-        /* Modal Cart */
-        .cart-modal {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.8); z-index: 10000;
-            display: none; align-items: center; justify-content: center;
-            opacity: 0; transition: opacity 0.3s;
-        }
-        .cart-modal.show { display: flex; opacity: 1; }
-        .cart-content {
-            background: #151515; width: 90%; max-width: 450px;
-            border-radius: 24px; padding: 25px; border: 1px solid #333;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.9);
-            transform: scale(0.9); transition: transform 0.3s;
-        }
-        .cart-modal.show .cart-content { transform: scale(1); }
+        .hero-section { min-height: 100vh; padding-top: 120px; position: relative; display: flex; align-items: center; overflow: hidden; }
+        .glow-orb { position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(255, 215, 0, 0.15) 0%, rgba(0,0,0,0) 70%); top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: -1; animation: pulseGlow 8s infinite alternate; }
+        @keyframes pulseGlow { 0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.5; } 100% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; } }
+        .trust-badge-container { display: flex; gap: 15px; margin-bottom: 2rem; flex-wrap: wrap; }
+        .trust-badge { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); padding: 8px 16px; border-radius: 30px; font-size: 0.85rem; color: #FFF; display: flex; align-items: center; gap: 8px; }
+        .trust-badge i { color: var(--gold-primary); }
 
         /* =========================================
-           5. MOBILE OPTIMIZATION
+           6. PRICING & TABS
            ========================================= */
+        .pricing-controls { display: flex; justify-content: center; gap: 10px; margin-bottom: 2rem; flex-wrap: wrap; }
+        .platform-tab { background: var(--bg-surface-2); color: var(--text-secondary); border: 1px solid rgba(255, 255, 255, 0.1); padding: 10px 24px; border-radius: 30px; cursor: pointer; transition: var(--transition-fast); font-weight: 600; display: flex; align-items: center; gap: 8px; }
+        .platform-tab:hover { background: var(--bg-surface-3); color: #FFF; }
+        .platform-tab.active { background: #FFF; color: #000; border-color: #FFF; }
+        .platform-tab.active[data-target="instagram"] { background: var(--brand-ig); color: #FFF; border: none; }
+        .platform-tab.active[data-target="tiktok"] { background: var(--brand-tt); color: #000; border: none; }
+        .platform-tab.active[data-target="shopee"] { background: var(--brand-sp); color: #FFF; border: none; }
+        
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+        .price-card { background: var(--bg-surface-2); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 20px; transition: var(--transition-smooth); display: flex; flex-direction: column; justify-content: space-between; }
+        .price-card:hover { border-color: var(--gold-primary); transform: translateY(-5px); }
+        .price-header { margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 15px; }
+        .service-name { font-weight: 700; color: #FFF; font-size: 1.1rem; line-height: 1.3; }
+        .service-meta { font-size: 0.8rem; color: var(--text-muted); display: block; margin-top: 5px; }
+        .price-tag { font-size: 1.25rem; color: var(--gold-primary); font-weight: 700; margin-bottom: 15px; display: block; }
+        .add-cart-btn { width: 100%; background: rgba(255,255,255,0.05); color: #FFF; border: 1px solid rgba(255,255,255,0.1); padding: 10px; border-radius: 8px; font-weight: 600; transition: 0.2s; }
+        .add-cart-btn:hover { background: #FFF; color: #000; }
+        .add-cart-btn.added { background: #28a745; border-color: #28a745; color: #FFF; }
+
+        /* =========================================
+           7. CALCULATOR & CART
+           ========================================= */
+        .cart-overlay { position: fixed; bottom: 90px; right: 20px; z-index: 1000; display: none; }
+        .cart-trigger { background: var(--gold-gradient); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4); cursor: pointer; position: relative; animation: bounceIn 0.5s; }
+        .cart-count { position: absolute; top: -5px; right: -5px; background: #FF0000; color: #FFF; font-size: 0.7rem; font-weight: bold; width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .cart-modal { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; max-width: 500px; background: #111; border: 1px solid #333; border-radius: 20px; padding: 25px; z-index: 2000; display: none; box-shadow: 0 20px 60px rgba(0,0,0,0.8); }
+        .cart-modal.active { display: block; animation: fadeIn 0.3s; }
+        .backdrop { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1999; display: none; }
+        .backdrop.active { display: block; }
+        .cart-items-container { max-height: 300px; overflow-y: auto; margin: 15px 0; padding-right: 5px; }
+        .cart-item { display: flex; justify-content: space-between; align-items: center; background: #1a1a1a; padding: 10px; margin-bottom: 8px; border-radius: 8px; font-size: 0.9rem; }
+        .remove-item { color: #ff4d4d; cursor: pointer; padding: 5px; }
+
+        /* =========================================
+           8. ORDER & PAYMENT
+           ========================================= */
+        .payment-card { background: var(--bg-surface-2); padding: 20px; border-radius: 12px; display: flex; align-items: center; justify-content: space-between; border: 1px solid rgba(255,255,255,0.05); margin-bottom: 15px; }
+        .copy-btn { background: transparent; border: 1px solid var(--text-muted); color: var(--text-secondary); padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; transition: 0.2s; }
+        .copy-btn:hover { border-color: #FFF; color: #FFF; }
+        .order-frame-wrapper { background: #FFF; border-radius: 20px; overflow: hidden; position: relative; min-height: 800px; }
+        .skeleton-loader { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #f0f0f0; z-index: 10; display: flex; justify-content: center; align-items: center; flex-direction: column; }
+        
+        /* =========================================
+           9. TESTIMONIALS & INSTAGRAM BUTTON
+           ========================================= */
+        .swiper { width: 100%; padding-bottom: 50px; }
+        .swiper-slide { background: var(--bg-surface-2); border-radius: 20px; padding: 30px; border: 1px solid rgba(255,255,255,0.05); height: auto; }
+        .swiper-pagination-bullet { background: #FFF; opacity: 0.3; }
+        .swiper-pagination-bullet-active { background: var(--gold-primary); opacity: 1; }
+
+        /* Instagram Official Button Styles (FIXED LOCATION) */
+        .cta-instagram-wrapper { margin-top: 3rem; position: relative; z-index: 2; }
+        .btn-ig-official { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 16px 32px; background: rgba(20, 20, 20, 0.6); border-radius: 50px; color: #FFF; text-decoration: none; overflow: hidden; backdrop-filter: blur(10px); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .btn-ig-official::before { content: ""; position: absolute; inset: 0; border-radius: 50px; padding: 2px; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0.6; transition: opacity 0.4s ease; }
+        .ig-icon-box { width: 38px; height: 38px; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: white; box-shadow: 0 4px 10px rgba(220, 39, 67, 0.4); }
+        .btn-ig-official:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 15px 35px rgba(220, 39, 67, 0.25); background: rgba(30, 30, 30, 0.9); }
+        .btn-ig-official:hover::before { opacity: 1; }
+        .btn-ig-official:active { transform: scale(0.98); }
+        .ig-text-group { text-align: left; line-height: 1.2; }
+        .ig-label { display: block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: #B0B0B0; margin-bottom: 2px; }
+        .ig-main-text { font-weight: 700; font-size: 1rem; color: #FFF; }
+
+        /* =========================================
+           10. MEDIA QUERIES
+           ========================================= */
+        @media (max-width: 991px) {
+            .hero-section { text-align: center; flex-direction: column; justify-content: center; padding-top: 100px; }
+            .hero-content { margin-bottom: 50px; }
+            .hero-img-col { display: none; }
+            .navbar-desktop .btn-custom { display: none; }
+        }
         @media (max-width: 768px) {
-            h1 { font-size: 2.8rem; }
-            .hero { padding-top: 60px; align-items: center; }
-            .navbar-custom { display: none; } /* Hide desktop nav */
-            .mobile-dock { display: flex; } /* Show mobile nav */
+            .mobile-nav { display: flex; }
+            .navbar-desktop { display: none; }
+            h1 { font-size: 2.5rem; }
+            .container { padding-left: 20px; padding-right: 20px; }
+            #order { padding-bottom: 100px; }
+            .pricing-controls { justify-content: flex-start; overflow-x: auto; padding-bottom: 10px; white-space: nowrap; }
             
-            .tabs-wrapper { justify-content: flex-start; padding-left: 5px; }
-            .col-6 { padding-left: 8px; padding-right: 8px; } /* Tighter grid on mobile */
-            
-            .price-card { padding: 15px; }
-            .price-val { font-size: 1.1rem; }
-            .service-title { font-size: 0.9rem; line-height: 1.3; }
-            
-            /* Full sheet modal on mobile */
-            .cart-content { 
-                position: absolute; bottom: 0; left: 0; width: 100%; max-width: 100%;
-                border-radius: 24px 24px 0 0; border-bottom: none;
-                margin: 0; animation: slideUp 0.3s ease;
-            }
-            @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+            /* Hide floating cart on mobile because it's now in the bottom nav */
+            .cart-overlay { display: none !important; }
         }
     </style>
 </head>
-<body>
+<body id="top">
 
-    <div id="loader" style="position:fixed; inset:0; background:#000; z-index:99999; display:flex; justify-content:center; align-items:center;">
-        <div class="spinner-border text-warning" role="status"></div>
+    <div id="preloader" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#000;z-index:99999;display:flex;justify-content:center;align-items:center;flex-direction:column;">
+        <div class="spinner-border text-warning" role="status" style="width: 3rem; height: 3rem;"></div>
+        <p class="mt-3 text-white letter-spacing-2 small fw-bold">MEMUAT TOKO...</p>
     </div>
 
-    <nav class="navbar-custom d-none d-md-block">
-        <div class="container d-flex justify-content-between align-items-center">
-            <a href="#" class="brand">RIDHO<span class="text-gold">STORE</span></a>
-            <div class="d-flex gap-4">
-                <a href="#home" class="text-white text-decoration-none">Beranda</a>
-                <a href="#pricing" class="text-white text-decoration-none">Harga</a>
-                <a href="#testimonials" class="text-white text-decoration-none">Testimoni</a>
+    <nav class="navbar navbar-expand-lg navbar-desktop">
+        <div class="container">
+            <a class="brand-logo" href="#">RIDHO<span class="text-gold">STORE</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navContent">
+                <ul class="navbar-nav ms-auto nav-links align-items-center">
+                    <li class="nav-item"><a class="nav-link active" href="#hero">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#features">Keunggulan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">Testimoni</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#pricing">Harga</a></li>
+                    <li class="nav-item ms-3">
+                        <a href="#order" class="btn btn-custom btn-gold">ORDER SEKARANG</a>
+                    </li>
+                </ul>
             </div>
-            <button class="btn-main" onclick="scrollToSection('order')">Order Now</button>
         </div>
     </nav>
 
-    <div class="d-md-none fixed-top p-3" style="background:rgba(5,5,5,0.9); backdrop-filter:blur(10px); border-bottom:1px solid rgba(255,255,255,0.05);">
-        <div class="text-center">
-            <span class="brand" style="font-size:1.2rem;">RIDHO<span class="text-gold">STORE</span></span>
-        </div>
-    </div>
-
-    <section id="home" class="hero">
-        <div class="hero-glow"></div>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill border border-secondary mb-4 animate__animated animate__fadeInDown" style="background:rgba(255,255,255,0.05);">
-                        <i class="bi bi-patch-check-fill text-gold"></i>
-                        <small class="text-uppercase text-white letter-spacing-1" style="font-size:0.7rem;">Official SMM Panel</small>
-                    </div>
-
-                    <h1 class="mb-3 animate__animated animate__fadeInUp">
-                        Boost Your <br> <span class="text-gold">Social Authority</span>
-                    </h1>
-                    
-                    <p class="mb-5 px-md-5 animate__animated animate__fadeInUp animate__delay-1s">
-                        Platform boosting sosial media #1 di Indonesia. <br class="d-none d-md-block">
-                        Layanan instan, aman, dan harga termurah untuk UMKM & Kreator.
-                    </p>
-
-                    <div class="d-flex justify-content-center gap-3 mb-5 animate__animated animate__fadeInUp animate__delay-1s">
-                        <button onclick="scrollToSection('pricing')" class="btn-main">
-                            Lihat Pricelist
-                        </button>
-                        <button onclick="scrollToSection('features')" class="btn-glass">
-                            Info Layanan
-                        </button>
-                    </div>
-
-                    <div class="row justify-content-center g-2 animate__animated animate__fadeIn animate__delay-2s">
-                        <div class="col-4 col-md-auto">
-                            <div class="stat-box">
-                                <h4 class="m-0 text-white">10K+</h4>
-                                <small class="text-muted" style="font-size:0.7rem;">Order</small>
-                            </div>
-                        </div>
-                        <div class="col-4 col-md-auto">
-                            <div class="stat-box">
-                                <h4 class="m-0 text-white">4.9</h4>
-                                <small class="text-muted" style="font-size:0.7rem;">Rating</small>
-                            </div>
-                        </div>
-                        <div class="col-4 col-md-auto">
-                            <div class="stat-box">
-                                <h4 class="m-0 text-white">24/7</h4>
-                                <small class="text-muted" style="font-size:0.7rem;">Support</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="pricing" class="py-5">
-        <div class="container">
-            <div class="text-center mb-5">
-                <span class="text-gold text-uppercase" style="letter-spacing:2px; font-size:0.8rem;">Katalog Premium</span>
-                <h2 class="mt-2 text-white">Pilih Layanan</h2>
-            </div>
-
-            <div class="tabs-wrapper">
-                <button class="tab-btn active" data-filter="all" onclick="filterServices('all', this)">Semua</button>
-                <button class="tab-btn" data-filter="instagram" onclick="filterServices('instagram', this)">Instagram</button>
-                <button class="tab-btn" data-filter="tiktok" onclick="filterServices('tiktok', this)">TikTok</button>
-                <button class="tab-btn" data-filter="shopee" onclick="filterServices('shopee', this)">Shopee</button>
-            </div>
-
-            <div class="row g-3" id="services-grid">
-                </div>
-        </div>
-    </section>
-
-    <section id="testimonials" class="py-5 bg-glass-heavy">
-        <div class="container">
-            <div class="d-flex justify-content-between align-items-end mb-4">
-                <div>
-                    <h2 class="text-white mb-0">Testimoni</h2>
-                    <p class="m-0 small">Apa kata mereka?</p>
-                </div>
-                <div class="d-none d-md-block text-warning">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-            </div>
-
-            <div class="swiper mySwiper pb-5">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide card-premium">
-                        <p class="text-italic-luxury">"Gila sih, order followers IG jam 2 pagi tetep masuk instan. Buat olshop ini ngebantu banget biar keliatan trust."</p>
-                        <div class="mt-3 d-flex align-items-center gap-3">
-                            <div style="width:40px;height:40px;background:#333;border-radius:50%;"></div>
-                            <div>
-                                <h6 class="m-0 text-white">Aldi Pratama</h6>
-                                <small class="text-muted">Owner ShoesClean</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide card-premium">
-                        <p class="text-italic-luxury">"Shopee followersnya murah banget dibanding lapak sebelah. Udah langganan 3x disini aman terus."</p>
-                        <div class="mt-3 d-flex align-items-center gap-3">
-                            <div style="width:40px;height:40px;background:#333;border-radius:50%;"></div>
-                            <div>
-                                <h6 class="m-0 text-white">Siska Amelia</h6>
-                                <small class="text-muted">Seller Star+</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide card-premium">
-                        <p class="text-italic-luxury">"Adminnya ramah parah. Pas ada kendala langsung dibantu sampe beres. TikTok views nya bikin FYP!"</p>
-                        <div class="mt-3 d-flex align-items-center gap-3">
-                            <div style="width:40px;height:40px;background:#333;border-radius:50%;"></div>
-                            <div>
-                                <h6 class="m-0 text-white">Bayu Saputra</h6>
-                                <small class="text-muted">Konten Kreator</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="order" class="py-5">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-5">
-                    <h2 class="text-white mb-4">Pembayaran</h2>
-                    
-                    <div class="card-premium mb-3 p-3 d-flex justify-content-between align-items-center">
-                        <div class="d-flex align-items-center gap-3">
-                            <i class="bi bi-wallet-fill text-gold fs-3"></i>
-                            <div>
-                                <h6 class="m-0 text-white">DANA / E-Wallet</h6>
-                                <small class="text-muted">0878-7984-2395</small>
-                            </div>
-                        </div>
-                        <button class="btn btn-sm btn-outline-light rounded-pill" onclick="copyText('087879842395')">Salin</button>
-                    </div>
-
-                    <div class="card-premium p-3 d-flex justify-content-between align-items-center" style="background:rgba(212, 175, 55, 0.1); border-color:var(--gold-text);">
-                        <div class="d-flex align-items-center gap-3">
-                            <i class="bi bi-qr-code-scan text-gold fs-3"></i>
-                            <div>
-                                <h6 class="m-0 text-white">QRIS (All Payment)</h6>
-                                <small class="text-gold">Scan di Form Order</small>
-                            </div>
-                        </div>
-                        <span class="badge bg-warning text-dark">Auto</span>
-                    </div>
-
-                    <div class="mt-4 p-4 rounded-4" style="background:#111;">
-                        <h5 class="text-white mb-3">Cara Order:</h5>
-                        <ul class="text-muted small ps-3 mb-0" style="line-height:1.8;">
-                            <li>Pilih layanan di menu "Harga".</li>
-                            <li>Klik "Add" lalu hitung total di keranjang.</li>
-                            <li>Transfer sesuai nominal.</li>
-                            <li>Isi Formulir di samping ini dengan benar.</li>
-                            <li>Upload bukti transfer & tunggu proses (1-10 menit).</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-lg-7">
-                    <div class="iframe-container shadow-lg">
-                        <iframe src="https://forms.gle/DQYvEt3YBNaFjBpC8" width="100%" height="100%" frameborder="0" style="min-height: 850px;">Loading...</iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="text-center py-5 border-top border-secondary border-opacity-10 mt-5">
-        <h3 class="brand mb-3">RIDHO<span class="text-gold">STORE</span></h3>
-        <p class="small text-muted mb-4">Platform Digital Marketing Terpercaya Sejak 2022.</p>
-        <div class="d-flex justify-content-center gap-3 mb-4">
-            <a href="#" class="text-white fs-4"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="text-white fs-4"><i class="bi bi-tiktok"></i></a>
-            <a href="https://wa.me/6287879842395" class="text-white fs-4"><i class="bi bi-whatsapp"></i></a>
-        </div>
-        <small class="text-muted">&copy; 2026 Ridho Store. All rights reserved.</small>
-    </footer>
-
-    <div class="mobile-dock animate__animated animate__fadeInUp">
-        <a href="#home" class="dock-item active">
+    <div class="mobile-nav animate__animated animate__fadeInUp">
+        <a href="#hero" class="mobile-nav-item active">
             <i class="bi bi-house-door-fill"></i>
             <span>Home</span>
         </a>
-        <a href="#pricing" class="dock-item">
+        <a href="#pricing" class="mobile-nav-item">
             <i class="bi bi-tags-fill"></i>
             <span>Harga</span>
         </a>
-        <a href="javascript:void(0)" class="dock-item position-relative" onclick="toggleCart()">
-            <div class="p-2 bg-warning rounded-circle text-black shadow-lg" style="margin-top:-25px; border:4px solid #111;">
-                <i class="bi bi-bag-fill" style="font-size:18px; margin:0;"></i>
+        <a href="#" class="mobile-nav-item" onclick="openCart()">
+            <div style="position:relative;">
+                <i class="bi bi-calculator-fill"></i>
+                <div class="cart-count" id="mobile-cart-count" style="top:-8px; right:-8px; width:16px; height:16px; font-size:9px; display:none;">0</div>
             </div>
-            <div class="cart-badge" id="cartBadge" style="display:none;">0</div>
+            <span>Hitung</span>
         </a>
-        <a href="#testimonials" class="dock-item">
-            <i class="bi bi-chat-quote-fill"></i>
-            <span>Testi</span>
-        </a>
-        <a href="#order" class="dock-item">
-            <i class="bi bi-file-text-fill"></i>
-            <span>Form</span>
+        <a href="#order" class="mobile-nav-item">
+            <i class="bi bi-bag-check-fill"></i>
+            <span>Order</span>
         </a>
     </div>
 
-    <div class="cart-modal" id="cartModal">
-        <div class="cart-content">
-            <div class="d-flex justify-content-between align-items-center mb-4 pb-3 border-bottom border-secondary border-opacity-25">
-                <h4 class="m-0 text-white">Keranjang</h4>
-                <button class="btn-close btn-close-white" onclick="toggleCart()"></button>
+    <section id="hero" class="hero-section">
+        <div class="glow-orb"></div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center">
+                    <div class="trust-badge-container justify-content-center animate__animated animate__fadeInDown">
+                        <div class="trust-badge"><i class="bi bi-shield-fill-check"></i> 100% Aman</div>
+                        <div class="trust-badge"><i class="bi bi-lightning-fill"></i> Proses Kilat</div>
+                        <div class="trust-badge"><i class="bi bi-star-fill"></i> 4.9/5 Rating</div>
+                    </div>
+                    
+                    <h1 class="mb-4 animate__animated animate__fadeInUp">
+                        Solusi Branding <br>
+                        <span class="text-gradient-gold">Digital Premium</span>
+                    </h1>
+                    
+                    <p class="lead mb-5 px-lg-5 animate__animated animate__fadeInUp animate__delay-1s">
+                        Tingkatkan kredibilitas sosial media Anda dengan layanan boosting terbaik di Indonesia. Tanpa password, privasi terjaga, dan harga bersahabat.
+                    </p>
+                    
+                    <div class="d-flex gap-3 justify-content-center animate__animated animate__fadeInUp animate__delay-1s">
+                        <a href="#pricing" class="btn btn-custom btn-gold">
+                            <i class="bi bi-rocket-takeoff-fill me-2"></i> LIHAT PAKET
+                        </a>
+                        <a href="#features" class="btn btn-custom btn-glass">
+                            PELAJARI LEBIH
+                        </a>
+                    </div>
+                </div>
             </div>
-            
-            <div id="cartItems" style="max-height: 250px; overflow-y: auto;">
-                <div class="text-center text-muted py-5">
-                    <i class="bi bi-cart-x fs-1 d-block mb-2"></i>
-                    Belum ada item
+        </div>
+    </section>
+
+    <section id="features" class="py-5 bg-surface-1">
+        <div class="container py-5">
+            <div class="section-header">
+                <span class="section-label">KENAPA KAMI?</span>
+                <h2>Kualitas di Atas Kuantitas</h2>
+                <p>Kami tidak sekadar menjual angka, kami memberikan value untuk branding Anda.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon-box"><i class="bi bi-shield-lock"></i></div>
+                        <h4 class="h5">Privasi Terjaga</h4>
+                        <p class="small text-secondary mb-0">Hanya butuh Username/Link. Kami tidak pernah meminta Password akun Anda.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon-box"><i class="bi bi-lightning-charge"></i></div>
+                        <h4 class="h5">Server High Speed</h4>
+                        <p class="small text-secondary mb-0">Orderan diproses otomatis oleh sistem 24 jam non-stop dengan kecepatan tinggi.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon-box"><i class="bi bi-wallet2"></i></div>
+                        <h4 class="h5">Harga Reseller</h4>
+                        <p class="small text-secondary mb-0">Harga termurah di kelasnya, cocok untuk dipakai sendiri atau dijual kembali.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon-box"><i class="bi bi-headset"></i></div>
+                        <h4 class="h5">Support Bantuan</h4>
+                        <p class="small text-secondary mb-0">Admin siap membantu jika ada kendala dalam pemesanan Anda.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="py-5">
+        <div class="container py-5">
+            <div class="section-header">
+                <span class="section-label">BUKTI NYATA</span>
+                <h2>Kata Mereka</h2>
+            </div>
+
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="d-flex text-warning mb-3">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="fst-italic">"Awalnya ragu karena tanpa password, ternyata beneran masuk cepet banget. Followernya juga akun aktif keliatannya. Thanks min!"</p>
+                        <div class="d-flex align-items-center mt-4">
+                            <img src="https://ui-avatars.com/api/?name=Andi+P&background=FFD700&color=000" class="rounded-circle me-3" width="40" alt="User">
+                            <div>
+                                <h6 class="mb-0 text-white">Andi Pratama</h6>
+                                <small class="text-muted">Owner Olshop Sepatu</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="d-flex text-warning mb-3">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="fst-italic">"Buat yang mau FYP di TikTok wajib cobain suntik views disini. Video gue langsung naik trafficnya setelah order."</p>
+                        <div class="d-flex align-items-center mt-4">
+                            <img src="https://ui-avatars.com/api/?name=Siska+L&background=FFD700&color=000" class="rounded-circle me-3" width="40" alt="User">
+                            <div>
+                                <h6 class="mb-0 text-white">Siska Larasati</h6>
+                                <small class="text-muted">Content Creator</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="d-flex text-warning mb-3">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="fst-italic">"Admin fast respon, ada garansi refill juga kalo drop. Recommended banget buat yang mau bangun branding dari nol."</p>
+                        <div class="d-flex align-items-center mt-4">
+                            <img src="https://ui-avatars.com/api/?name=Budi+S&background=FFD700&color=000" class="rounded-circle me-3" width="40" alt="User">
+                            <div>
+                                <h6 class="mb-0 text-white">Budi Santoso</h6>
+                                <small class="text-muted">UMKM Kuliner</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination mt-4"></div>
+            </div>
+
+            <div class="cta-instagram-wrapper text-center animate__animated animate__fadeInUp animate__delay-2s">
+                <a href="https://instagram.com/ridho.store17" target="_blank" class="btn-ig-official">
+                    <div class="ig-icon-box">
+                        <i class="bi bi-instagram"></i>
+                    </div>
+                    
+                    <div class="ig-text-group">
+                        <span class="ig-label">Masih Ragu?</span>
+                        <span class="ig-main-text">Cek 1.000+ Bukti Real di Profil IG</span>
+                    </div>
+        
+                    <i class="bi bi-arrow-right text-white opacity-50 ms-2"></i>
+                </a>
+                
+                <p class="mt-3 text-muted small" style="font-size: 0.75rem;">
+                    <i class="bi bi-info-circle me-1"></i> Klik untuk melihat Highlight "Testimoni" secara langsung
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="pricing" class="py-5 bg-surface-1">
+        <div class="container py-5">
+            <div class="section-header">
+                <span class="section-label">KATALOG LENGKAP</span>
+                <h2>Pilih Layanan</h2>
+                <p>Gunakan filter di bawah untuk menemukan layanan sesuai platform.</p>
+            </div>
+
+            <div class="pricing-controls">
+                <div class="platform-tab active" data-target="all" onclick="filterServices('all', this)">
+                    <i class="bi bi-grid-fill"></i> Semua
+                </div>
+                <div class="platform-tab" data-target="instagram" onclick="filterServices('instagram', this)">
+                    <i class="bi bi-instagram"></i> Instagram
+                </div>
+                <div class="platform-tab" data-target="tiktok" onclick="filterServices('tiktok', this)">
+                    <i class="bi bi-tiktok"></i> TikTok
+                </div>
+                <div class="platform-tab" data-target="shopee" onclick="filterServices('shopee', this)">
+                    <i class="bi bi-bag-fill"></i> Shopee
                 </div>
             </div>
 
-            <div class="mt-4 pt-3 border-top border-secondary border-opacity-25">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <span class="text-muted">Total Estimasi</span>
-                    <span class="h4 text-gold m-0" id="cartTotal">Rp 0</span>
+            <div id="service-container" class="service-grid">
                 </div>
-                <button class="btn-main w-100" onclick="copyTotal()">
-                    <i class="bi bi-files me-2"></i> Salin & Bayar
+        </div>
+    </section>
+
+    <section id="payment" class="py-5">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <h3 class="mb-4">Metode Pembayaran</h3>
+                    <p>Kami menerima pembayaran melalui E-Wallet dan QRIS (All Payment) bebas biaya admin. Konfirmasi otomatis jika menggunakan QRIS.</p>
+                    
+                    <div class="payment-card">
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-wallet-fill fs-2 text-gold me-3"></i>
+                            <div>
+                                <h6 class="mb-0 text-white">DANA / GOPAY</h6>
+                                <small class="text-secondary">0878-7984-2395 (Ridho)</small>
+                            </div>
+                        </div>
+                        <button class="copy-btn" onclick="copyToClipboard('087879842395')">Salin</button>
+                    </div>
+
+                    <div class="payment-card border-active bg-glass">
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-qr-code-scan fs-2 text-gold me-3"></i>
+                            <div>
+                                <h6 class="mb-0 text-white">QRIS (All Bank/E-Wallet)</h6>
+                                <small class="text-secondary">Scan barcode pada Form Order</small>
+                            </div>
+                        </div>
+                        <span class="badge bg-success">AUTO</span>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                     <div class="p-4 rounded-4" style="background: linear-gradient(135deg, #1a1a1a, #000); border: 1px solid #333;">
+                        <h5 class="text-white mb-3"><i class="bi bi-info-circle text-gold me-2"></i>Cara Pemesanan</h5>
+                        <ol class="text-secondary ps-3 mb-0" style="font-size: 0.95rem;">
+                            <li class="mb-2">Pilih layanan di menu "Daftar Harga".</li>
+                            <li class="mb-2">Gunakan fitur "Hitung" untuk estimasi biaya.</li>
+                            <li class="mb-2">Lakukan pembayaran ke metode yang tersedia.</li>
+                            <li class="mb-2">Isi formulir order di bawah ini.</li>
+                            <li class="mb-2">Upload bukti transfer dan tunggu proses selesai.</li>
+                        </ol>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="order" class="py-5 bg-surface-1">
+        <div class="container py-5">
+            <div class="section-header">
+                <span class="section-label">TAHAP TERAKHIR</span>
+                <h2>Formulir Pemesanan</h2>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="order-frame-wrapper shadow-soft">
+                        <div id="iframe-loader" class="skeleton-loader">
+                            <div class="spinner-border text-secondary mb-3" role="status"></div>
+                            <span class="text-muted fw-bold">Memuat Formulir Aman...</span>
+                        </div>
+                        
+                        <iframe 
+                            src="https://forms.gle/DQYvEt3YBNaFjBpC8" 
+                            width="100%" 
+                            height="950" 
+                            frameborder="0" 
+                            marginheight="0" 
+                            marginwidth="0"
+                            onload="document.getElementById('iframe-loader').style.display='none';">
+                            Memuat...
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-5 bg-black border-top border-secondary border-opacity-25 text-center">
+        <div class="container">
+            <h3 class="brand-logo mb-3">RIDHO<span class="text-gold">STORE</span></h3>
+            <p class="text-secondary small mx-auto mb-4" style="max-width: 500px;">
+                Platform Social Media Marketing terpercaya membantu UMKM dan Kreator Indonesia berkembang sejak 2022.
+            </p>
+            <div class="d-flex justify-content-center gap-3 mb-4">
+                <a href="#" class="btn btn-icon-only btn-glass d-flex align-items-center justify-content-center"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="btn btn-icon-only btn-glass d-flex align-items-center justify-content-center"><i class="bi bi-tiktok"></i></a>
+                <a href="https://wa.me/6287879842395" class="btn btn-icon-only btn-glass d-flex align-items-center justify-content-center"><i class="bi bi-whatsapp"></i></a>
+            </div>
+            <small class="text-muted d-block">&copy; 2026 Ridho Store. All rights reserved.</small>
+        </div>
+    </footer>
+
+    <div class="cart-overlay animate__animated animate__bounceIn" id="cart-overlay">
+        <div class="cart-trigger" onclick="openCart()">
+            <i class="bi bi-calculator-fill fs-4 text-dark"></i>
+            <div class="cart-count" id="cart-count-badge">0</div>
+        </div>
+    </div>
+
+    <div class="backdrop" id="backdrop" onclick="closeCart()"></div>
+    <div class="cart-modal" id="cart-modal">
+        <div class="d-flex justify-content-between align-items-center border-bottom border-secondary border-opacity-25 pb-3">
+            <h5 class="text-white m-0">Estimasi Biaya</h5>
+            <button class="btn-close btn-close-white" onclick="closeCart()"></button>
+        </div>
+        
+        <div class="cart-items-container" id="cart-items">
+            <p class="text-center text-muted py-4 small">Belum ada layanan dipilih.</p>
+        </div>
+
+        <div class="border-top border-secondary border-opacity-25 pt-3">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-secondary">Total Estimasi:</span>
+                <span class="h4 text-gold mb-0" id="cart-total">Rp 0</span>
+            </div>
+            <div class="d-grid gap-2">
+                <button class="btn btn-custom btn-gold w-100" onclick="copyCartTotal()">
+                    <i class="bi bi-clipboard-check me-2"></i> Salin Total & Bayar
                 </button>
+                <small class="text-center text-muted" style="font-size: 0.7rem;">*Total ini hanya estimasi. Salin nominal untuk transfer.</small>
             </div>
         </div>
     </div>
@@ -536,169 +591,201 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     
     <script>
-        // Data Layanan
-        const services = [
-            { id: 1, cat: 'instagram', name: 'Followers Mix (Murah)', price: 2500, label: '100 Fol' },
-            { id: 2, cat: 'instagram', name: 'Followers Mix', price: 12500, label: '500 Fol' },
-            { id: 3, cat: 'instagram', name: 'Followers Indo (Real)', price: 6000, label: '100 Fol' },
-            { id: 4, cat: 'instagram', name: 'Likes (Non-Drop)', price: 3500, label: '100 Likes' },
-            { id: 5, cat: 'tiktok', name: 'TikTok Followers', price: 3000, label: '100 Fol' },
-            { id: 6, cat: 'tiktok', name: 'TikTok Views FYP', price: 2000, label: '5000 View' },
-            { id: 7, cat: 'tiktok', name: 'TikTok Likes', price: 2000, label: '100 Likes' },
-            { id: 8, cat: 'shopee', name: 'Shopee Followers', price: 5000, label: '100 Fol' },
-            { id: 9, cat: 'shopee', name: 'Shopee Likes', price: 4000, label: '100 Likes' }
+        // =========================================
+        // 1. DATA CENTER (No Hardcoding)
+        // =========================================
+        const servicesData = [
+            // INSTAGRAM
+            { id: 1, category: 'instagram', name: 'IG Followers Mix (Less Drop)', desc: '100 Followers', price: 2500 },
+            { id: 2, category: 'instagram', name: 'IG Followers Mix (Less Drop)', desc: '500 Followers', price: 12500 },
+            { id: 3, category: 'instagram', name: 'IG Followers Mix (Less Drop)', desc: '1000 Followers', price: 25000 },
+            { id: 4, category: 'instagram', name: 'IG Followers Indo (High Quality)', desc: '100 Followers', price: 6000 },
+            { id: 5, category: 'instagram', name: 'IG Likes (Non-Drop)', desc: '100 Likes', price: 3500 },
+            { id: 6, category: 'instagram', name: 'IG Views (Reels/Video)', desc: '1000 Views', price: 2000 },
+            
+            // TIKTOK
+            { id: 7, category: 'tiktok', name: 'TikTok Followers (Global)', desc: '100 Followers', price: 3000 },
+            { id: 8, category: 'tiktok', name: 'TikTok Followers (Global)', desc: '1000 Followers', price: 30000 },
+            { id: 9, category: 'tiktok', name: 'TikTok Likes (Fast)', desc: '100 Likes', price: 2000 },
+            { id: 10, category: 'tiktok', name: 'TikTok Views (FYP Booster)', desc: '5000 Views', price: 2000 },
+            { id: 11, category: 'tiktok', name: 'TikTok Views (FYP Booster)', desc: '25k Views', price: 10000 },
+            
+            // SHOPEE
+            { id: 12, category: 'shopee', name: 'Shopee Followers Toko', desc: '100 Followers', price: 5000 },
+            { id: 13, category: 'shopee', name: 'Shopee Product Likes', desc: '100 Likes', price: 4000 }
         ];
 
         let cart = [];
 
-        // Loading
-        window.onload = () => {
-            setTimeout(() => document.getElementById('loader').style.display = 'none', 800);
+        // =========================================
+        // 2. INITIALIZATION
+        // =========================================
+        window.addEventListener('load', () => {
+            // Hide Preloader
+            setTimeout(() => {
+                document.getElementById('preloader').style.opacity = '0';
+                setTimeout(() => { document.getElementById('preloader').style.display = 'none'; }, 500);
+            }, 800);
+
+            // Render All Services Initially
             renderServices('all');
-            
-            // Swiper
+
+            // Init Swiper
             new Swiper(".mySwiper", {
                 slidesPerView: 1,
-                spaceBetween: 20,
-                loop: true,
-                autoplay: { delay: 3000 },
-                pagination: { el: ".swiper-pagination" },
-                breakpoints: { 768: { slidesPerView: 2, spaceBetween: 30 } }
+                spaceBetween: 30,
+                pagination: { el: ".swiper-pagination", clickable: true },
+                autoplay: { delay: 3000, disableOnInteraction: false },
+                breakpoints: {
+                    768: { slidesPerView: 2 },
+                    1024: { slidesPerView: 3 },
+                },
             });
-        };
+        });
 
-        // Format IDR
-        const formatRupiah = (n) => 'Rp ' + n.toLocaleString('id-ID');
-
-        // Render Cards
-        function renderServices(filter) {
-            const grid = document.getElementById('services-grid');
-            grid.innerHTML = '';
-            
-            const filtered = filter === 'all' ? services : services.filter(s => s.cat === filter);
-            
-            filtered.forEach(s => {
-                let icon = 'instagram';
-                let color = '#E1306C';
-                if(s.cat === 'tiktok') { icon = 'tiktok'; color = '#00f2ea'; }
-                if(s.cat === 'shopee') { icon = 'bag-fill'; color = '#ee4d2d'; }
-
-                grid.innerHTML += `
-                    <div class="col-6 col-md-4 col-lg-3 animate__animated animate__fadeIn">
-                        <div class="price-card">
-                            <div>
-                                <div class="d-flex align-items-center gap-2 mb-2">
-                                    <i class="bi bi-${icon}" style="color:${color}"></i>
-                                    <small class="text-muted text-uppercase" style="font-size:0.65rem;">${s.cat}</small>
-                                </div>
-                                <h6 class="service-title text-white mb-1">${s.name}</h6>
-                                <small class="text-muted d-block mb-3">${s.label}</small>
-                            </div>
-                            <div>
-                                <div class="price-val">${formatRupiah(s.price)}</div>
-                                <button class="add-btn" onclick="addToCart(${s.id})">
-                                    <i class="bi bi-plus-lg"></i> Add
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                `;
-            });
-        }
-
-        // Filter Function
-        function filterServices(cat, btn) {
-            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            renderServices(cat);
-        }
-
-        // Cart Logic
-        function addToCart(id) {
-            const item = services.find(s => s.id === id);
-            cart.push(item);
-            updateCart();
-            
-            // Visual Feedback (Vibrate/Shake)
-            const dock = document.querySelector('.mobile-dock');
-            dock.classList.add('animate__animated', 'animate__pulse');
-            setTimeout(() => dock.classList.remove('animate__animated', 'animate__pulse'), 500);
-        }
-
-        function updateCart() {
-            const badge = document.getElementById('cartBadge');
-            const totalEl = document.getElementById('cartTotal');
-            const itemsEl = document.getElementById('cartItems');
-            
-            // Badge
-            badge.innerText = cart.length;
-            badge.style.display = cart.length > 0 ? 'flex' : 'none';
-
-            // Items List
-            if(cart.length === 0) {
-                itemsEl.innerHTML = '<div class="text-center text-muted py-5"><i class="bi bi-cart-x fs-1 d-block mb-2"></i>Belum ada item</div>';
-                totalEl.innerText = 'Rp 0';
-                return;
-            }
-
-            itemsEl.innerHTML = '';
-            let total = 0;
-            
-            cart.forEach((item, index) => {
-                total += item.price;
-                itemsEl.innerHTML += `
-                    <div class="d-flex justify-content-between align-items-center mb-3 bg-dark p-2 rounded">
-                        <div>
-                            <div class="text-white small fw-bold">${item.name}</div>
-                            <small class="text-muted">${item.label}</small>
-                        </div>
-                        <div class="d-flex align-items-center gap-3">
-                            <span class="text-gold small">${formatRupiah(item.price)}</span>
-                            <i class="bi bi-trash text-danger" style="cursor:pointer;" onclick="removeItem(${index})"></i>
-                        </div>
-                    </div>
-                `;
-            });
-            totalEl.innerText = formatRupiah(total);
-        }
-
-        function removeItem(index) {
-            cart.splice(index, 1);
-            updateCart();
-        }
-
-        function toggleCart() {
-            const modal = document.getElementById('cartModal');
-            if(modal.classList.contains('show')) {
-                modal.classList.remove('show');
-            } else {
-                modal.classList.add('show');
-            }
-        }
-
-        // Utilities
-        function scrollToSection(id) {
-            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function copyText(text) {
-            navigator.clipboard.writeText(text);
-            alert('Tersalin: ' + text);
-        }
-
-        function copyTotal() {
-            const total = document.getElementById('cartTotal').innerText;
-            navigator.clipboard.writeText(total);
-            alert('Total ' + total + ' berhasil disalin! Silakan transfer.');
-            toggleCart();
-            scrollToSection('order');
-        }
-
-        // Nav Scroll Effect
-        window.onscroll = () => {
-            const nav = document.querySelector('.navbar-custom');
-            if(window.scrollY > 50) nav.classList.add('scrolled');
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.navbar-desktop');
+            if (window.scrollY > 50) nav.classList.add('scrolled');
             else nav.classList.remove('scrolled');
+        });
+
+        // =========================================
+        // 3. SERVICE LOGIC
+        // =========================================
+        function formatRupiah(num) {
+            return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(num);
+        }
+
+        function filterServices(category, btnElement) {
+            // Active Tab UI
+            if(btnElement) {
+                document.querySelectorAll('.platform-tab').forEach(el => el.classList.remove('active'));
+                btnElement.classList.add('active');
+            }
+            renderServices(category);
+        }
+
+        function renderServices(filter) {
+            const container = document.getElementById('service-container');
+            container.innerHTML = ''; // Clear existing
+
+            const filteredData = filter === 'all' 
+                ? servicesData 
+                : servicesData.filter(item => item.category === filter);
+
+            filteredData.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'col animate__animated animate__fadeIn';
+                card.innerHTML = `
+                    <div class="price-card h-100">
+                        <div>
+                            <div class="price-header">
+                                <span class="badge bg-secondary mb-2 text-uppercase" style="font-size:0.6rem;">${item.category}</span>
+                                <div class="service-name">${item.name}</div>
+                                <span class="service-meta">${item.desc}</span>
+                            </div>
+                            <span class="price-tag">${formatRupiah(item.price)}</span>
+                        </div>
+                        <button class="add-cart-btn" onclick="addToCart(${item.id})">
+                            <i class="bi bi-plus-circle me-1"></i> Tambah
+                        </button>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // =========================================
+        // 4. CART / CALCULATOR LOGIC
+        // =========================================
+        function addToCart(id) {
+            const item = servicesData.find(s => s.id === id);
+            cart.push(item);
+            updateCartUI();
+            
+            // Show toast or feedback
+            const btn = event.target.closest('button');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="bi bi-check-circle-fill"></i> Masuk!';
+            btn.classList.add('added');
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.classList.remove('added');
+            }, 1000);
+
+            // Show floating button if hidden (only on desktop now)
+            if(window.innerWidth > 768) {
+                document.getElementById('cart-overlay').style.display = 'block';
+            }
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            // Update Badges
+            const count = cart.length;
+            document.getElementById('cart-count-badge').innerText = count;
+            
+            // Mobile Nav Badge
+            const mobBadge = document.getElementById('mobile-cart-count');
+            if(count > 0) {
+                mobBadge.innerText = count;
+                mobBadge.style.display = 'flex';
+            } else {
+                mobBadge.style.display = 'none';
+            }
+
+            // Update List
+            const list = document.getElementById('cart-items');
+            if (count === 0) {
+                list.innerHTML = '<p class="text-center text-muted py-4 small">Belum ada layanan dipilih.</p>';
+            } else {
+                list.innerHTML = '';
+                let total = 0;
+                cart.forEach((item, index) => {
+                    total += item.price;
+                    list.innerHTML += `
+                        <div class="cart-item">
+                            <div>
+                                <div class="fw-bold text-white small">${item.name}</div>
+                                <div class="text-muted small" style="font-size:0.75rem;">${item.desc}</div>
+                            </div>
+                            <div class="d-flex align-items-center gap-3">
+                                <span class="text-gold small">${formatRupiah(item.price)}</span>
+                                <i class="bi bi-trash remove-item" onclick="removeFromCart(${index})"></i>
+                            </div>
+                        </div>
+                    `;
+                });
+                document.getElementById('cart-total').innerText = formatRupiah(total);
+            }
+        }
+
+        function openCart() {
+            document.getElementById('cart-modal').classList.add('active');
+            document.getElementById('backdrop').classList.add('active');
+        }
+
+        function closeCart() {
+            document.getElementById('cart-modal').classList.remove('active');
+            document.getElementById('backdrop').classList.remove('active');
+        }
+
+        function copyCartTotal() {
+            const totalText = document.getElementById('cart-total').innerText;
+            navigator.clipboard.writeText(totalText);
+            alert(`Total ${totalText} berhasil disalin! Silakan transfer dan isi formulir.`);
+            closeCart();
+            document.getElementById('order').scrollIntoView({behavior: 'smooth'});
+        }
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text);
+            alert('Nomor tersalin: ' + text);
         }
     </script>
 </body>
