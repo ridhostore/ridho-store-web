@@ -75,7 +75,7 @@
             width: 100%;
             height: 100%;
             background-color: transparent;
-            z-index: -1; /* Behind content */
+            z-index: -1; 
             top: 0; left: 0;
         }
 
@@ -105,10 +105,66 @@
            3. UI COMPONENTS & NEW FEATURES
            ========================================= */
         
-        /* -- NEW: FAKE NOTIFICATION -- */
+        /* -- NEW: FLOATING WA BUTTON (PULSE) -- */
+        .float-wa {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 90px; /* Above bottom nav on mobile */
+            right: 20px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            animation: pulse-green 2s infinite;
+        }
+
+        .float-wa:hover {
+            background-color: #20ba5a;
+            transform: scale(1.1);
+        }
+
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        /* -- NEW: FAQ ACCORDION -- */
+        .accordion-custom .accordion-item {
+            background-color: var(--bg-surface-2);
+            border: 1px solid rgba(255,255,255,0.05);
+            margin-bottom: 10px;
+            border-radius: 10px !important;
+            overflow: hidden;
+        }
+        .accordion-custom .accordion-button {
+            background-color: var(--bg-surface-2);
+            color: #fff;
+            font-weight: 600;
+            box-shadow: none;
+        }
+        .accordion-custom .accordion-button:not(.collapsed) {
+            color: var(--gold-primary);
+            background-color: rgba(255, 215, 0, 0.05);
+        }
+        .accordion-custom .accordion-body {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* -- EXISTING FEATURES -- */
         .fake-notification {
             position: fixed;
-            bottom: 80px; /* Above mobile nav */
+            bottom: 80px; 
             left: 20px;
             background: rgba(20, 20, 20, 0.9);
             border: 1px solid rgba(255, 215, 0, 0.3);
@@ -120,19 +176,17 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             z-index: 999;
             width: 320px;
-            transform: translateX(-150%); /* Hidden initially */
+            transform: translateX(-150%);
             transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             backdrop-filter: blur(10px);
         }
 
         .fake-notification.show { transform: translateX(0); }
-
         .notif-img { width: 45px; height: 45px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold-primary); }
         .notif-content h6 { font-size: 0.85rem; margin: 0; color: #FFF; font-weight: 700; }
         .notif-content p { font-size: 0.75rem; margin: 0; color: var(--text-secondary); line-height: 1.2; }
         .notif-time { font-size: 0.65rem; color: var(--text-muted); display: block; margin-top: 3px; }
 
-        /* -- NEW: COUNTDOWN TIMER -- */
         .flash-sale-banner {
             background: linear-gradient(90deg, #b91d1d 0%, #8b0000 100%);
             color: #fff;
@@ -154,60 +208,15 @@
             border: 1px solid rgba(255,255,255,0.2);
         }
 
-        /* -- NEW: SEARCH BAR -- */
-        .search-container {
-            position: relative;
-            margin-bottom: 30px;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .search-input {
-            width: 100%;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            color: #fff;
-            padding: 15px 20px 15px 45px;
-            border-radius: 50px;
-            font-size: 0.95rem;
-            transition: 0.3s;
-        }
-        .search-input:focus {
-            background: rgba(255,255,255,0.1);
-            border-color: var(--gold-primary);
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.1);
-            outline: none;
-        }
-        .search-icon {
-            position: absolute;
-            left: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--text-muted);
-        }
+        .search-container { position: relative; margin-bottom: 30px; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .search-input { width: 100%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; padding: 15px 20px 15px 45px; border-radius: 50px; font-size: 0.95rem; transition: 0.3s; }
+        .search-input:focus { background: rgba(255,255,255,0.1); border-color: var(--gold-primary); box-shadow: 0 0 15px rgba(255, 215, 0, 0.1); outline: none; }
+        .search-icon { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: var(--text-muted); }
 
-        /* -- NEW: SERVER STATUS -- */
-        .server-status {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(0,255,0,0.1);
-            border: 1px solid rgba(0,255,0,0.2);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            color: #4ade80;
-            margin-top: 15px;
-        }
-        .status-dot {
-            width: 8px; height: 8px;
-            background-color: #4ade80;
-            border-radius: 50%;
-            animation: blinkStatus 1.5s infinite;
-        }
+        .server-status { display: inline-flex; align-items: center; gap: 8px; background: rgba(0,255,0,0.1); border: 1px solid rgba(0,255,0,0.2); padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; color: #4ade80; margin-top: 15px; }
+        .status-dot { width: 8px; height: 8px; background-color: #4ade80; border-radius: 50%; animation: blinkStatus 1.5s infinite; }
         @keyframes blinkStatus { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
 
-        /* BUTTONS & CARDS (Existing) */
         .btn-custom { display: inline-flex; align-items: center; justify-content: center; padding: 14px 28px; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; border-radius: var(--border-radius-pill); border: none; cursor: pointer; transition: var(--transition-smooth); position: relative; overflow: hidden; }
         .btn-gold { background: var(--gold-gradient); color: #000; box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3); }
         .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5); color: #000; }
@@ -224,75 +233,23 @@
         .section-header { text-align: center; margin-bottom: 4rem; max-width: 700px; margin-left: auto; margin-right: auto; }
         .section-label { font-size: 0.8rem; font-weight: 800; color: var(--gold-primary); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; display: block; }
 
-        /* =========================================
-           4. NAVIGATION
-           ========================================= */
-        /* --- BRAND LOGO ENHANCEMENT --- */
-        .brand-logo { 
-            font-family: 'Syncopate', sans-serif; 
-            font-weight: 800; 
-            font-size: 1.5rem; 
-            color: #FFF; 
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            text-decoration: none;
-            text-shadow: 0 0 15px rgba(255, 215, 0, 0.2); 
-        }
-        
-        .brand-logo .text-gold {
-            background: linear-gradient(to bottom, #FFD700 0%, #FDB931 50%, #C5A000 100%);
-            -webkit-background-clip: text; 
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 900;
-            filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.4));
-        }
+        .brand-logo { font-family: 'Syncopate', sans-serif; font-weight: 800; font-size: 1.5rem; color: #FFF; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; text-shadow: 0 0 15px rgba(255, 215, 0, 0.2); }
+        .brand-logo .text-gold { background: linear-gradient(to bottom, #FFD700 0%, #FDB931 50%, #C5A000 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-weight: 900; filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.4)); }
 
         .navbar-desktop { position: fixed; top: 0; left: 0; width: 100%; padding: 1.5rem 0; z-index: var(--z-index-fixed); transition: var(--transition-smooth); background: rgba(0,0,0,0); }
         .navbar-desktop.scrolled { padding: 1rem 0; background: rgba(5, 5, 5, 0.85); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255,255,255,0.05); }
-        
         .nav-links .nav-link { color: var(--text-secondary) !important; font-weight: 500; font-size: 0.95rem; padding: 0.5rem 1rem; position: relative; }
         .nav-links .nav-link:hover, .nav-links .nav-link.active { color: var(--gold-primary) !important; }
         .nav-links .nav-link::after { content: ''; position: absolute; bottom: 0; left: 50%; width: 0; height: 2px; background: var(--gold-primary); transition: var(--transition-fast); transform: translateX(-50%); }
         .nav-links .nav-link:hover::after { width: 20px; }
         
-        /* Mobile Nav Fixed */
-        .mobile-nav { 
-            position: fixed; bottom: 0; left: 0; width: 100%; 
-            background: #000000; border-top: 1px solid rgba(255,255,255,0.15); 
-            padding: 12px 0; display: none; justify-content: space-around; 
-            align-items: center; z-index: 1001; box-shadow: 0 -5px 20px rgba(0,0,0,0.8);
-            padding-bottom: env(safe-area-inset-bottom, 12px);
-        }
-
-        .mobile-nav-item { 
-            display: flex; flex-direction: column; align-items: center; justify-content: center;
-            color: var(--text-secondary); font-size: 0.7rem; gap: 4px; 
-            transition: 0.3s; flex: 1; 
-        }
-
+        .mobile-nav { position: fixed; bottom: 0; left: 0; width: 100%; background: #000000; border-top: 1px solid rgba(255,255,255,0.15); padding: 12px 0; display: none; justify-content: space-around; align-items: center; z-index: 1001; box-shadow: 0 -5px 20px rgba(0,0,0,0.8); padding-bottom: env(safe-area-inset-bottom, 12px); }
+        .mobile-nav-item { display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--text-secondary); font-size: 0.7rem; gap: 4px; transition: 0.3s; flex: 1; }
         .mobile-nav-item i { font-size: 1.3rem; margin-bottom: 2px; }
         .mobile-nav-item.active, .mobile-nav-item:hover { color: var(--gold-primary); }
 
-        /* --- MOBILE TOP HEADER (NEW FIX) --- */
-        .mobile-top-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 18px 0;
-            z-index: 1002;
-            background: rgba(5, 5, 5, 0.85); /* Semi transparan gelap */
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            text-align: center;
-            display: none; /* Default hidden on desktop */
-        }
+        .mobile-top-bar { position: fixed; top: 0; left: 0; width: 100%; padding: 18px 0; z-index: 1002; background: rgba(5, 5, 5, 0.85); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255, 255, 255, 0.08); text-align: center; display: none; }
 
-        /* =========================================
-           5. HERO
-           ========================================= */
         .hero-section { min-height: 100vh; padding-top: 120px; position: relative; display: flex; align-items: center; overflow: hidden; }
         .glow-orb { position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(255, 215, 0, 0.15) 0%, rgba(0,0,0,0) 70%); top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: -1; animation: pulseGlow 8s infinite alternate; }
         @keyframes pulseGlow { 0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.5; } 100% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; } }
@@ -300,9 +257,6 @@
         .trust-badge { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); padding: 8px 16px; border-radius: 30px; font-size: 0.85rem; color: #FFF; display: flex; align-items: center; gap: 8px; }
         .trust-badge i { color: var(--gold-primary); }
 
-        /* =========================================
-           6. PRICING & TABS
-           ========================================= */
         .pricing-controls { display: flex; justify-content: center; gap: 10px; margin-bottom: 2rem; flex-wrap: wrap; }
         .platform-tab { background: var(--bg-surface-2); color: var(--text-secondary); border: 1px solid rgba(255, 255, 255, 0.1); padding: 10px 24px; border-radius: 30px; cursor: pointer; transition: var(--transition-fast); font-weight: 600; display: flex; align-items: center; gap: 8px; }
         .platform-tab:hover { background: var(--bg-surface-3); color: #FFF; }
@@ -322,81 +276,18 @@
         .add-cart-btn:hover { background: #FFF; color: #000; }
         .add-cart-btn.added { background: #28a745; border-color: #28a745; color: #FFF; }
 
-        /* =========================================
-           7. CALCULATOR & CART
-           ========================================= */
-        .cart-overlay { position: fixed; bottom: 90px; right: 20px; z-index: 1000; display: none; }
-        .cart-trigger { background: var(--gold-gradient); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4); cursor: pointer; position: relative; animation: bounceIn 0.5s; }
-        .cart-count { position: absolute; top: -5px; right: -5px; background: #FF0000; color: #FFF; font-size: 0.7rem; font-weight: bold; width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-        .cart-modal { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; max-width: 500px; background: #111; border: 1px solid #333; border-radius: 20px; padding: 25px; z-index: 2000; display: none; box-shadow: 0 20px 60px rgba(0,0,0,0.8); }
-        .cart-modal.active { display: block; animation: fadeIn 0.3s; }
-        .backdrop { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1999; display: none; }
-        .backdrop.active { display: block; }
-        .cart-items-container { max-height: 300px; overflow-y: auto; margin: 15px 0; padding-right: 5px; }
-        .cart-item { display: flex; justify-content: space-between; align-items: center; background: #1a1a1a; padding: 10px; margin-bottom: 8px; border-radius: 8px; font-size: 0.9rem; }
-        .remove-item { color: #ff4d4d; cursor: pointer; padding: 5px; }
-
-        /* =========================================
-           8. PAYMENT
-           ========================================= */
         .payment-card { background: var(--bg-surface-2); padding: 20px; border-radius: 12px; display: flex; align-items: center; justify-content: space-between; border: 1px solid rgba(255,255,255,0.05); margin-bottom: 15px; }
         .copy-btn { background: transparent; border: 1px solid var(--text-muted); color: var(--text-secondary); padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; transition: 0.2s; }
         .copy-btn:hover { border-color: #FFF; color: #FFF; }
 
-        /* =========================================
-           9. ORDER FORM (PAPER WRAPPER)
-           ========================================= */
-        .order-paper-wrapper {
-            background-color: #FFFFFF;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-            border: 4px solid rgba(255, 215, 0, 0.3);
-            position: relative;
-        }
-
-        .order-header {
-            background: #F8F9FA;
-            padding: 25px 20px;
-            text-align: center;
-            border-bottom: 2px dashed #E0E0E0;
-        }
-
-        .iframe-container {
-            position: relative;
-            background: #fff;
-            min-height: 500px;
-        }
-
-        .skeleton-loader {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: #ffffff;
-            z-index: 10;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-        
-        .blink { animation: blinker 1.5s linear infinite; }
-        @keyframes blinker { 50% { opacity: 0.5; } }
-        
-        /* =========================================
-           10. TESTIMONIALS & INSTAGRAM BUTTON
-           ========================================= */
         .swiper { width: 100%; padding-bottom: 50px; }
         .swiper-slide { background: var(--bg-surface-2); border-radius: 20px; padding: 30px; border: 1px solid rgba(255,255,255,0.05); height: auto; }
         .swiper-pagination-bullet { background: #FFF; opacity: 0.3; }
         .swiper-pagination-bullet-active { background: var(--gold-primary); opacity: 1; }
 
-        /* Instagram Button */
         .cta-instagram-wrapper { margin-top: 3rem; position: relative; z-index: 2; }
         .btn-ig-official { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 16px 32px; background: rgba(20, 20, 20, 0.6); border-radius: 50px; color: #FFF; text-decoration: none; overflow: hidden; backdrop-filter: blur(10px); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .btn-ig-official::before { content: ""; position: absolute; inset: 0; border-radius: 50px; padding: 2px; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0.6; transition: opacity 0.4s ease; 
-        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-        }
+        .btn-ig-official::before { content: ""; position: absolute; inset: 0; border-radius: 50px; padding: 2px; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0.6; transition: opacity 0.4s ease; mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); }
         .ig-icon-box { width: 38px; height: 38px; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: white; box-shadow: 0 4px 10px rgba(220, 39, 67, 0.4); }
         .btn-ig-official:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 15px 35px rgba(220, 39, 67, 0.25); background: rgba(30, 30, 30, 0.9); }
         .btn-ig-official:hover::before { opacity: 1; }
@@ -405,16 +296,11 @@
         .ig-label { display: block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: #B0B0B0; margin-bottom: 2px; }
         .ig-main-text { font-weight: 700; font-size: 1rem; color: #FFF; }
 
-        /* =========================================
-           11. MEDIA QUERIES
-           ========================================= */
         @media (max-width: 991px) {
             .hero-section { text-align: center; flex-direction: column; justify-content: center; padding-top: 100px; }
             .hero-content { margin-bottom: 50px; }
             .hero-img-col { display: none; }
             .navbar-desktop .btn-custom { display: none; }
-            
-            /* SHOW MOBILE TOP HEADER */
             .mobile-top-bar { display: block; }
         }
         @media (max-width: 768px) {
@@ -424,13 +310,6 @@
             .container { padding-left: 20px; padding-right: 20px; }
             #order { padding-bottom: 100px; }
             .pricing-controls { justify-content: flex-start; overflow-x: auto; padding-bottom: 10px; white-space: nowrap; }
-            
-            /* Order Wrapper Mobile */
-            .order-paper-wrapper { border-radius: 16px; border-width: 2px; }
-            .order-header h5 { font-size: 1.1rem; }
-            iframe { max-width: 100% !important; overflow-x: hidden !important; }
-
-            /* Hide floating cart on mobile because it's now in the bottom nav */
             .cart-overlay { display: none !important; }
         }
     </style>
@@ -452,6 +331,10 @@
             <span class="notif-time">1 menit yang lalu</span>
         </div>
     </div>
+
+    <a href="https://wa.me/6287879842395?text=Halo%20Admin%2C%20saya%20mau%20tanya%20tentang%20layanan%20Ridho%20Store..." class="float-wa" target="_blank">
+        <i class="bi bi-whatsapp"></i>
+    </a>
 
     <div class="mobile-top-bar">
         <a class="brand-logo text-decoration-none" href="#">RIDHO<span class="text-gold">STORE</span></a>
@@ -501,7 +384,7 @@
 
     <div class="flash-sale-banner">
         <div class="container">
-            🔥 PROMO TERBATAS! Harga Spesial Berakhir dalam: 
+            🔥 PROMO TERBATAS! Diskon 10% (Min 1k Followers) Berakhir dalam: 
             <span class="countdown-box" id="countdownTimer">00:00:00</span>
         </div>
     </div>
@@ -595,7 +478,7 @@
                         </div>
                         <p class="fst-italic">"Awalnya ragu karena tanpa password, ternyata beneran masuk cepet banget. Followernya juga akun aktif keliatannya. Thanks min!"</p>
                         <div class="d-flex align-items-center mt-4">
-                            <img src="https://ui-avatars.com/api/?name=Andi+P&background=FFD700&color=000" class="rounded-circle me-3" width="40" alt="User">
+                            <img src="https://ui-avatars.com/api/?name=David+P&background=FFD700&color=000" class="rounded-circle me-3" width="40" alt="User">
                             <div>
                                 <h6 class="mb-0 text-white">David Pratama</h6>
                                 <small class="text-secondary">Owner Olshop Sepatu</small>
@@ -646,7 +529,7 @@
                     <i class="bi bi-arrow-right text-white opacity-50 ms-2"></i>
                 </a>
                 
-                <p class="mt-3 text-muted small" style="font-size: 0.75rem;">
+                <p class="mt-3 text-secondary small" style="font-size: 0.75rem;">
                     <i class="bi bi-info-circle me-1"></i> Klik untuk melihat Highlight "Testimoni" secara langsung
                 </p>
             </div>
@@ -683,7 +566,73 @@
             </div>
 
             <div id="service-container" class="service-grid">
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-5">
+        <div class="container py-5">
+            <div class="section-header">
+                <span class="section-label">EDUKASI</span>
+                <h2>Pertanyaan Umum</h2>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion accordion-custom" id="accordionFaq">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    Apa itu "Refill" dan "No Refill"?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <strong>Refill (Bergaransi):</strong> Jika followers turun dalam masa garansi (biasanya 30 hari), sistem akan mengisi ulang secara otomatis/manual. <br>
+                                    <strong>No Refill (Tidak Garansi):</strong> Jika followers turun, tidak ada pengisian ulang. Biasanya harganya jauh lebih murah.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    Berapa lama proses pengerjaan?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    Rata-rata pesanan diproses dalam <strong>10-60 menit</strong> setelah pembayaran terkonfirmasi. Namun, untuk layanan server yang sedang padat bisa memakan waktu hingga 1x24 jam. Layanan Views/Likes biasanya Instant.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    Apakah akun saya aman? Butuh password?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <strong>100% AMAN.</strong> Kami HANYA membutuhkan Username atau Link Postingan. Kami <span class="text-danger fw-bold">TIDAK PERNAH</span> meminta Password akun Anda. Pastikan akun tidak di-private saat proses pengerjaan.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    Apa itu Drop dan Instant?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <strong>Drop:</strong> Penurunan jumlah followers/likes yang wajar karena algoritma sosmed menghapus akun pasif.<br>
+                                    <strong>Instant:</strong> Layanan langsung masuk sesaat setelah dipesan (tanpa antri lama).
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
         </div>
     </section>
 
@@ -771,6 +720,7 @@
                                 <div class="col-6 mb-4">
                                     <label class="text-secondary small mb-2 text-uppercase fw-bold">Total Harga</label>
                                     <input type="text" class="form-control bg-black text-gold border-gold fw-bold p-3" id="displayTotal" value="Rp 0" readonly>
+                                    <small id="discountMsg" class="text-success fw-bold mt-1 d-block" style="display:none;"></small>
                                 </div>
                             </div>
 
@@ -807,7 +757,7 @@
 
     <script>
         // =========================================
-        // 1. DATA CENTER (UPDATED: Price per 1000)
+        // 1. DATA CENTER
         // =========================================
         const servicesData = [
             { id: 1, category: 'instagram', name: 'IG Followers Mix (Less Drop)', price: 25000 },
@@ -821,19 +771,19 @@
             { id: 9, category: 'shopee', name: 'Shopee Likes Produk', price: 40000 }
         ];
 
-        let cart = []; // Required for compatibility with existing cart functions
+        let cart = []; // Required for compatibility
 
         // --- 1. DATA LAYANAN ---
         document.addEventListener("DOMContentLoaded", function() {
-            // -- ANTI STUCK PRELOADER --
+            // Anti Stuck Preloader
             function hidePreloader() {
                 const p = document.getElementById('preloader');
                 if(p) { p.style.opacity=0; setTimeout(()=>{p.style.display='none'},500); }
             }
             window.addEventListener('load', hidePreloader);
-            setTimeout(hidePreloader, 3000); // Force hide after 3s
+            setTimeout(hidePreloader, 3000); 
 
-            // -- POPULATE SERVICE --
+            // Populate Service
             const select = document.getElementById('inputService');
             select.innerHTML = '<option value="" selected disabled>-- Pilih Paket --</option>';
             
@@ -845,27 +795,41 @@
                 select.appendChild(option);
             });
 
-            // Initialize services display
             renderServices('all');
-
-            // --- START NEW FEATURES ---
+            
+            // Start Features
             startFakeNotif();
             startCountdown();
             loadParticles();
         });
 
-        // --- 2. HITUNG HARGA ---
+        // --- 2. HITUNG HARGA (Updated with 10% Discount logic) ---
         function calcTotal() {
             const serviceSelect = document.getElementById('inputService');
             const qtyInput = document.getElementById('inputQuantity');
+            const discountMsg = document.getElementById('discountMsg');
             
             if(serviceSelect.selectedIndex > 0 && qtyInput.value) {
-                const pricePerK = serviceSelect.options[serviceSelect.selectedIndex].getAttribute('data-price');
-                const qty = qtyInput.value;
-                const total = (pricePerK / 1000) * qty;
+                const selectedOption = serviceSelect.options[serviceSelect.selectedIndex];
+                const pricePerK = selectedOption.getAttribute('data-price');
+                const serviceName = selectedOption.value.toLowerCase();
+                const qty = parseInt(qtyInput.value);
+                
+                let total = (pricePerK / 1000) * qty;
+
+                // Logic Diskon: Jika layanan mengandung kata "Followers" dan jumlah > 1000
+                if(serviceName.includes("followers") && qty > 1000) {
+                    total = total * 0.9; // Potongan 10%
+                    discountMsg.innerHTML = `<i class="bi bi-tags-fill"></i> Diskon Flash Sale 10% Diterapkan!`;
+                    discountMsg.style.display = 'block';
+                } else {
+                    discountMsg.style.display = 'none';
+                }
+
                 document.getElementById('displayTotal').value = formatRupiah(Math.ceil(total));
             } else {
                 document.getElementById('displayTotal').value = 'Rp 0';
+                discountMsg.style.display = 'none';
             }
         }
 
@@ -875,7 +839,6 @@
 
             document.getElementById('loadingOverlay').style.display = 'flex';
 
-            // --- SETTINGAN GOOGLE FORM (SUDAH DIUPDATE) ---
             const GFORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSesAKeDg2Uh1dQTELBuMghZrT31yJV6B1rpGQHrYnvRZsAE0w/formResponse'; 
             
             const formMap = {
@@ -936,7 +899,7 @@ Mohon diproses, bukti transfer saya lampirkan dibawah ini 👇
             });
         }
         
-        // --- 4. RENDER SERVICES (Visual Price List) ---
+        // --- 4. RENDER SERVICES & FEATURES ---
         function filterServices(category, btnElement) {
             if(btnElement) {
                 document.querySelectorAll('.platform-tab').forEach(el => el.classList.remove('active'));
@@ -979,14 +942,12 @@ Mohon diproses, bukti transfer saya lampirkan dibawah ini 👇
             });
         }
 
-        // --- NEW FEATURE 1: LIVE SEARCH ---
         function searchServices() {
             const activeTab = document.querySelector('.platform-tab.active');
             const category = activeTab ? activeTab.getAttribute('data-target') : 'all';
             renderServices(category);
         }
 
-        // --- NEW FEATURE 2: FAKE NOTIFICATIONS ---
         function startFakeNotif() {
             const names = ["Andi", "Siska", "Budi", "Dewi", "Rizky", "Putri", "Agus", "Sari"];
             const cities = ["Jakarta", "Surabaya", "Bandung", "Medan", "Bali", "Makassar", "Jogja"];
@@ -994,11 +955,8 @@ Mohon diproses, bukti transfer saya lampirkan dibawah ini 👇
             const notif = document.getElementById('fakeNotif');
 
             setInterval(() => {
-                // Hide first
                 notif.classList.remove('show');
-                
                 setTimeout(() => {
-                    // Update Content
                     const randomName = names[Math.floor(Math.random() * names.length)];
                     const randomCity = cities[Math.floor(Math.random() * cities.length)];
                     const randomItem = items[Math.floor(Math.random() * items.length)];
@@ -1007,21 +965,16 @@ Mohon diproses, bukti transfer saya lampirkan dibawah ini 👇
                     document.getElementById('notifAction').innerText = `Baru saja membeli ${randomItem}`;
                     document.getElementById('notifImg').src = `https://ui-avatars.com/api/?name=${randomName}&background=random`;
                     
-                    // Show again
                     notif.classList.add('show');
-                }, 1000); // Wait for hide animation
-
-            }, 8000); // Loop every 8 seconds
+                }, 1000); 
+            }, 8000); 
         }
 
-        // --- NEW FEATURE 3: COUNTDOWN TIMER ---
         function startCountdown() {
-            // Set countdown for 2 hours from now (simulated urgency)
-            let timeInSecs = 2 * 60 * 60 + 45 * 60 + 10; // 02:45:10
-            
+            let timeInSecs = 2 * 60 * 60 + 45 * 60 + 10; 
             setInterval(() => {
                 timeInSecs--;
-                if(timeInSecs < 0) timeInSecs = 2 * 60 * 60; // Reset loop
+                if(timeInSecs < 0) timeInSecs = 2 * 60 * 60; 
 
                 const h = Math.floor(timeInSecs / 3600).toString().padStart(2,'0');
                 const m = Math.floor((timeInSecs % 3600) / 60).toString().padStart(2,'0');
@@ -1031,7 +984,6 @@ Mohon diproses, bukti transfer saya lampirkan dibawah ini 👇
             }, 1000);
         }
 
-        // --- NEW FEATURE 4: PARTICLES BACKGROUND ---
         function loadParticles() {
             if(window.particlesJS) {
                 particlesJS("particles-js", {
@@ -1054,21 +1006,21 @@ Mohon diproses, bukti transfer saya lampirkan dibawah ini 👇
             }
         }
 
-        // Helper Format Rupiah
         function formatRupiah(num) {
             return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(num);
         }
         
-        // Helper Copy
         function copyToClipboard(text) {
             navigator.clipboard.writeText(text);
             alert('Nomor tersalin: ' + text);
         }
 
-        // Helper Cart (Dummy functions)
         function openCart() { document.getElementById('cart-modal').classList.add('active'); document.getElementById('backdrop').classList.add('active'); }
         function closeCart() { document.getElementById('cart-modal').classList.remove('active'); document.getElementById('backdrop').classList.remove('active'); }
         function copyCartTotal() { }
+        function addToCart(id) { }
+        function removeFromCart(index) { }
+        function updateCartUI() { }
 
     </script>
     
@@ -1091,7 +1043,7 @@ Mohon diproses, bukti transfer saya lampirkan dibawah ini 👇
                 <a href="#" class="btn btn-icon-only btn-glass d-flex align-items-center justify-content-center"><i class="bi bi-tiktok"></i></a>
                 <a href="https://wa.me/6287879842395" class="btn btn-icon-only btn-glass d-flex align-items-center justify-content-center"><i class="bi bi-whatsapp"></i></a>
             </div>
-            <small class="text-muted d-block">&copy; 2026 Ridho Store. All rights reserved.</small>
+            <small class="text-secondary d-block">&copy; 2026 Ridho Store. All rights reserved.</small>
         </div>
     </footer>
 
@@ -1103,7 +1055,7 @@ Mohon diproses, bukti transfer saya lampirkan dibawah ini 👇
             <button class="btn-close btn-close-white" onclick="closeCart()"></button>
         </div>
         <div class="p-3 text-center">
-            <p class="text-muted small">Silakan langsung gunakan Formulir Pemesanan di bawah untuk menghitung harga otomatis.</p>
+            <p class="text-secondary small">Silakan langsung gunakan Formulir Pemesanan di bawah untuk menghitung harga otomatis.</p>
             <a href="#order" class="btn btn-gold w-100" onclick="closeCart()">Ke Form Order</a>
         </div>
     </div>
