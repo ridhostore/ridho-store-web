@@ -18,7 +18,7 @@
             --glass-bg: rgba(255, 255, 255, 0.03);
             --glass-border: rgba(255, 255, 255, 0.08);
             --neon-glow: 0 0 20px rgba(255, 215, 0, 0.3);
-            --text-silver-bright: rgba(255, 255, 255, 0.85); /* Warna baru untuk teks terang */
+            --text-silver-bright: rgba(255, 255, 255, 0.85);
         }
 
         body {
@@ -29,7 +29,6 @@
             background-image: radial-gradient(circle at 50% 0%, #1a1500 0%, #020202 60%);
         }
 
-        /* Helper Class Baru */
         .text-silver-bright { color: var(--text-silver-bright) !important; }
 
         /* --- ANIMASI --- */
@@ -42,7 +41,7 @@
         .delay-3 { animation-delay: 0.6s; }
         @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
 
-        /* --- TYPOGRAPHY & COMPONENTS --- */
+        /* --- COMPONENTS --- */
         .text-gradient-gold {
             background: linear-gradient(to right, #FFF, var(--gold-light), #FFF);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
@@ -77,13 +76,52 @@
             transform: translateY(-10px);
         }
 
-        /* Styling Baru untuk Ikon Statistik */
         .stat-box i {
-            font-size: 2.5rem;
+            font-size: 2.5rem; color: var(--gold-light); margin-bottom: 15px;
+            display: inline-block; filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.4));
+        }
+
+        /* --- SOCIAL ICONS (UPDATED) --- */
+        .social-btn-container {
+            display: flex; justify-content: center; gap: 20px; margin-bottom: 2rem;
+        }
+        .social-icon-link {
+            width: 55px; height: 55px;
+            display: flex; align-items: center; justify-content: center;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 50%;
             color: var(--gold-light);
-            margin-bottom: 15px;
-            display: inline-block;
-            filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.4)); /* Efek glow pada ikon */
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .social-icon-link:hover {
+            background: var(--gold-light); color: #000;
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            border-color: var(--gold-light);
+        }
+
+        /* --- TESTIMONI BOX --- */
+        .testimoni-wrapper {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            transition: 0.3s;
+        }
+        .testimoni-wrapper:hover {
+            border-color: var(--gold-dark);
+            box-shadow: 0 0 30px rgba(184, 134, 11, 0.1);
+        }
+        /* Style untuk gambar SS profil IG */
+        .img-testi {
+            width: 100%;
+            max-width: 400px; /* Batas lebar agar tidak terlalu besar di PC */
+            border-radius: 12px;
+            border: 2px solid rgba(255,255,255,0.1);
         }
 
         /* Pricing Cards */
@@ -151,13 +189,13 @@
                 <div class="col-lg-9">
                     <div class="fade-up">
                         <span class="px-3 py-2 rounded-pill border border-secondary text-secondary small text-uppercase fw-bold bg-black mb-4 d-inline-block">
-                            🚀 Solusi Branding No. 1 Mahasiswa
+                            🚀 Solusi Kebutuhan Sosmed MU 
                         </span>
                     </div>
 
                     <h1 class="display-2 fw-bold mb-4 fade-up delay-1" style="line-height: 1.1;">
                         Ubah Akun Biasa Jadi <br>
-                        <span class="text-gradient-gold">Selebriti Digital</span>
+                        <span class="text-gradient-gold">Selebgram</span>
                     </h1>
 
                     <p class="lead text-secondary mb-5 mx-auto fade-up delay-2" style="max-width: 600px;">
@@ -179,7 +217,7 @@
             
             <div class="row mt-5 pt-5 fade-up delay-3 justify-content-center g-4 border-top border-secondary border-opacity-25 mx-lg-5">
                 <div class="col-4 col-md-3 stat-box">
-                    <i class="bi bi-bag-check-fill"></i> <h3 class="fw-bold text-white mb-0">10k+</h3>
+                    <i class="bi bi-bag-check-fill"></i> <h3 class="fw-bold text-white mb-0">1k+</h3>
                     <small class="text-secondary text-uppercase" style="font-size: 0.7rem; letter-spacing: 1px;">Order Sukses</small>
                 </div>
                 <div class="col-4 col-md-3 stat-box">
@@ -187,10 +225,31 @@
                     <small class="text-secondary text-uppercase" style="font-size: 0.7rem; letter-spacing: 1px;">Sistem Otomatis</small>
                 </div>
                 <div class="col-4 col-md-3 stat-box">
-                    <i class="bi bi-star-fill"></i> <h3 class="fw-bold text-white mb-0">4.9/5</h3>
-                    <small class="text-secondary text-uppercase" style="font-size: 0.7rem; letter-spacing: 1px;">Rating Kepuasan</small>
+                    <i class="bi bi-star-fill"></i> <h3 class="fw-bold text-white mb-0">Sejak 2022</h3>
+                    <small class="text-secondary text-uppercase" style="font-size: 0.7rem; letter-spacing: 1px;">Amanah dan Trusted</small>
                 </div>
             </div>
+
+            <div class="row mt-5 justify-content-center fade-up delay-3">
+                <div class="col-lg-8">
+                    <div class="testimoni-wrapper">
+                        <h5 class="fw-bold text-white mb-3 text-uppercase" style="letter-spacing: 2px;">
+                            <i class="bi bi-instagram text-danger me-2"></i>Bukti Testimoni
+                        </h5>
+                        
+                        <img src="Assets/testimoni1.jpeg" 
+                             alt="Testimoni Instagram Ridho Store" 
+                             class="img-fluid img-testi shadow-lg">
+                        
+                        <div class="mt-3">
+                            <a href="https://instagram.com/ridho.store17" class="text-silver-bright small text-decoration-none">
+                                <i class="bi bi-arrow-right me-1"></i> Cek Highlight Story Kami
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -208,14 +267,14 @@
                     <div class="card-glass text-center h-100">
                         <div class="icon-box"><i class="bi bi-speedometer2"></i></div>
                         <h4 class="fw-bold mb-3">Speed Turbo</h4>
-                        <p class="text-secondary">Tidak perlu menunggu berhari-hari. Sistem Instant Execution kami memproses order dalam hitungan menit.</p>
+                        <p class="text-secondary">Tidak perlu menunggu berhari-hari. Order succes dalam hitungan jam.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card-glass text-center h-100">
                         <div class="icon-box"><i class="bi bi-patch-check"></i></div>
                         <h4 class="fw-bold mb-3">Garansi Anti-Drop</h4>
-                        <p class="text-secondary">Kami memberikan garansi Refill 30 Hari. Jika followers turun, kami isi ulang GRATIS sampai penuh.</p>
+                        <p class="text-secondary">Kami memberikan garansi Refill 30 Hari. Jika followers turun, kami isi ulang GRATIS.</p>
                     </div>
                 </div>
             </div>
@@ -239,14 +298,14 @@
                             <h4 class="fw-bold mt-2">INSTAGRAM</h4>
                             <span class="badge bg-dark border border-secondary text-secondary rounded-pill">STARTER</span>
                         </div>
-                        <div class="price-amount">10<span class="fs-2">rb</span> <span>/100f</span></div>
+                        <div class="price-amount">150<span class="fs-2">rb</span> <span>/10.000foll</span></div>
                         <hr class="border-secondary opacity-25 my-4">
                         <ul class="list-unstyled text-start mx-auto" style="max-width: 200px;">
                             <li class="mb-3 text-secondary"><i class="bi bi-check-circle-fill text-white me-2"></i> Akun Campuran</li>
-                            <li class="mb-3 text-secondary"><i class="bi bi-check-circle-fill text-white me-2"></i> Tanpa Password</li>
+                            <li class="mb-3 text-secondary"><i class="bi bi-check-circle-fill text-white me-2"></i> Akun Bot Ber-profil</li>
                             <li class="mb-3 text-secondary"><i class="bi bi-check-circle-fill text-white me-2"></i> Permanen</li>
                         </ul>
-                        <a href="#order" class="btn btn-outline-light w-100 rounded-pill py-3 fw-bold mt-2">Pilih Paket</a>
+                        <a href="https://wa.me/6287879842395?text=HaloAdmin_MauOrderPaketInstagram" class="btn btn-outline-light w-100 rounded-pill py-3 fw-bold mt-2">Pilih Paket</a>
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -259,16 +318,16 @@
                             <h4 class="fw-bold mt-2 text-warning">TIKTOK VIRAL</h4>
                             <span class="badge bg-warning text-dark rounded-pill fw-bold">RECOMMENDED</span>
                         </div>
-                        <div class="price-amount text-warning">45<span class="fs-2 text-warning">rb</span> <span style="color: #ffd700;">/500f</span></div>
+                        <div class="price-amount text-warning">300<span class="fs-2 text-warning">rb</span> <span style="color: #ffd700;">/10.000foll</span></div>
                         <p class="small text-white opacity-75 mb-0">Paket lengkap agar cepat FYP</p>
                         <hr class="border-warning opacity-25 my-4">
                         <ul class="list-unstyled text-start mx-auto text-white" style="max-width: 220px;">
-                            <li class="mb-3"><i class="bi bi-check-circle-fill text-warning me-2"></i> <strong>Syarat Live Streaming</strong></li>
-                            <li class="mb-3"><i class="bi bi-check-circle-fill text-warning me-2"></i> Bonus Views Video</li>
+                            <li class="mb-3"><i class="bi bi-check-circle-fill text-warning me-2"></i> <strong>Unlock Fitur Live Streaming</strong></li>
+                            <li class="mb-3"><i class="bi bi-check-circle-fill text-warning me-2"></i> Bonus Views & Likes Video</li>
                             <li class="mb-3"><i class="bi bi-check-circle-fill text-warning me-2"></i> Garansi 30 Hari</li>
                             <li class="mb-3"><i class="bi bi-check-circle-fill text-warning me-2"></i> Proses Prioritas</li>
                         </ul>
-                        <a href="#order" class="btn btn-cta-premium w-100 mt-2">AMBIL PROMO INI</a>
+                        <a href="https://wa.me/6287879842395?text=HaloAdmin_MauOrderPaketTiktokViral" class="btn btn-cta-premium w-100 mt-2">AMBIL PROMO INI</a>
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -278,59 +337,103 @@
                             <h4 class="fw-bold mt-2">SHOPEE</h4>
                             <span class="badge bg-dark border border-secondary text-secondary rounded-pill">TRUST</span>
                         </div>
-                        <div class="price-amount">20<span class="fs-2">rb</span> <span>/100f</span></div>
+                        <div class="price-amount">150<span class="fs-2">rb</span> <span>/10.000foll</span></div>
                         <hr class="border-secondary opacity-25 my-4">
                         <ul class="list-unstyled text-start mx-auto" style="max-width: 200px;">
                             <li class="mb-3 text-secondary"><i class="bi bi-check-circle-fill text-white me-2"></i> Followers Toko</li>
                             <li class="mb-3 text-secondary"><i class="bi bi-check-circle-fill text-white me-2"></i> Naikkan Reputasi</li>
-                            <li class="mb-3 text-secondary"><i class="bi bi-check-circle-fill text-white me-2"></i> Aman utk Toko</li>
+                            <li class="mb-3 text-secondary"><i class="bi bi-check-circle-fill text-white me-2"></i> Aman untuk Toko</li>
                         </ul>
-                        <a href="#order" class="btn btn-outline-light w-100 rounded-pill py-3 fw-bold mt-2">Pilih Paket</a>
+                        <a href="https://wa.me/6287879842395?text=HaloAdmin_MauOrderPaketShopee" class="btn btn-outline-light w-100 rounded-pill py-3 fw-bold mt-2">Pilih Paket</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="order" class="py-5 bg-black border-top border-secondary border-opacity-25">
-        <div class="container py-4">
-            <div class="row align-items-start g-5">
-                <div class="col-lg-5">
-                    <h2 class="display-6 fw-bold mb-4">Selesaikan Pesanan</h2>
-                    <p class="text-secondary mb-5">Ikuti 3 langkah mudah di bawah ini. Pesanan akan langsung diproses setelah konfirmasi.</p>
+<section id="order" class="py-5 bg-black border-top border-secondary border-opacity-25 position-relative">
+        <div style="position: absolute; left: 0; bottom: 0; width: 300px; height: 300px; background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%); pointer-events: none;"></div>
+
+        <div class="container py-5">
+            <div class="row align-items-center g-5">
+                
+                <div class="col-lg-5 pe-lg-5 mb-5 mb-lg-0">
+                    <span class="text-warning fw-bold text-uppercase small ls-2">CHECKOUT</span>
+                    <h2 class="display-5 fw-bold mb-4 text-white">Selesaikan Pesanan</h2>
+                    <p class="text-secondary mb-5">Hanya 3 langkah mudah. Sistem kami akan memproses pesanan Anda secara otomatis setelah konfirmasi.</p>
+
                     <div class="d-flex mb-4">
-                        <div class="flex-shrink-0"><span class="bg-warning text-dark fw-bold rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">1</span></div>
-                        <div class="ms-3">
-                            <h5 class="fw-bold text-white">Transfer Pembayaran</h5>
-                            <div class="p-3 mt-2 rounded border border-secondary border-opacity-50" style="background: #111;">
-                                <div class="d-flex justify-content-between"><span class="text-secondary">SEABANK</span><span class="fw-bold text-white font-monospace">9019 3550 7168</span></div>
-                                <div class="d-flex justify-content-between"><span class="text-secondary">DANA</span><span class="fw-bold text-white font-monospace">0878-7984-2395</span></div>
-                                <div class="d-flex justify-content-between"><span class="text-secondary">QRIS</span><span class="fw-bold text-white font-monospace">Scan dalam form</span></div>
+                        <div class="flex-shrink-0">
+                            <span class="bg-warning text-dark fw-bold rounded-circle d-flex align-items-center justify-content-center shadow-lg" style="width: 50px; height: 50px; font-size: 1.2rem;">1</span>
+                        </div>
+                        <div class="ms-4 w-100">
+                            <h5 class="fw-bold text-white mb-3">Transfer Pembayaran</h5>
+                            
+                            <div class="p-4 rounded-4 position-relative overflow-hidden" style="background: linear-gradient(145deg, #111, #0a0a0a); border: 1px solid rgba(255, 215, 0, 0.2);">
+                                <div style="position: absolute; top: -50px; right: -50px; width: 100px; height: 100px; background: rgba(255,215,0,0.1); filter: blur(40px);"></div>
+                                
+                                <div class="d-flex justify-content-between align-items-center mb-3 border-bottom border-secondary border-opacity-25 pb-2">
+                                    <span class="text-secondary small text-uppercase">SeaBank</span>
+                                    <span class="fw-bold text-warning font-monospace fs-5">9019 3550 7168</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mb-3 border-bottom border-secondary border-opacity-25 pb-2">
+                                    <span class="text-secondary small text-uppercase">DANA</span>
+                                    <span class="fw-bold text-white font-monospace fs-5">0878-7984-2395</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="text-secondary small text-uppercase">QRIS</span>
+                                    <span class="badge bg-secondary bg-opacity-25 text-white">Scan di Form</span>
+                                </div>
                             </div>
                         </div>
                     </div>
+
                     <div class="d-flex mb-4">
-                         <div class="flex-shrink-0"><span class="bg-dark border border-secondary text-white fw-bold rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">2</span></div>
-                        <div class="ms-3"><h5 class="fw-bold text-white">Isi Formulir</h5><p class="text-secondary small">Masukkan data target (Username/Link) di form sebelah kanan.</p></div>
+                         <div class="flex-shrink-0">
+                            <span class="bg-dark border border-secondary text-white fw-bold rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; font-size: 1.2rem;">2</span>
+                        </div>
+                        <div class="ms-4">
+                            <h5 class="fw-bold text-white">Isi Formulir</h5>
+                            <p class="text-secondary small mb-0">Masukkan Username/Link target dengan benar di formulir sebelah kanan.</p>
+                        </div>
                     </div>
-                    <div class="d-flex mb-4">
-                         <div class="flex-shrink-0"><span class="bg-dark border border-secondary text-white fw-bold rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">3</span></div>
-                        <div class="ms-3"><h5 class="fw-bold text-white">Konfirmasi WA</h5><p class="text-secondary small">Wajib klik link WA yang muncul setelah submit form agar admin notif.</p></div>
+
+                    <div class="d-flex">
+                         <div class="flex-shrink-0">
+                            <span class="bg-dark border border-secondary text-white fw-bold rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; font-size: 1.2rem;">3</span>
+                        </div>
+                        <div class="ms-4">
+                            <h5 class="fw-bold text-white">Wajib Konfirmasi WA</h5>
+                            <p class="text-secondary small mb-0">Setelah klik Submit, <span class="text-warning">klik link WA yang muncul</span> agar Admin mendapat notifikasi orderan masuk.</p>
+                        </div>
                     </div>
                 </div>
+
                 <div class="col-lg-7">
-                    <div class="order-container">
-                        <iframe src="https://forms.gle/DQYvEt3YBNaFjBpC8" width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0">Memuat formulir...</iframe>
+                    <div class="order-container bg-white p-2 rounded-4 shadow-lg position-relative" style="z-index: 10;">
+                        <div style="position: absolute; z-index: -1; top: 20px; right: -20px; width: 100%; height: 100%; border: 2px solid rgba(255,215,0,0.2); border-radius: 20px;"></div>
+                        
+                        <iframe src="https://forms.gle/DQYvEt3YBNaFjBpC8" width="100%" height="750" frameborder="0" marginheight="0" marginwidth="0" style="border-radius: 15px;">Memuat formulir...</iframe>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
     <footer class="py-5 text-center border-top border-secondary border-opacity-10" style="background: #000;">
         <div class="container">
+            <div class="social-btn-container">
+                <a href="https://instagram.com/ridho.store17" class="social-icon-link" aria-label="Instagram">
+                    <i class="bi bi-instagram"></i>
+                </a>
+                <a href="https://wa.me/6287879842395" class="social-icon-link" aria-label="WhatsApp">
+                    <i class="bi bi-whatsapp"></i>
+                </a>
+            </div>
+            
             <h3 class="fw-bold mb-3">RIDHO<span class="text-warning">STORE</span></h3>
-             <small class="text-muted opacity-100">&copy; 2026 Ridho Store Premium.</small>
+            <small class="text-muted opacity-100">&copy; 2026 Ridho Store Premium.</small>
         </div>
     </footer>
 
