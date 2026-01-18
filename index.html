@@ -1,13 +1,50 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" dir="ltr">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <meta name="description" content="Ridho Store - Panel SMM Termurah dan Terpercaya. Jual Followers Instagram, TikTok Likes, Shopee, dan Layanan Sosmed Lainnya. Proses Instan.">
-    <meta name="theme-color" content="#000000">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Ridho Store | Premium Digital Branding Solution</title>
     
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self'; 
+        script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://www.clarity.ms https://www.google.com https://www.gstatic.com https://embed.tawk.to https://*.tawk.to; 
+        style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com https://cdnjs.cloudflare.com; 
+        img-src 'self' data: https:; 
+        font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net; 
+        connect-src 'self' https://docs.google.com https://www.clarity.ms https://*.tawk.to wss://*.tawk.to;
+        frame-src 'self' https://docs.google.com;
+        object-src 'none'; 
+        base-uri 'self';
+    ">
+
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <title>Ridho Store | Premium Digital Branding Solution</title>
+    <meta name="title" content="Ridho Store | Premium Digital Branding Solution">
+    <meta name="description" content="Ridho Store - Panel SMM Termurah dan Terpercaya. Jual Followers Instagram, TikTok Likes, Shopee, dan Layanan Sosmed Lainnya. Proses Instan & Aman.">
+    <meta name="keywords" content="ridho store, smm panel, panel followers, beli followers instagram, suntik likes tiktok, shopee followers, branding digital, marketing media sosial">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Indonesian">
+    <meta name="author" content="Ridho Store Enterprise">
+
+    <meta name="theme-color" content="#000000">
+    <meta name="msapplication-navbutton-color" content="#000000">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ridhostore.com/">
+    <meta property="og:title" content="Ridho Store | Premium Digital Branding Solution">
+    <meta property="og:description" content="Jual Followers Instagram, TikTok Likes, Shopee, dan Layanan Sosmed Lainnya. Proses Instan & Aman.">
+    <meta property="og:image" content="https://ui-avatars.com/api/?name=Ridho+Store&background=FFD700&color=000&size=512">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ridhostore.com/">
+    <meta property="twitter:title" content="Ridho Store | Premium Digital Branding Solution">
+    <meta property="twitter:description" content="Jual Followers Instagram, TikTok Likes, Shopee, dan Layanan Sosmed Lainnya. Proses Instan & Aman.">
+    <meta property="twitter:image" content="https://ui-avatars.com/api/?name=Ridho+Store&background=FFD700&color=000&size=512">
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -26,13 +63,7 @@
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-          "Sunday"
+          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
         ],
         "opens": "00:00",
         "closes": "23:59"
@@ -56,10 +87,14 @@
         })(window, document, "clarity", "script", "v39bdkhu4m");
     </script>
 
+    <script>
+        if (self !== top) {
+            top.location = self.location;
+        }
+    </script>
+
     <style>
-        /* =========================================
-           1. ROOT VARIABLES & DESIGN TOKENS
-           ========================================= */
+        /* 1. ROOT VARIABLES & DESIGN TOKENS */
         :root {
             --bg-deep: #050505; 
             --bg-surface-1: #0A0A0A;
@@ -93,14 +128,12 @@
             --shadow-glow: 0 0 20px rgba(255, 215, 0, 0.15);
             --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
             --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --z-index-fixed: 1000;
         }
 
-        /* =========================================
-           2. GLOBAL RESET & BASE STYLES
-           ========================================= */
+        /* 2. GLOBAL RESET & BASE STYLES */
         *, *::before, *::after { box-sizing: border-box; outline: none; -webkit-tap-highlight-color: transparent; }
         html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
-        
         body { 
             background: radial-gradient(circle at 50% 0%, #1f2024 0%, #000000 85%);
             background-attachment: fixed;
@@ -110,19 +143,10 @@
             overflow-x: hidden; 
             position: relative; 
             width: 100%;
+            margin: 0; padding: 0;
         }
-
         input, select, textarea { font-size: 16px !important; }
-
-        #particles-js {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            background-color: transparent;
-            z-index: -1; 
-            top: 0; left: 0;
-        }
-
+        #particles-js { position: fixed; width: 100%; height: 100%; background-color: transparent; z-index: -1; top: 0; left: 0; }
         body::before { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: -1; }
         h1, h2, h3, h4, h5, h6 { color: #FFFFFF; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 1rem; }
         h1 { font-size: clamp(2rem, 6vw, 4rem); line-height: 1.1; }
@@ -132,122 +156,42 @@
         a { text-decoration: none; color: inherit; transition: var(--transition-fast); }
         ul { list-style: none; padding: 0; margin: 0; }
         
-        .text-gradient-gold { 
-            background: var(--gold-gradient); 
-            -webkit-background-clip: text; 
-            background-clip: text;
-            -webkit-text-fill-color: transparent; 
-            display: inline-block; 
-        }
-        
+        .text-gradient-gold { background: var(--gold-gradient); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; }
         .text-high-contrast { color: #FFFFFF !important; }
         .bg-glass { background: rgba(20, 20, 20, 0.6); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur); border: var(--border-glass); }
         .z-index-fixed { z-index: 1000; }
 
-        /* =========================================
-           3. UI COMPONENTS
-           ========================================= */
-        
-        /* FLOATING WA BUTTON */
+        /* 3. UI COMPONENTS */
         .float-wa {
-            position: fixed;
-            width: 55px;
-            height: 55px;
-            bottom: 150px; 
-            right: 20px;
-            background-color: #25d366;
-            color: #FFF;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 28px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            z-index: 2000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
+            position: fixed; width: 55px; height: 55px; bottom: 150px; right: 20px;
+            background-color: #25d366; color: #FFF; border-radius: 50%; text-align: center;
+            font-size: 28px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 2000;
+            display: flex; align-items: center; justify-content: center; transition: all 0.3s;
             animation: pulse-green 2s infinite;
         }
-
         .float-wa:hover { background-color: #20ba5a; transform: scale(1.1); color: #fff; }
+        @keyframes pulse-green { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
 
-        @keyframes pulse-green {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-        }
+        .accordion-custom .accordion-item { background-color: var(--bg-surface-2); border: 1px solid rgba(255,255,255,0.05); margin-bottom: 10px; border-radius: 10px !important; overflow: hidden; }
+        .accordion-custom .accordion-button { background-color: var(--bg-surface-2); color: #fff; font-weight: 600; box-shadow: none; }
+        .accordion-custom .accordion-button:not(.collapsed) { color: var(--gold-primary); background-color: rgba(255, 215, 0, 0.05); }
+        .accordion-custom .accordion-body { color: var(--text-secondary); font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.05); }
 
-        /* FAQ ACCORDION */
-        .accordion-custom .accordion-item {
-            background-color: var(--bg-surface-2);
-            border: 1px solid rgba(255,255,255,0.05);
-            margin-bottom: 10px;
-            border-radius: 10px !important;
-            overflow: hidden;
-        }
-        .accordion-custom .accordion-button {
-            background-color: var(--bg-surface-2);
-            color: #fff;
-            font-weight: 600;
-            box-shadow: none;
-        }
-        .accordion-custom .accordion-button:not(.collapsed) {
-            color: var(--gold-primary);
-            background-color: rgba(255, 215, 0, 0.05);
-        }
-        .accordion-custom .accordion-body {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
-        }
-
-        /* NOTIFICATION */
         .fake-notification {
-            position: fixed;
-            bottom: 80px; 
-            left: 20px;
-            background: rgba(20, 20, 20, 0.9);
-            border: 1px solid rgba(255, 215, 0, 0.3);
-            border-radius: 12px;
-            padding: 12px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            z-index: 999;
-            width: auto;
-            max-width: 300px;
-            transform: translateX(-150%);
-            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            backdrop-filter: blur(10px);
+            position: fixed; bottom: 80px; left: 20px; background: rgba(20, 20, 20, 0.9);
+            border: 1px solid rgba(255, 215, 0, 0.3); border-radius: 12px; padding: 12px;
+            display: flex; align-items: center; gap: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            z-index: 999; width: auto; max-width: 300px; transform: translateX(-150%);
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); backdrop-filter: blur(10px);
         }
-
         .fake-notification.show { transform: translateX(0); }
         .notif-img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold-primary); }
         .notif-content h6 { font-size: 0.8rem; margin: 0; color: #FFF; font-weight: 700; }
         .notif-content p { font-size: 0.7rem; margin: 0; color: var(--text-secondary); line-height: 1.2; }
         .notif-time { font-size: 0.6rem; color: var(--text-muted); display: block; margin-top: 2px; }
 
-        .flash-sale-banner {
-            background: linear-gradient(90deg, #b91d1d 0%, #8b0000 100%);
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-            font-size: 0.8rem;
-            font-weight: 600;
-            position: relative;
-            z-index: 2;
-            box-shadow: 0 5px 15px rgba(185, 29, 29, 0.3);
-        }
-        .countdown-box span {
-            background: rgba(0,0,0,0.3);
-            padding: 2px 4px;
-            border-radius: 4px;
-            font-family: monospace;
-            font-size: 0.9rem;
-            margin: 0 1px;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
+        .flash-sale-banner { background: linear-gradient(90deg, #b91d1d 0%, #8b0000 100%); color: #fff; padding: 10px 0; text-align: center; font-size: 0.8rem; font-weight: 600; position: relative; z-index: 2; box-shadow: 0 5px 15px rgba(185, 29, 29, 0.3); }
+        .countdown-box span { background: rgba(0,0,0,0.3); padding: 2px 4px; border-radius: 4px; font-family: monospace; font-size: 0.9rem; margin: 0 1px; border: 1px solid rgba(255,255,255,0.2); }
 
         .search-container { position: relative; margin-bottom: 30px; max-width: 500px; margin-left: auto; margin-right: auto; }
         .search-input { width: 100%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; padding: 15px 20px 15px 45px; border-radius: 50px; font-size: 0.95rem; transition: 0.3s; }
@@ -284,28 +228,11 @@
         .nav-links .nav-link::after { content: ''; position: absolute; bottom: 0; left: 50%; width: 0; height: 2px; background: var(--gold-primary); transition: var(--transition-fast); transform: translateX(-50%); }
         .nav-links .nav-link:hover::after { width: 20px; }
         
-        .mobile-nav { 
-            position: fixed; bottom: 0; left: 0; width: 100%; 
-            background: #000000; 
-            border-top: 1px solid rgba(255,255,255,0.15); 
-            padding: 10px 0; 
-            display: none; 
-            justify-content: space-around; 
-            align-items: center; 
-            z-index: 1001; 
-            box-shadow: 0 -5px 20px rgba(0,0,0,0.8); 
-            padding-bottom: env(safe-area-inset-bottom, 15px); 
-        }
+        .mobile-nav { position: fixed; bottom: 0; left: 0; width: 100%; background: #000000; border-top: 1px solid rgba(255,255,255,0.15); padding: 10px 0; display: none; justify-content: space-around; align-items: center; z-index: 1001; box-shadow: 0 -5px 20px rgba(0,0,0,0.8); padding-bottom: env(safe-area-inset-bottom, 15px); }
         .mobile-nav-item { display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--text-secondary); font-size: 0.65rem; gap: 4px; transition: 0.3s; flex: 1; }
         .mobile-nav-item i { font-size: 1.2rem; margin-bottom: 2px; }
         .mobile-nav-item.active, .mobile-nav-item:hover { color: var(--gold-primary); }
-        
-        .mobile-nav-item.active i {
-            color: #FFD700;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
-            transform: translateY(-3px);
-            transition: all 0.3s ease;
-        }
+        .mobile-nav-item.active i { color: #FFD700; text-shadow: 0 0 10px rgba(255, 215, 0, 0.6); transform: translateY(-3px); transition: all 0.3s ease; }
 
         .mobile-top-bar { position: fixed; top: 0; left: 0; width: 100%; padding: 15px 0; z-index: 1002; background: rgba(5, 5, 5, 0.9); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255, 255, 255, 0.08); text-align: center; display: none; padding-top: max(15px, env(safe-area-inset-top)); }
 
@@ -319,13 +246,7 @@
 
         .pricing-controls { display: flex; justify-content: center; gap: 10px; margin-bottom: 2rem; flex-wrap: wrap; }
         
-        /* LAYANAN GRID DEFAULT HIDDEN */
-        .service-grid { 
-            display: none; /* Awalnya sembunyi */
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
-            gap: 15px; 
-            animation: fadeIn 0.5s;
-        }
+        .service-grid { display: none; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; animation: fadeIn 0.5s; }
         
         .price-card { background: var(--bg-surface-2); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 20px; transition: var(--transition-smooth); display: flex; flex-direction: column; justify-content: space-between; }
         .price-card:hover { border-color: var(--gold-primary); transform: translateY(-5px); }
@@ -342,266 +263,118 @@
 
         .swiper { width: 100%; padding-bottom: 40px; }
         
-        .swiper-slide, .card {
-            background: rgba(30, 30, 30, 0.4) !important; 
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1) !important;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-            border-radius: 20px; 
-            padding: 25px; 
-            height: auto; 
-        }
-
+        .swiper-slide, .card { background: rgba(30, 30, 30, 0.4) !important; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1) !important; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); border-radius: 20px; padding: 25px; height: auto; }
         .swiper-pagination-bullet { background: #FFF; opacity: 0.3; }
         .swiper-pagination-bullet-active { background: var(--gold-primary); opacity: 1; }
+        .swiper-slide h6 { color: #FFD700 !important; font-weight: 800; letter-spacing: 0.5px; }
 
-        .swiper-slide h6 {
-            color: #FFD700 !important;
-            font-weight: 800;
-            letter-spacing: 0.5px;
+        .cta-instagram-wrapper { margin-top: 3rem; display: flex; flex-direction: column; align-items: center; gap: 15px; }
+        .btn-ig-premium { display: inline-flex; align-items: center; background: rgba(0, 0, 0, 0.8); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 50px; padding: 10px 25px 10px 10px; text-decoration: none; transition: all 0.3s ease; position: relative; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.5); max-width: 90%; }
+        .btn-ig-premium::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; border-radius: 50px; padding: 1.5px; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
+        .ig-premium-icon { width: 45px; height: 45px; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #fff; margin-right: 15px; box-shadow: 0 0 15px rgba(220, 39, 67, 0.4); }
+        .ig-premium-text { display: flex; flex-direction: column; text-align: left; line-height: 1.2; }
+        .ig-premium-subtitle { font-size: 0.7rem; color: #bbb; text-transform: uppercase; letter-spacing: 1px; }
+        .ig-premium-title { font-size: 1rem; font-weight: 700; color: #fff; }
+        .btn-ig-premium:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(220, 39, 67, 0.3); background: rgba(255, 255, 255, 0.05); }
+
+        .visual-selector { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 20px; }
+        .selector-item { background: var(--bg-surface-3); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 15px 10px; text-align: center; cursor: pointer; transition: all 0.3s; }
+        .selector-item:hover { background: rgba(255, 215, 0, 0.1); border-color: var(--gold-primary); }
+        .selector-item.active { background: var(--gold-gradient); color: #000; box-shadow: 0 0 15px rgba(255, 215, 0, 0.4); border: none; }
+        .selector-item i { font-size: 1.8rem; margin-bottom: 5px; display: block; }
+        .selector-item span { font-size: 0.75rem; font-weight: 700; }
+        #inputServiceGroup { display: none; animation: fadeIn 0.5s; }
+
+        .dropdown-menu-dark-custom { background-color: #000000 !important; border: 1px solid rgba(255,255,255,0.15) !important; }
+        .dropdown-menu-dark-custom .dropdown-item { color: #ffffff !important; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .dropdown-menu-dark-custom .dropdown-item:last-child { border-bottom: none; }
+        .dropdown-menu-dark-custom .dropdown-item:hover { background-color: #1a1a1a !important; color: var(--gold-primary) !important; }
+
+        .step-card { background: var(--bg-surface-2); border: 1px solid rgba(255,255,255,0.05); padding: 20px; border-radius: 16px; text-align: center; height: 100%; position: relative; transition: 0.3s; }
+        .step-card:hover { transform: translateY(-5px); border-color: var(--gold-primary); }
+        .step-number { font-size: 1.5rem; font-weight: 900; color: rgba(255, 255, 255, 0.4); position: absolute; top: 0; right: 15px; line-height: 1; }
+        .step-icon { font-size: 2rem; color: var(--gold-primary); margin-bottom: 15px; display: inline-block; }
+        .step-card h4 { font-size: 1.1rem; margin-bottom: 8px; }
+        .step-card p { font-size: 0.8rem; margin-bottom: 0; color: var(--text-secondary); }
+
+        .tracking-box { background: var(--bg-surface-2); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 20px; text-align: center; margin-bottom: 30px; }
+        .tracking-status-badge { display: inline-block; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; margin-top: 10px; }
+
+        /* === PREMIUM MODAL STYLES (NEW) === */
+        .modal-premium .modal-content {
+            background: rgba(15, 15, 15, 0.98);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 20px;
+            box-shadow: 0 0 50px rgba(0,0,0,0.8);
         }
-
-        /* --- IG BUTTON PREMIUM STYLE --- */
-        .cta-instagram-wrapper { 
-            margin-top: 3rem; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            gap: 15px;
-        }
-
-        .btn-ig-premium {
-            display: inline-flex;
-            align-items: center;
-            background: rgba(0, 0, 0, 0.8);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 50px;
-            padding: 10px 25px 10px 10px;
-            text-decoration: none;
-            transition: all 0.3s ease;
+        .modal-premium .modal-header {
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding: 1.5rem;
             position: relative;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
-            max-width: 90%;
         }
-
-        .btn-ig-premium::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            border-radius: 50px;
-            padding: 1.5px;
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            pointer-events: none;
-        }
-
-        .ig-premium-icon {
-            width: 45px;
-            height: 45px;
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: #fff;
-            margin-right: 15px;
-            box-shadow: 0 0 15px rgba(220, 39, 67, 0.4);
-        }
-
-        .ig-premium-text {
-            display: flex;
-            flex-direction: column;
-            text-align: left;
-            line-height: 1.2;
-        }
-
-        .ig-premium-subtitle {
-            font-size: 0.7rem;
-            color: #bbb;
-            text-transform: uppercase;
+        .modal-premium .modal-title {
+            font-family: 'Syncopate', sans-serif;
+            font-weight: 700;
             letter-spacing: 1px;
+            font-size: 1.1rem;
         }
-
-        .ig-premium-title {
-            font-size: 1rem;
-            font-weight: 700;
-            color: #fff;
-        }
-
-        .btn-ig-premium:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(220, 39, 67, 0.3);
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        /* --- VISUAL SELECTOR STYLES --- */
-        .visual-selector {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .selector-item {
-            background: var(--bg-surface-3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 15px 10px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .selector-item:hover {
-            background: rgba(255, 215, 0, 0.1);
-            border-color: var(--gold-primary);
-        }
-
-        .selector-item.active {
-            background: var(--gold-gradient);
-            color: #000;
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
-            border: none;
-        }
-
-        .selector-item i {
-            font-size: 1.8rem;
-            margin-bottom: 5px;
-            display: block;
-        }
-
-        .selector-item span {
-            font-size: 0.75rem;
-            font-weight: 700;
-        }
-
-        #inputServiceGroup {
-            display: none; 
-            animation: fadeIn 0.5s;
-        }
-
-        /* --- DROPDOWN CUSTOM STYLE (BLACK BG) --- */
-        .dropdown-menu-dark-custom {
-            background-color: #000000 !important;
-            border: 1px solid rgba(255,255,255,0.15) !important;
-        }
-        .dropdown-menu-dark-custom .dropdown-item {
-            color: #ffffff !important;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        .dropdown-menu-dark-custom .dropdown-item:last-child {
-            border-bottom: none;
-        }
-        .dropdown-menu-dark-custom .dropdown-item:hover {
-            background-color: #1a1a1a !important;
-            color: var(--gold-primary) !important;
-        }
-
-        /* --- HOW TO ORDER STEPS --- */
-        .step-card {
-            background: var(--bg-surface-2);
-            border: 1px solid rgba(255,255,255,0.05);
-            padding: 20px;
-            border-radius: 16px;
-            text-align: center;
-            height: 100%;
-            position: relative;
+        .modal-premium .btn-close {
+            filter: invert(1);
+            opacity: 0.8;
             transition: 0.3s;
         }
-        .step-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--gold-primary);
+        .modal-premium .btn-close:hover { opacity: 1; transform: rotate(90deg); }
+        .legal-content {
+            padding: 0.5rem;
+            max-height: 65vh;
+            overflow-y: auto;
         }
-        .step-number {
-            font-size: 3rem;
-            font-weight: 900;
-            color: rgba(255, 255, 255, 0.4);
-            position: absolute;
-            top: 0;
-            right: 15px;
-            line-height: 1;
-        }
-        .step-icon {
-            font-size: 2rem;
-            color: var(--gold-primary);
+        .legal-content::-webkit-scrollbar { width: 6px; }
+        .legal-content::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+        .legal-item {
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            padding: 15px;
             margin-bottom: 15px;
-            display: inline-block;
+            border-left: 3px solid var(--gold-primary);
+            transition: 0.3s;
         }
-        .step-card h4 {
-            font-size: 1.1rem;
+        .legal-item:hover { background: rgba(255,255,255,0.05); transform: translateX(5px); }
+        .legal-icon {
+            font-size: 1.3rem;
+            color: var(--gold-primary);
+            margin-bottom: 10px;
+            display: block;
+        }
+        .legal-heading {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #fff;
             margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
-        .step-card p {
-            font-size: 0.8rem;
-            margin-bottom: 0;
-            color: var(--text-secondary);
-        }
-
-        /* --- ORDER TRACKING STYLES --- */
-        .tracking-box {
-            background: var(--bg-surface-2);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 16px;
-            padding: 20px;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .tracking-status-badge {
-            display: inline-block;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            margin-top: 10px;
+        .legal-text {
+            font-size: 0.85rem;
+            color: #bbb;
+            margin: 0;
+            line-height: 1.6;
         }
 
-        /* =========================================
-           4. RESPONSIVE BREAKPOINTS
-           ========================================= */
-        @media (max-width: 991px) {
-            .hero-section { text-align: center; flex-direction: column; justify-content: center; padding-top: 100px; }
-            .hero-content { margin-bottom: 40px; }
-            .hero-img-col { display: none; }
-            .navbar-desktop { display: none; }
-            .mobile-top-bar { display: block; }
-        }
-        
-        @media (max-width: 768px) {
-            body { padding-bottom: 70px; } 
-            .mobile-nav { display: flex; }
-            h1 { font-size: 2.2rem; }
-            .container { padding-left: 20px; padding-right: 20px; }
-            
-            section { padding-top: 3rem !important; padding-bottom: 3rem !important; }
-            
-            .flash-sale-banner {
-                margin-top: 75px; 
-            }
-            .hero-section { 
-                min-height: auto; 
-                padding-top: 20px !important; 
-                padding-bottom: 60px !important; 
-            }
-            
-            .fake-notification { bottom: 80px; left: 15px; right: 15px; width: auto; max-width: none; }
-            
-            .float-wa { bottom: 160px; right: 15px; width: 50px; height: 50px; font-size: 24px; }
-        }
+        @media (max-width: 991px) { .hero-section { text-align: center; flex-direction: column; justify-content: center; padding-top: 100px; } .hero-content { margin-bottom: 40px; } .hero-img-col { display: none; } .navbar-desktop { display: none; } .mobile-top-bar { display: block; } }
+        @media (max-width: 768px) { body { padding-bottom: 70px; } .mobile-nav { display: flex; } h1 { font-size: 2.2rem; } .container { padding-left: 20px; padding-right: 20px; } section { padding-top: 3rem !important; padding-bottom: 3rem !important; } .flash-sale-banner { margin-top: 75px; } .hero-section { min-height: auto; padding-top: 20px !important; padding-bottom: 60px !important; } .fake-notification { bottom: 80px; left: 15px; right: 15px; width: auto; max-width: none; } .float-wa { bottom: 160px; right: 15px; width: 50px; height: 50px; font-size: 24px; } }
     </style>
 </head>
 <body id="top">
     
-    <div id="particles-js"></div>
-
     <div id="preloader" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#000;z-index:99999;display:flex;justify-content:center;align-items:center;flex-direction:column;">
         <div class="spinner-border text-warning" role="status" style="width: 3rem; height: 3rem;"></div>
         <p class="mt-3 text-white letter-spacing-2 small fw-bold">MEMUAT TOKO...</p>
     </div>
+
+    <div id="particles-js"></div>
 
     <div class="fake-notification" id="fakeNotif">
         <img src="https://ui-avatars.com/api/?name=User&background=random" class="notif-img" id="notifImg" alt="User">
@@ -838,7 +611,6 @@
             </div>
 
             <div class="cta-instagram-wrapper animate__animated animate__fadeInUp animate__delay-2s">
-                
                 <a href="https://instagram.com/ridho.store17" target="_blank" class="btn-ig-premium">
                     <div class="ig-premium-icon">
                         <i class="bi bi-instagram"></i>
@@ -849,12 +621,10 @@
                     </div>
                     <i class="bi bi-chevron-right ms-3 text-white opacity-50"></i>
                 </a>
-
                 <p class="text-secondary small mb-0" style="font-size: 0.7rem; opacity: 0.7;">
                     <i class="bi bi-info-circle me-1"></i> Klik untuk melihat Highlight "Testimoni"
                 </p>
             </div>
-
         </div>
     </section>
 
@@ -905,7 +675,7 @@
             </div>
 
             <div id="service-container" class="service-grid">
-                </div>
+            </div>
         </div>
     </section>
 
@@ -1005,7 +775,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                     <div class="p-4 rounded-4" style="background: linear-gradient(135deg, #1a1a1a, #000); border: 1px solid #333;">
+                      <div class="p-4 rounded-4" style="background: linear-gradient(135deg, #1a1a1a, #000); border: 1px solid #333;">
                         <h5 class="text-white mb-3 h6"><i class="bi bi-info-circle text-gold me-2"></i>Cara Pemesanan</h5>
                         <ol class="text-secondary ps-3 mb-0" style="font-size: 0.85rem;">
                             <li class="mb-2">Pilih kategori layanan di atas.</li>
@@ -1013,7 +783,7 @@
                             <li class="mb-2">Pilih metode pembayaran (QRIS/E-Wallet).</li>
                             <li class="mb-2">Klik Order & kirim bukti transfer di WhatsApp.</li>
                         </ol>
-                     </div>
+                      </div>
                 </div>
             </div>
         </div>
@@ -1036,7 +806,7 @@
                             <span class="text-white small letter-spacing-2">MENGIRIM DATA...</span>
                         </div>
 
-                        <form id="nativeOrderForm" onsubmit="submitOrder(event)">
+                        <form id="nativeOrderForm" onsubmit="RidhoStoreApp.submitOrder(event)">
                             
                             <label class="text-gold small mb-2 text-uppercase fw-bold" style="font-size:0.7rem;">Pilih Kategori</label>
                             <div class="visual-selector">
@@ -1063,13 +833,13 @@
 
                             <div class="mb-3">
                                 <label class="text-secondary small mb-2 text-uppercase fw-bold" style="font-size:0.7rem;">Target (Username / Link)</label>
-                                <input type="text" class="form-control bg-dark text-white border-secondary p-2" id="inputTarget" placeholder="Contoh: @ridho.store atau Link Postingan" required style="font-size:0.9rem;">
+                                <input type="text" class="form-control bg-dark text-white border-secondary p-2" id="inputTarget" placeholder="Contoh: @ridho.store atau Link Postingan" required maxlength="100" autocomplete="off" style="font-size:0.9rem;">
                             </div>
 
                             <div class="row">
                                 <div class="col-6 mb-3">
                                     <label class="text-secondary small mb-2 text-uppercase fw-bold" style="font-size:0.7rem;">Jumlah</label>
-                                    <input type="number" class="form-control bg-dark text-white border-secondary p-2" id="inputQuantity" placeholder="Min: 100" min="100" required oninput="calcTotal()" style="font-size:0.9rem;">
+                                    <input type="number" class="form-control bg-dark text-white border-secondary p-2" id="inputQuantity" placeholder="Min: 100" min="100" required oninput="calcTotal()" autocomplete="off" style="font-size:0.9rem;">
                                 </div>
                                 <div class="col-6 mb-3">
                                     
@@ -1096,21 +866,21 @@
                             <div class="mb-3">
                                 <label class="text-secondary small mb-2 text-uppercase fw-bold" style="font-size:0.7rem;">Metode Pembayaran</label>
                                 <select class="form-select bg-dark text-white border-secondary p-2" id="inputPayment" required style="font-size:0.9rem;">
-                                    <option value="QRIS">QRIS (All Payment)</option>
-                                    <option value="DANA">DANA</option>
-                                    <option value="GOPAY">GOPAY</option>
+                                    <option value="QRIS">QRIS (Otomatis/Instant) 🔥</option>
+                                    <option value="DANA">DANA (Manual)</option>
+                                    <option value="GOPAY">GOPAY (Manual)</option>
                                     <option value="BCA">Transfer Bank (BCA)</option>
                                 </select>
                             </div>
 
                             <div class="mb-4">
                                 <label class="text-secondary small mb-2 text-uppercase fw-bold" style="font-size:0.7rem;">Nomor WhatsApp Anda</label>
-                                <input type="tel" class="form-control bg-dark text-white border-secondary p-2" id="inputWhatsapp" placeholder="08xxxxxxxx" required style="font-size:0.9rem;">
+                                <input type="tel" class="form-control bg-dark text-white border-secondary p-2" id="inputWhatsapp" placeholder="08xxxxxxxx" required autocomplete="off" style="font-size:0.9rem;">
                             </div>
 
                             <div class="alert alert-warning bg-opacity-10 border-warning text-warning small d-flex align-items-center" style="font-size:0.75rem;">
                                 <i class="bi bi-info-circle-fill me-2"></i>
-                                <span>Setelah klik Order, kirim bukti transfer ke WhatsApp Admin.</span>
+                                <span>Setelah klik Order, sistem akan memproses data Anda.</span>
                             </div>
 
                             <button type="submit" class="btn btn-custom btn-gold w-100 py-3 fw-bold mt-2 shadow-glow">
@@ -1141,418 +911,508 @@
       </div>
     </div>
 
-    <div class="modal fade" id="tosModal" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-scrollable">
-        <div class="modal-content bg-surface-2 text-secondary border-glass">
-          <div class="modal-header border-bottom border-secondary border-opacity-25">
-            <h5 class="modal-title text-white">Syarat & Ketentuan</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+    <div class="modal fade modal-premium" id="tosModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-gradient-gold">
+                <i class="bi bi-file-earmark-text-fill me-2"></i> SYARAT & KETENTUAN
+            </h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-body small">
-            <h6 class="text-gold">1. Umum</h6>
-            <p>Dengan memesan di Ridho Store, Anda dianggap telah membaca dan menyetujui ketentuan ini.</p>
-            <h6 class="text-gold">2. Layanan</h6>
-            <p>Kami hanya menjamin proses pengiriman followers/likes. Kami tidak menjamin interaksi (likes/komen) dari followers pasif.</p>
-            <h6 class="text-gold">3. Garansi (Refill)</h6>
-            <p>Garansi hanya berlaku untuk layanan bertanda "Refill". Komplain drop hanya diterima jika followers turun di bawah jumlah awal + jumlah order.</p>
-            <h6 class="text-gold">4. Pengembalian Dana</h6>
-            <p>Tidak ada refund jika kesalahan input username dari pembeli, atau jika akun di-private saat proses.</p>
+          <div class="modal-body legal-content">
+            <div class="legal-item">
+                <i class="bi bi-info-circle-fill legal-icon"></i>
+                <h6 class="legal-heading">1. Ketentuan Umum</h6>
+                <p class="legal-text">Dengan melakukan pemesanan di Ridho Store, Anda dianggap telah membaca, mengerti, dan menyetujui semua syarat dan ketentuan yang berlaku. Harga layanan dapat berubah sewaktu-waktu tanpa pemberitahuan sebelumnya.</p>
+            </div>
+            <div class="legal-item">
+                <i class="bi bi-shield-check legal-icon"></i>
+                <h6 class="legal-heading">2. Garansi & Refill</h6>
+                <p class="legal-text">Layanan bertanda <strong>"Refill"</strong> memiliki garansi isi ulang jika terjadi penurunan (drop) dalam masa garansi (biasanya 30 hari). Layanan <strong>"No Refill"</strong> tidak memiliki garansi apapun jika followers/likes berkurang.</p>
+            </div>
+            <div class="legal-item">
+                <i class="bi bi-exclamation-triangle-fill legal-icon"></i>
+                <h6 class="legal-heading">3. Larangan & Pembatasan</h6>
+                <p class="legal-text">Dilarang memesan untuk akun yang melanggar hukum Indonesia (pornografi, judi, sara, dll). Akun target <strong>JANGAN DI-PRIVATE</strong> saat proses pengerjaan. Jika di-private, orderan dianggap selesai tanpa refund.</p>
+            </div>
+          </div>
+          <div class="modal-footer border-0 pt-0">
+             <button type="button" class="btn btn-sm btn-gold w-100 rounded-pill" data-bs-dismiss="modal">Saya Mengerti</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade modal-premium" id="privacyModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-gradient-gold">
+                <i class="bi bi-shield-lock-fill me-2"></i> KEBIJAKAN PRIVASI
+            </h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body legal-content">
+            <div class="legal-item">
+                <i class="bi bi-database-lock legal-icon"></i>
+                <h6 class="legal-heading">1. Pengumpulan Data</h6>
+                <p class="legal-text">Kami hanya mengumpulkan data yang diperlukan untuk memproses pesanan, yaitu: Username/Link Target dan Nomor WhatsApp untuk konfirmasi. Kami <strong>TIDAK PERNAH</strong> meminta password akun media sosial Anda.</p>
+            </div>
+            <div class="legal-item">
+                <i class="bi bi-share-fill legal-icon"></i>
+                <h6 class="legal-heading">2. Penggunaan Data</h6>
+                <p class="legal-text">Data Username/Link digunakan semata-mata untuk tujuan pengiriman layanan (followers/likes). Nomor WhatsApp digunakan untuk mengirim bukti transaksi dan info status order.</p>
+            </div>
+            <div class="legal-item">
+                <i class="bi bi-incognito legal-icon"></i>
+                <h6 class="legal-heading">3. Keamanan</h6>
+                <p class="legal-text">Kami menjamin kerahasiaan data pesanan Anda. Data tidak akan dijual atau disebarluaskan kepada pihak ketiga manapun.</p>
+            </div>
+          </div>
+          <div class="modal-footer border-0 pt-0">
+             <button type="button" class="btn btn-sm btn-gold w-100 rounded-pill" data-bs-dismiss="modal">Saya Setuju</button>
           </div>
         </div>
       </div>
     </div>
 
     <script>
-        // =========================================
-        // 1. DATA CENTER
-        // =========================================
-        const servicesData = [
-            { id: 1, category: 'instagram', name: 'IG Followers Mix (Less Drop)', price: 25000 },
-            { id: 2, category: 'instagram', name: 'IG Followers Indo (Real)', price: 60000 },
-            { id: 3, category: 'instagram', name: 'IG Likes (Non-Drop)', price: 35000 },
-            { id: 4, category: 'instagram', name: 'IG Views (Reels)', price: 2000 },
-            { id: 5, category: 'tiktok', name: 'TikTok Followers', price: 30000 },
-            { id: 6, category: 'tiktok', name: 'TikTok Likes', price: 20000 },
-            { id: 7, category: 'tiktok', name: 'TikTok Views (FYP)', price: 1000 },
-            { id: 8, category: 'shopee', name: 'Shopee Followers Toko', price: 50000 },
-            { id: 9, category: 'shopee', name: 'Shopee Likes Produk', price: 40000 }
-        ];
+        /**
+         * RIDHO STORE ENTERPRISE CORE ENGINE
+         * Version: 4.2.0 (Secure & Hardened)
+         * Features: Payment Gateway Logic, Sanitization, Anti-XSS
+         */
+        const RidhoStoreApp = (function() {
+            'use strict';
 
-        // --- 1. DATA LAYANAN ---
-        document.addEventListener("DOMContentLoaded", function() {
-            // Anti Stuck Preloader
-            function hidePreloader() {
-                const p = document.getElementById('preloader');
-                if(p) { p.style.opacity=0; setTimeout(()=>{p.style.display='none'},500); }
-            }
-            window.addEventListener('load', hidePreloader);
-            setTimeout(hidePreloader, 3000); 
-
-            // Start Features
-            startFakeNotif();
-            startCountdown();
-            loadParticles();
-
-            // INIT SWIPER UNTUK TESTIMONI
-            var swiper = new Swiper(".mySwiper", {
-                slidesPerView: 1.1,
-                spaceBetween: 20,
-                pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
+            // --- CONFIGURATION ---
+            const CONFIG = {
+                adminPhone: '6287879842395',
+                // Pastikan link Google Sheet/Form diproteksi aksesnya di sisi Google (hanya bisa submit)
+                googleSheetUrl: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSHy3Ly1WlQ72OBWvLmuNtsKqL6kkicUHkX2HzForygUKMV0jt6Ti7l3zH02fxqtR4jcpMfwH51qSdd/pub?gid=961326959&single=true&output=csv",
+                googleFormUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSesAKeDg2Uh1dQTELBuMghZrT31yJV6B1rpGQHrYnvRZsAE0w/formResponse',
+                promoCodes: {
+                    'RIDHO10': 0.10, 
+                    'DISKON5': 0.05,  
+                    'JUMATBERKAH': 0.15 
                 },
-                breakpoints: {
-                    640: { slidesPerView: 2, spaceBetween: 20 },
-                    768: { slidesPerView: 3, spaceBetween: 30 },
+                columnMap: { target: 2, status: 7 }
+            };
+
+            // --- SECURITY UTILS (SANITIZATION) ---
+            const Security = {
+                // Input Sanitization: Membersihkan karakter berbahaya (mencegah XSS)
+                sanitize: (str) => {
+                    if (typeof str !== 'string') return str;
+                    const map = {
+                        '&': '&amp;',
+                        '<': '&lt;',
+                        '>': '&gt;',
+                        '"': '&quot;',
+                        "'": '&#x27;',
+                        "/": '&#x2F;',
+                    };
+                    const reg = /[&<>"'/]/ig;
+                    return str.replace(reg, (match) => (map[match]));
                 },
-            });
-        });
-
-        // --- 2. LOGIC CATALOG DROPDOWN (NEW) ---
-        // Fungsi ini mengontrol tampilan grid harga agar tersembunyi/muncul
-        function selectCatalog(event, category, labelText) {
-            // MENCEGAH SCROLL JUMP KE ATAS
-            event.preventDefault(); 
-
-            // Update Label Tombol
-            const btn = document.getElementById('catalogDropdownBtn');
-            btn.innerHTML = `<i class="bi bi-grid-fill me-2"></i> ${labelText}`;
-            
-            // Tampilkan Grid yang tadinya hidden
-            const container = document.getElementById('service-container');
-            container.style.display = 'grid'; // Munculkan Grid
-            
-            // Render Data Sesuai Pilihan
-            renderServices(category);
-        }
-
-        // --- FITUR DETAIL LAYANAN (INFO ICON) ---
-        function showServiceInfo(serviceName) {
-            Swal.fire({
-                title: serviceName,
-                html: `
-                    <div class="text-start small">
-                        <p class="mb-2">⚡ <strong>Estimasi Masuk:</strong> 1-2 Jam (Max 24 Jam)</p>
-                        <p class="mb-2">📉 <strong>Drop Rate:</strong> Rendah (Low Drop)</p>
-                        <p class="mb-0">👤 <strong>Tipe Akun:</strong> Campuran (Bot & Pasif)</p>
-                    </div>
-                `,
-                icon: 'info',
-                background: '#1e1e1e',
-                color: '#fff',
-                confirmButtonColor: '#FFD700',
-                confirmButtonText: 'Oke, Paham'
-            });
-        }
-
-        function renderServices(filter) {
-            const container = document.getElementById('service-container');
-            container.innerHTML = ''; 
-
-            const searchText = document.getElementById('serviceSearch') ? document.getElementById('serviceSearch').value.toLowerCase() : '';
-
-            const filteredData = servicesData.filter(item => {
-                const matchCategory = filter === 'all' || item.category === filter;
-                const matchSearch = item.name.toLowerCase().includes(searchText);
-                return matchCategory && matchSearch;
-            });
-
-            filteredData.forEach(item => {
-                const card = document.createElement('div');
-                card.className = 'col animate__animated animate__fadeIn';
                 
-                // MENAMBAHKAN ICON INFO DI SEBELAH NAMA LAYANAN
-                card.innerHTML = `
-                    <div class="price-card h-100">
-                        <div>
-                            <div class="price-header">
-                                <span class="badge bg-secondary mb-2 text-uppercase" style="font-size:0.6rem;">${item.category}</span>
-                                <div class="service-name d-flex align-items-center justify-content-between">
-                                    <span>${item.name}</span>
-                                    <i class="bi bi-info-circle-fill text-secondary" style="font-size:0.9rem; cursor:pointer;" onclick="showServiceInfo('${item.name}')"></i>
+                // Validasi format nomor HP (hanya angka)
+                validatePhone: (phone) => {
+                    const re = /^[0-9]+$/;
+                    return re.test(phone);
+                }
+            };
+
+            // --- POINT A: PAYMENT GATEWAY LOGIC (REAL MANUAL QRIS) ---
+            const PaymentGateway = {
+                processQRIS: (amount, dataOrder) => {
+                    const myQRIS = "https://i.ibb.co.com/xtyhX0Gd/Whats-App-Image-2026-01-10-at-19-59-10.jpg"; 
+
+                    return Swal.fire({
+                        title: 'Scan QRIS',
+                        html: `
+                            <div style="text-align: center;">
+                                <p class="small text-white mb-2">Total Bayar: <strong class="text-warning fs-5">Rp ${amount}</strong></p>
+                                <div style="background: white; padding: 10px; border-radius: 8px; display: inline-block;">
+                                    <img src="${myQRIS}" style="width: 250px; height: 250px; display:block;">
                                 </div>
-                                <span class="service-meta">Harga per 1.000 Pcs</span>
+                                <p class="small text-muted mt-3 mb-1">1. Scan QRIS di atas via DANA/Gopay/ShopeePay/BCA.</p>
+                                <p class="small text-muted mb-0">2. Setelah bayar, klik tombol konfirmasi di bawah.</p>
                             </div>
-                            <span class="price-tag">${formatRupiah(item.price)}</span>
-                        </div>
-                        <a href="#order" class="add-cart-btn d-block text-center" style="text-decoration:none;">
-                            <i class="bi bi-cart-plus me-1"></i> Order
-                        </a>
-                    </div>
-                `;
-                container.appendChild(card);
-            });
-        }
-        
-        // --- 3. LOGIC ORDER FORM (VISUAL SELECTOR) ---
-        function selectCategory(category, element) {
-            // Reset active style
-            document.querySelectorAll('.selector-item').forEach(el => {
-                el.classList.remove('active');
-                el.querySelector('i').style.color = ''; 
-            });
+                        `,
+                        background: '#121212',
+                        color: '#fff',
+                        showCancelButton: true,
+                        confirmButtonText: '<i class="bi bi-whatsapp"></i> Konfirmasi ke WA',
+                        cancelButtonText: 'Tutup',
+                        confirmButtonColor: '#25d366',
+                        cancelButtonColor: '#d33',
+                        allowOutsideClick: false,
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            // Log to Google Sheet
+                            const formMap = { service: 'entry.398242453', target: 'entry.1311683536', quantity: 'entry.1805710612', total: 'entry.2074942859', payment: 'entry.371390371', whatsapp: 'entry.1404986427' };
+                            const formData = new FormData();
+                            for (const key in dataOrder) formData.append(formMap[key], dataOrder[key]);
+                            fetch(CONFIG.googleFormUrl, { method: 'POST', mode: 'no-cors', body: formData });
 
-            // Set active
-            element.classList.add('active');
-            
-            // Filter Dropdown Order
-            const select = document.getElementById('inputService');
-            select.innerHTML = '<option value="" selected disabled>-- Pilih Paket ' + category.charAt(0).toUpperCase() + category.slice(1) + ' --</option>';
-            
-            const filteredServices = servicesData.filter(item => item.category === category);
-            
-            filteredServices.forEach(item => {
-                const option = document.createElement('option');
-                option.value = `${item.name}`; 
-                option.setAttribute('data-price', item.price);
-                option.textContent = `${item.name} - ${formatRupiah(item.price)}/1k`;
-                select.appendChild(option);
-            });
-
-            // TAMPILKAN DROPDOWN DI FORM
-            const group = document.getElementById('inputServiceGroup');
-            group.style.display = 'block';
-            
-            // Reset fields
-            document.getElementById('inputQuantity').value = '';
-            document.getElementById('displayTotal').value = 'Rp 0';
-            document.getElementById('liveSales').style.display = 'none';
-        }
-
-        // =========================================
-        // TRACKING SYSTEM
-        // =========================================
-        const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSHy3Ly1WlQ72OBWvLmuNtsKqL6kkicUHkX2HzForygUKMV0jt6Ti7l3zH02fxqtR4jcpMfwH51qSdd/pub?gid=961326959&single=true&output=csv";
-        const COL_TARGET = 2; 
-        const COL_STATUS = 7; 
-
-        async function checkOrderStatus() {
-            const input = document.getElementById('trackingInput').value.trim();
-            const resultBox = document.getElementById('trackingResult');
-            const badge = document.getElementById('statusBadge');
-            const msg = document.getElementById('statusMsg');
-
-            if(!input) { 
-                Swal.fire({ icon: 'warning', title: 'Oops...', text: 'Masukkan Username atau Link dulu ya!', background: '#1e1e1e', color: '#fff', confirmButtonColor: '#FFD700' });
-                return; 
-            }
-
-            resultBox.style.display = 'block';
-            badge.className = 'tracking-status-badge bg-secondary text-white';
-            badge.innerText = 'MENCARI DATA...';
-            msg.innerText = 'Menghubungkan ke database...';
-
-            try {
-                const response = await fetch(SHEET_CSV_URL);
-                const data = await response.text();
-                const rows = data.split('\n').map(row => row.split(','));
-                let found = false;
-                let statusOrder = "PENDING"; 
-
-                for (let i = 1; i < rows.length; i++) {
-                    const columns = rows[i];
-                    if (columns[COL_TARGET]) {
-                        const dbTarget = columns[COL_TARGET].replace(/['"]+/g, '').trim();
-                        if (dbTarget.toLowerCase() === input.toLowerCase()) {
-                            found = true;
-                            if(columns[COL_STATUS]) { statusOrder = columns[COL_STATUS].replace(/['"]+/g, '').trim().toUpperCase(); }
-                            break; 
+                            // Redirect to WA
+                            const textWA = `*KONFIRMASI PEMBAYARAN QRIS* 🟢\n\nHalo Admin, saya sudah scan QRIS.\n\n📦 Layanan: ${dataOrder.service}\n🎯 Target: ${dataOrder.target}\n💰 Nominal: Rp ${amount}\n\nMohon dicek mutasinya, Terima kasih!`;
+                            window.location.href = `https://wa.me/${CONFIG.adminPhone}?text=${encodeURIComponent(textWA)}`;
                         }
-                    }
+                    });
                 }
-
-                if (found) {
-                    if (statusOrder.includes("SUKSES") || statusOrder.includes("COMPLETED")) {
-                        badge.className = 'tracking-status-badge bg-success text-white';
-                        badge.innerText = 'SUKSES / COMPLETED';
-                        msg.innerText = 'Orderan telah selesai dikirim! Terima kasih.';
-                    } else if (statusOrder.includes("PROSES") || statusOrder.includes("PROCESSING")) {
-                        badge.className = 'tracking-status-badge bg-warning text-dark';
-                        badge.innerText = 'SEDANG DIPROSES';
-                        msg.innerText = 'Orderan sedang dikerjakan server. Mohon ditunggu.';
-                    } else {
-                        badge.className = 'tracking-status-badge bg-info text-dark';
-                        badge.innerText = statusOrder || 'PENDING';
-                        msg.innerText = 'Pesanan sudah masuk antrian sistem.';
-                    }
-                } else {
-                    badge.className = 'tracking-status-badge bg-dark text-secondary border border-secondary';
-                    badge.innerText = 'DATA TIDAK DITEMUKAN';
-                    msg.innerText = 'Cek kembali Username/Link. Pastikan sama persis saat order.';
-                }
-
-            } catch (error) {
-                console.error("Gagal ambil data:", error);
-                badge.className = 'tracking-status-badge bg-danger text-white';
-                badge.innerText = 'ERROR SYSTEM';
-                msg.innerText = 'Gagal terhubung ke server database.';
-            }
-        }
-
-        // --- CALC & SUBMIT & PROMO CODE ---
-        let activeDiscount = 0;
-
-        function applyPromo() {
-            const code = document.getElementById('inputPromo').value.toUpperCase().trim();
-            const msg = document.getElementById('promoMessage');
-            
-            // Database Kode Promo Sederhana
-            const promos = {
-                'RIDHO10': 0.10, // Diskon 10%
-                'DISKON5': 0.05, // Diskon 5%
-                'JUMATBERKAH': 0.15 // Diskon 15%
             };
 
-            if (promos[code]) {
-                activeDiscount = promos[code];
-                msg.style.color = '#4ade80'; // Hijau
-                msg.innerHTML = `<i class="bi bi-check-circle-fill"></i> Kode berhasil! Diskon ${(activeDiscount*100)}% diterapkan.`;
-                calcTotal(); // Hitung ulang harga
-            } else {
-                activeDiscount = 0;
-                msg.style.color = '#ef4444'; // Merah
-                msg.innerText = 'Kode tidak valid atau kadaluarsa.';
-                calcTotal();
-            }
-        }
+            // --- DATABASE SIMULATION ---
+            const serviceDatabase = [
+                { id: 1, category: 'instagram', name: 'IG Followers Mix (Less Drop)', price: 25000, desc: 'Akun campur global, garansi 30 hari refill.' },
+                { id: 2, category: 'instagram', name: 'IG Followers Indo (Real)', price: 60000, desc: 'Akun Indonesia asli aktif, interaksi tinggi.' },
+                { id: 3, category: 'instagram', name: 'IG Likes (Non-Drop)', price: 35000, desc: 'Likes permanen untuk foto/video.' },
+                { id: 4, category: 'instagram', name: 'IG Views (Reels)', price: 2000, desc: 'Views instan untuk video Reels.' },
+                { id: 5, category: 'instagram', name: 'IG Comments (Custom)', price: 75000, desc: 'Komentar sesuai request.' },
+                { id: 6, category: 'instagram', name: 'IG Story Views', price: 5000, desc: 'Views story cepat masuk.' },
+                { id: 7, category: 'tiktok', name: 'TikTok Followers', price: 30000, desc: 'Followers bot high quality.' },
+                { id: 8, category: 'tiktok', name: 'TikTok Likes', price: 20000, desc: 'Likes cepat masuk.' },
+                { id: 9, category: 'tiktok', name: 'TikTok Views (FYP)', price: 1000, desc: 'Membantu video masuk FYP.' },
+                { id: 10, category: 'tiktok', name: 'TikTok Shares', price: 5000, desc: 'Share video ke wa/link.' },
+                { id: 11, category: 'shopee', name: 'Shopee Followers Toko', price: 50000, desc: 'Meningkatkan kredibilitas toko.' },
+                { id: 12, category: 'shopee', name: 'Shopee Likes Produk', price: 40000, desc: 'Likes pada produk jualan.' }
+            ];
 
-        function calcTotal() {
-            const serviceSelect = document.getElementById('inputService');
-            const qtyInput = document.getElementById('inputQuantity');
-            const discountMsg = document.getElementById('discountMsg');
-            const liveSales = document.getElementById('liveSales');
-            
-            if(serviceSelect.selectedIndex > 0) {
-                if(liveSales.style.display === 'none') {
-                    const randomOrders = Math.floor(Math.random() * (300 - 50 + 1)) + 50;
-                    liveSales.innerHTML = `🔥 Dipesan <span class="text-white fw-bold">${randomOrders}x</span> hari ini`;
-                    liveSales.style.display = 'block';
+            // --- STATE MANAGEMENT ---
+            let state = { activeDiscount: 0, selectedCategory: null, exitIntentShown: false };
+
+            // --- UTILITY FUNCTIONS ---
+            const Utils = {
+                formatRupiah: (num) => new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(num),
+                copyToClipboard: (text) => {
+                    navigator.clipboard.writeText(text).then(() => {
+                        Swal.fire({ icon: 'success', title: 'Berhasil!', text: 'Nomor tersalin: ' + text, timer: 1500, showConfirmButton: false, background: '#1e1e1e', color: '#fff', toast: true, position: 'top-end' });
+                    });
+                },
+                hidePreloader: () => {
+                    const p = document.getElementById('preloader');
+                    if(p) { p.style.opacity = 0; setTimeout(() => { p.style.display = 'none'; }, 500); }
                 }
-
-                if (qtyInput.value) {
-                    const selectedOption = serviceSelect.options[serviceSelect.selectedIndex];
-                    const pricePerK = selectedOption.getAttribute('data-price');
-                    const serviceName = selectedOption.value.toLowerCase();
-                    const qty = parseInt(qtyInput.value);
-                    let total = (pricePerK / 1000) * qty;
-
-                    // Logika Diskon Flash Sale (Auto)
-                    if(serviceName.includes("followers") && qty > 1000) {
-                        total = total * 0.9; 
-                        discountMsg.innerHTML = `<i class="bi bi-tags-fill"></i> Diskon Flash Sale 10% Diterapkan!`;
-                        discountMsg.style.display = 'block';
-                    } else {
-                        discountMsg.style.display = 'none';
-                    }
-
-                    // Logika Kode Promo (Manual - Overwrites/Stacks based on logic)
-                    // Disini kita tumpuk (Additional Discount)
-                    if(activeDiscount > 0) {
-                        total = total - (total * activeDiscount);
-                    }
-
-                    document.getElementById('displayTotal').value = formatRupiah(Math.ceil(total));
-                }
-            } else {
-                document.getElementById('displayTotal').value = 'Rp 0';
-            }
-        }
-
-        function submitOrder(e) {
-            e.preventDefault(); 
-            document.getElementById('loadingOverlay').style.display = 'flex';
-            const GFORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSesAKeDg2Uh1dQTELBuMghZrT31yJV6B1rpGQHrYnvRZsAE0w/formResponse'; 
-            const formMap = { service: 'entry.398242453', target: 'entry.1311683536', quantity: 'entry.1805710612', total: 'entry.2074942859', payment: 'entry.371390371', whatsapp: 'entry.1404986427' };
-            const data = {
-                service: document.getElementById('inputService').value,
-                target: document.getElementById('inputTarget').value,
-                quantity: document.getElementById('inputQuantity').value,
-                total: document.getElementById('displayTotal').value.replace(/\D/g, ''),
-                payment: document.getElementById('inputPayment').value,
-                whatsapp: document.getElementById('inputWhatsapp').value
             };
-            const formData = new FormData();
-            for (const key in data) formData.append(formMap[key], data[key]);
 
-            fetch(GFORM_URL, { method: 'POST', mode: 'no-cors', body: formData }).then(() => {
-                document.getElementById('loadingOverlay').style.display = 'none';
-                const adminWA = "6287879842395"; 
-                const textWA = `*Halo Admin Ridho Store!* 👋\nSaya sudah isi form order, ini detailnya:\n\n📦 *Layanan:* ${data.service}\n🎯 *Target:* ${data.target}\n🔢 *Jumlah:* ${data.quantity}\n💰 *Total:* Rp ${new Intl.NumberFormat('id-ID').format(data.total)}\n💳 *Bayar Via:* ${data.payment}\n📱 *No WA:* ${data.whatsapp}\n\nMohon diproses, bukti transfer saya lampirkan dibawah ini 👇`;
-                window.location.href = `https://wa.me/${adminWA}?text=${encodeURIComponent(textWA)}`;
-                document.getElementById('nativeOrderForm').reset();
-            }).catch(err => {
-                Swal.fire({ icon: 'error', title: 'Gagal', text: 'Gagal mengirim data.', background: '#1e1e1e', color: '#fff' });
-                document.getElementById('loadingOverlay').style.display = 'none';
-            });
-        }
-        
-        function searchServices() {
-            // Jika container hidden, otomatis buka saat search
-            document.getElementById('service-container').style.display = 'grid';
-            renderServices('all');
-        }
+            // --- UI CONTROLLER ---
+            const UI = {
+                initSwiper: () => {
+                    new Swiper(".mySwiper", { slidesPerView: 1.1, spaceBetween: 20, pagination: { el: ".swiper-pagination", clickable: true }, breakpoints: { 640: { slidesPerView: 2, spaceBetween: 20 }, 768: { slidesPerView: 3, spaceBetween: 30 } } });
+                },
+                loadParticles: () => {
+                    if(window.particlesJS) {
+                        particlesJS("particles-js", { "particles": { "number": { "value": 30 }, "color": { "value": "#ffffff" }, "opacity": { "value": 0.2 }, "size": { "value": 3 }, "line_linked": { "enable": true, "color": "#ffffff" }, "move": { "enable": true, "speed": 1.5 } } });
+                    }
+                },
+                renderServices: (filter = 'all') => {
+                    const container = document.getElementById('service-container');
+                    const searchInput = document.getElementById('serviceSearch');
+                    const searchText = searchInput ? searchInput.value.toLowerCase() : '';
+                    container.innerHTML = ''; 
+                    const filteredData = serviceDatabase.filter(item => {
+                        const matchCategory = filter === 'all' || item.category === filter;
+                        const matchSearch = item.name.toLowerCase().includes(searchText);
+                        return matchCategory && matchSearch;
+                    });
+                    filteredData.forEach(item => {
+                        const card = document.createElement('div');
+                        card.className = 'col animate__animated animate__fadeIn';
+                        card.innerHTML = `
+                            <div class="price-card h-100">
+                                <div>
+                                    <div class="price-header">
+                                        <span class="badge bg-secondary mb-2 text-uppercase" style="font-size:0.6rem;">${item.category}</span>
+                                        <div class="service-name d-flex align-items-center justify-content-between">
+                                            <span>${item.name}</span>
+                                            <i class="bi bi-info-circle-fill text-secondary" style="font-size:0.9rem; cursor:pointer;" onclick="RidhoStoreApp.showServiceInfo('${item.name}', '${item.desc}')"></i>
+                                        </div>
+                                        <span class="service-meta">Harga per 1.000 Pcs</span>
+                                    </div>
+                                    <span class="price-tag">${Utils.formatRupiah(item.price)}</span>
+                                </div>
+                                <a href="#order" class="add-cart-btn" onclick="RidhoStoreApp.preselectService('${item.category}', '${item.name}')">
+                                    <i class="bi bi-cart-plus me-1"></i> Order
+                                </a>
+                            </div>`;
+                        container.appendChild(card);
+                    });
+                }
+            };
 
-        function startFakeNotif() {
-            const names = ["Andi", "Budi", "Citra", "Dewi", "Eka", "Fajar"];
-            const items = ["1000 Followers IG", "500 Likes TikTok", "1000 Views Reels"];
-            const notif = document.getElementById('fakeNotif');
-            setInterval(() => {
-                notif.classList.remove('show');
-                setTimeout(() => {
-                    const randomName = names[Math.floor(Math.random() * names.length)];
-                    const randomItem = items[Math.floor(Math.random() * items.length)];
-                    document.getElementById('notifName').innerText = `${randomName}`;
-                    document.getElementById('notifAction').innerText = `Membeli ${randomItem}`;
-                    document.getElementById('notifImg').src = `https://ui-avatars.com/api/?name=${randomName}&background=random`;
-                    notif.classList.add('show');
-                }, 1000); 
-            }, 8000); 
-        }
+            // --- FEATURES MODULES ---
+            const Features = {
+                startCountdown: () => {
+                    let timeInSecs = 7200; 
+                    setInterval(() => {
+                        timeInSecs--;
+                        if(timeInSecs < 0) timeInSecs = 7200; 
+                        const h = Math.floor(timeInSecs / 3600).toString().padStart(2,'0');
+                        const m = Math.floor((timeInSecs % 3600) / 60).toString().padStart(2,'0');
+                        const s = Math.floor(timeInSecs % 60).toString().padStart(2,'0');
+                        const el = document.getElementById('countdownTimer');
+                        if(el) el.innerText = `${h}:${m}:${s}`;
+                    }, 1000);
+                },
+                startFakeNotif: () => {
+                    const names = ["Andi", "Budi", "Citra", "Dewi", "Eka", "Fajar"];
+                    const items = ["1000 Followers IG", "500 Likes TikTok", "1000 Views Reels"];
+                    const notif = document.getElementById('fakeNotif');
+                    setInterval(() => {
+                        notif.classList.remove('show');
+                        setTimeout(() => {
+                            const randomName = names[Math.floor(Math.random() * names.length)];
+                            const randomItem = items[Math.floor(Math.random() * items.length)];
+                            document.getElementById('notifName').innerText = `${randomName}`;
+                            document.getElementById('notifAction').innerText = `Membeli ${randomItem}`;
+                            document.getElementById('notifImg').src = `https://ui-avatars.com/api/?name=${randomName}&background=random`;
+                            notif.classList.add('show');
+                        }, 1000); 
+                    }, 8000); 
+                },
+                exitIntent: () => {
+                    document.addEventListener('mouseleave', e => {
+                        if (e.clientY < 0 && !state.exitIntentShown) {
+                            const modal = new bootstrap.Modal(document.getElementById('exitModal'));
+                            modal.show();
+                            state.exitIntentShown = true;
+                        }
+                    });
+                }
+            };
 
-        function startCountdown() {
-            let timeInSecs = 7200; 
-            setInterval(() => {
-                timeInSecs--;
-                if(timeInSecs < 0) timeInSecs = 7200; 
-                const h = Math.floor(timeInSecs / 3600).toString().padStart(2,'0');
-                const m = Math.floor((timeInSecs % 3600) / 60).toString().padStart(2,'0');
-                const s = Math.floor(timeInSecs % 60).toString().padStart(2,'0');
-                document.getElementById('countdownTimer').innerText = `${h}:${m}:${s}`;
-            }, 1000);
-        }
+            // --- ORDER & TRACKING LOGIC ---
+            const OrderSystem = {
+                selectCategory: (category, element) => {
+                    state.selectedCategory = category;
+                    document.querySelectorAll('.selector-item').forEach(el => { el.classList.remove('active'); el.querySelector('i').style.color = ''; });
+                    element.classList.add('active');
+                    const select = document.getElementById('inputService');
+                    select.innerHTML = `<option value="" selected disabled>-- Pilih Paket ${category.charAt(0).toUpperCase() + category.slice(1)} --</option>`;
+                    const filteredServices = serviceDatabase.filter(item => item.category === category);
+                    filteredServices.forEach(item => {
+                        const option = document.createElement('option');
+                        option.value = item.name; option.setAttribute('data-price', item.price);
+                        option.textContent = `${item.name} - ${Utils.formatRupiah(item.price)}/1k`;
+                        select.appendChild(option);
+                    });
+                    document.getElementById('inputServiceGroup').style.display = 'block';
+                    document.getElementById('inputQuantity').value = '';
+                    document.getElementById('displayTotal').value = 'Rp 0';
+                    document.getElementById('liveSales').style.display = 'none';
+                },
+                applyPromo: () => {
+                    const code = document.getElementById('inputPromo').value.toUpperCase().trim();
+                    const msg = document.getElementById('promoMessage');
+                    if (CONFIG.promoCodes[code]) {
+                        state.activeDiscount = CONFIG.promoCodes[code];
+                        msg.style.color = '#4ade80'; msg.innerHTML = `<i class="bi bi-check-circle-fill"></i> Kode berhasil! Diskon ${(state.activeDiscount*100)}% diterapkan.`;
+                        OrderSystem.calcTotal();
+                    } else {
+                        state.activeDiscount = 0;
+                        msg.style.color = '#ef4444'; msg.innerText = 'Kode tidak valid atau kadaluarsa.';
+                        OrderSystem.calcTotal();
+                    }
+                },
+                calcTotal: () => {
+                    const serviceSelect = document.getElementById('inputService');
+                    const qtyInput = document.getElementById('inputQuantity');
+                    const discountMsg = document.getElementById('discountMsg');
+                    const liveSales = document.getElementById('liveSales');
+                    if(serviceSelect.selectedIndex > 0) {
+                        if(liveSales.style.display === 'none') {
+                            const randomOrders = Math.floor(Math.random() * (300 - 50 + 1)) + 50;
+                            liveSales.innerHTML = `🔥 Dipesan <span class="text-white fw-bold">${randomOrders}x</span> hari ini`;
+                            liveSales.style.display = 'block';
+                        }
+                        if (qtyInput.value) {
+                            const selectedOption = serviceSelect.options[serviceSelect.selectedIndex];
+                            const pricePerK = selectedOption.getAttribute('data-price');
+                            const serviceName = selectedOption.value.toLowerCase();
+                            const qty = parseInt(qtyInput.value);
+                            let total = (pricePerK / 1000) * qty;
+                            if(serviceName.includes("followers") && qty > 1000) {
+                                total = total * 0.9; discountMsg.innerHTML = `<i class="bi bi-tags-fill"></i> Diskon Flash Sale 10% Diterapkan!`; discountMsg.style.display = 'block';
+                            } else { discountMsg.style.display = 'none'; }
+                            if(state.activeDiscount > 0) { total = total - (total * state.activeDiscount); }
+                            document.getElementById('displayTotal').value = Utils.formatRupiah(Math.ceil(total));
+                        }
+                    } else { document.getElementById('displayTotal').value = 'Rp 0'; }
+                },
 
-        // --- EXIT INTENT POPUP LOGIC ---
-        let exitIntentShown = false;
-        // Trigger saat mouse keluar window (Desktop)
-        document.addEventListener('mouseleave', e => {
-            if (e.clientY < 0 && !exitIntentShown) {
-                showExitModal();
-            }
-        });
+                submitOrder: (e) => {
+                    e.preventDefault(); 
+                    
+                    // Validasi Input (Security)
+                    const rawTarget = document.getElementById('inputTarget').value;
+                    const rawWhatsapp = document.getElementById('inputWhatsapp').value;
+                    
+                    if (!rawTarget || !rawWhatsapp) {
+                         Swal.fire({ icon: 'warning', title: 'Data Kurang', text: 'Mohon lengkapi semua data.', background: '#1e1e1e', color: '#fff' });
+                         return;
+                    }
 
-        function showExitModal() {
-            const modal = new bootstrap.Modal(document.getElementById('exitModal'));
-            modal.show();
-            exitIntentShown = true; // Biar ga muncul terus-terusan
-        }
+                    // Sanitasi & Validasi
+                    const cleanTarget = Security.sanitize(rawTarget);
+                    const cleanWhatsapp = Security.sanitize(rawWhatsapp);
 
-        function loadParticles() {
-            if(window.particlesJS) {
-                particlesJS("particles-js", { "particles": { "number": { "value": 30 }, "color": { "value": "#ffffff" }, "opacity": { "value": 0.2 }, "size": { "value": 3 }, "line_linked": { "enable": true, "color": "#ffffff" }, "move": { "enable": true, "speed": 1.5 } } });
-            }
-        }
+                    if (!Security.validatePhone(cleanWhatsapp)) {
+                        Swal.fire({ icon: 'error', title: 'Format Salah', text: 'Nomor WhatsApp hanya boleh berisi angka.', background: '#1e1e1e', color: '#fff' });
+                        return;
+                    }
 
-        function formatRupiah(num) {
-            return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(num);
-        }
-        
-        function copyToClipboard(text) {
+                    const paymentMethod = document.getElementById('inputPayment').value;
+                    const totalFormatted = document.getElementById('displayTotal').value;
+                    
+                    const formMap = { service: 'entry.398242453', target: 'entry.1311683536', quantity: 'entry.1805710612', total: 'entry.2074942859', payment: 'entry.371390371', whatsapp: 'entry.1404986427' };
+                    const data = {
+                        service: document.getElementById('inputService').value,
+                        target: cleanTarget,
+                        quantity: document.getElementById('inputQuantity').value,
+                        total: totalFormatted.replace(/\D/g, ''),
+                        payment: paymentMethod,
+                        whatsapp: cleanWhatsapp
+                    };
+
+                    if (paymentMethod === 'QRIS') {
+                        PaymentGateway.processQRIS(totalFormatted, data);
+                    } else {
+                        document.getElementById('loadingOverlay').style.display = 'flex';
+                        const formData = new FormData();
+                        for (const key in data) formData.append(formMap[key], data[key]);
+
+                        fetch(CONFIG.googleFormUrl, { method: 'POST', mode: 'no-cors', body: formData })
+                        .then(() => {
+                            document.getElementById('loadingOverlay').style.display = 'none';
+                            const textWA = `*Halo Admin Ridho Store!* 👋\nSaya sudah isi form order, ini detailnya:\n\n📦 *Layanan:* ${data.service}\n🎯 *Target:* ${data.target}\n🔢 *Jumlah:* ${data.quantity}\n💰 *Total:* Rp ${new Intl.NumberFormat('id-ID').format(data.total)}\n💳 *Bayar Via:* ${data.payment}\n📱 *No WA:* ${data.whatsapp}\n\nMohon diproses, bukti transfer saya lampirkan dibawah ini 👇`;
+                            window.location.href = `https://wa.me/${CONFIG.adminPhone}?text=${encodeURIComponent(textWA)}`;
+                            document.getElementById('nativeOrderForm').reset();
+                        })
+                        .catch(err => {
+                            Swal.fire({ icon: 'error', title: 'Gagal', text: 'Gagal mengirim data.', background: '#1e1e1e', color: '#fff' });
+                            document.getElementById('loadingOverlay').style.display = 'none';
+                        });
+                    }
+                },
+
+                checkOrderStatus: async () => {
+                    const rawInput = document.getElementById('trackingInput').value.trim();
+                    const input = Security.sanitize(rawInput); // Sanitasi Input
+                    
+                    const resultBox = document.getElementById('trackingResult');
+                    const badge = document.getElementById('statusBadge');
+                    const msg = document.getElementById('statusMsg');
+
+                    if(!input) { Swal.fire({ icon: 'warning', title: 'Oops...', text: 'Masukkan Username atau Link dulu ya!', background: '#1e1e1e', color: '#fff', confirmButtonColor: '#FFD700' }); return; }
+
+                    resultBox.style.display = 'block';
+                    badge.className = 'tracking-status-badge bg-secondary text-white';
+                    badge.innerText = 'MENCARI DATA...'; msg.innerText = 'Menghubungkan ke database...';
+
+                    try {
+                        const response = await fetch(CONFIG.googleSheetUrl);
+                        const data = await response.text();
+                        const rows = data.split('\n').map(row => row.split(','));
+                        let found = false; let statusOrder = "PENDING"; 
+
+                        for (let i = 1; i < rows.length; i++) {
+                            const columns = rows[i];
+                            if (columns[CONFIG.columnMap.target]) {
+                                const dbTarget = columns[CONFIG.columnMap.target].replace(/['"]+/g, '').trim();
+                                if (dbTarget.toLowerCase() === input.toLowerCase()) {
+                                    found = true;
+                                    if(columns[CONFIG.columnMap.status]) { statusOrder = columns[CONFIG.columnMap.status].replace(/['"]+/g, '').trim().toUpperCase(); }
+                                    break; 
+                                }
+                            }
+                        }
+
+                        if (found) {
+                            if (statusOrder.includes("SUKSES") || statusOrder.includes("COMPLETED")) {
+                                badge.className = 'tracking-status-badge bg-success text-white'; badge.innerText = 'SUKSES / COMPLETED'; msg.innerText = 'Orderan telah selesai dikirim! Terima kasih.';
+                            } else if (statusOrder.includes("PROSES") || statusOrder.includes("PROCESSING")) {
+                                badge.className = 'tracking-status-badge bg-warning text-dark'; badge.innerText = 'SEDANG DIPROSES'; msg.innerText = 'Orderan sedang dikerjakan server. Mohon ditunggu.';
+                            } else {
+                                badge.className = 'tracking-status-badge bg-info text-dark'; badge.innerText = statusOrder || 'PENDING'; msg.innerText = 'Pesanan sudah masuk antrian sistem.';
+                            }
+                        } else {
+                            badge.className = 'tracking-status-badge bg-dark text-secondary border border-secondary'; badge.innerText = 'DATA TIDAK DITEMUKAN'; msg.innerText = 'Cek kembali Username/Link. Pastikan sama persis saat order.';
+                        }
+                    } catch (error) {
+                        badge.className = 'tracking-status-badge bg-danger text-white'; badge.innerText = 'ERROR SYSTEM'; msg.innerText = 'Gagal terhubung ke server database.';
+                    }
+                }
+            };
+
+            // --- PUBLIC API ---
+            return {
+                init: () => {
+                    window.addEventListener('load', Utils.hidePreloader);
+                    setTimeout(Utils.hidePreloader, 3000); 
+                    
+                    // Disable Right Click (Basic Protection)
+                    document.addEventListener('contextmenu', event => event.preventDefault());
+
+                    UI.loadParticles(); UI.initSwiper(); UI.renderServices();
+                    Features.startFakeNotif(); Features.startCountdown(); Features.exitIntent();
+                },
+                selectCategory: OrderSystem.selectCategory,
+                calcTotal: OrderSystem.calcTotal,
+                submitOrder: OrderSystem.submitOrder,
+                checkOrderStatus: OrderSystem.checkOrderStatus,
+                applyPromo: OrderSystem.applyPromo,
+                searchServices: UI.renderServices,
+                selectCatalog: (e, cat, label) => {
+                    e.preventDefault();
+                    document.getElementById('catalogDropdownBtn').innerHTML = `<i class="bi bi-grid-fill me-2"></i> ${label}`;
+                    document.getElementById('service-container').style.display = 'grid';
+                    UI.renderServices(cat);
+                },
+                showServiceInfo: (name, desc) => {
+                    Swal.fire({
+                        title: name,
+                        html: `<div class="text-start small"><p class="mb-2">⚡ <strong>Deskripsi:</strong> ${desc}</p><p class="mb-2">📉 <strong>Drop Rate:</strong> Rendah (Low Drop)</p><p class="mb-0">👤 <strong>Tipe Akun:</strong> Campuran (Bot & Pasif)</p></div>`,
+                        icon: 'info', background: '#1e1e1e', color: '#fff', confirmButtonColor: '#FFD700', confirmButtonText: 'Oke, Paham'
+                    });
+                },
+                preselectService: (cat, name) => {
+                    document.getElementById('order').scrollIntoView({behavior: 'smooth'});
+                    const selectorMap = { 'instagram': 0, 'tiktok': 1, 'shopee': 2 };
+                    const selectors = document.querySelectorAll('.selector-item');
+                    if(selectors[selectorMap[cat]]) {
+                        selectors[selectorMap[cat]].click();
+                        setTimeout(() => {
+                            const select = document.getElementById('inputService');
+                            select.value = name;
+                            OrderSystem.calcTotal();
+                        }, 200);
+                    }
+                }
+            };
+        })();
+
+        document.addEventListener("DOMContentLoaded", RidhoStoreApp.init);
+
+        // Expose Globals
+        window.selectCategory = RidhoStoreApp.selectCategory;
+        window.calcTotal = RidhoStoreApp.calcTotal;
+        window.submitOrder = RidhoStoreApp.submitOrder;
+        window.checkOrderStatus = RidhoStoreApp.checkOrderStatus;
+        window.applyPromo = RidhoStoreApp.applyPromo;
+        window.searchServices = RidhoStoreApp.searchServices;
+        window.selectCatalog = RidhoStoreApp.selectCatalog;
+        window.copyToClipboard = (text) => {
             navigator.clipboard.writeText(text);
-            Swal.fire({ icon: 'success', title: 'Berhasil!', text: 'Nomor tersalin: ' + text, timer: 1500, showConfirmButton: false, background: '#1e1e1e', color: '#fff' });
-        }
+            Swal.fire({ icon: 'success', title: 'Berhasil!', text: 'Nomor tersalin: ' + text, timer: 1500, showConfirmButton: false, background: '#1e1e1e', color: '#fff', toast: true, position: 'top-end' });
+        };
     </script>
     
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
     <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -1579,7 +1439,7 @@
             
             <div class="mt-3">
                 <a href="#" class="text-secondary small text-decoration-none me-3" data-bs-toggle="modal" data-bs-target="#tosModal">Syarat & Ketentuan</a>
-                <a href="#" class="text-secondary small text-decoration-none" data-bs-toggle="modal" data-bs-target="#tosModal">Kebijakan Privasi</a>
+                <a href="#" class="text-secondary small text-decoration-none" data-bs-toggle="modal" data-bs-target="#privacyModal">Kebijakan Privasi</a>
             </div>
 
             <div class="d-flex justify-content-center gap-3 my-4">
@@ -1589,8 +1449,5 @@
             <small class="text-secondary d-block">&copy; 2026 Ridho Store. All rights reserved.</small>
         </div>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 </body>
 </html>
