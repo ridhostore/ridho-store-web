@@ -340,6 +340,70 @@
         .ig-label { display: block; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; color: #B0B0B0; margin-bottom: 2px; }
         .ig-main-text { font-weight: 700; font-size: 0.9rem; color: #FFF; }
 
+        /* --- VISUAL SELECTOR STYLES (NEW) --- */
+        .visual-selector {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .selector-item {
+            background: var(--bg-surface-3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 15px 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .selector-item:hover {
+            background: rgba(255, 215, 0, 0.1);
+            border-color: var(--gold-primary);
+        }
+
+        .selector-item.active {
+            background: var(--gold-gradient);
+            color: #000;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+            border: none;
+        }
+
+        .selector-item i {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .selector-item span {
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        #inputServiceGroup {
+            display: none; 
+            animation: fadeIn 0.5s;
+        }
+
+        /* --- ORDER TRACKING STYLES (NEW) --- */
+        .tracking-box {
+            background: var(--bg-surface-2);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .tracking-status-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
         /* =========================================
            4. RESPONSIVE BREAKPOINTS
            ========================================= */
@@ -491,6 +555,27 @@
                         <a href="#features" class="btn btn-custom btn-glass">
                             PELAJARI LEBIH
                         </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tracking" class="py-4">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8">
+                    <div class="tracking-box bg-glass animate__animated animate__fadeInUp">
+                        <h5 class="text-white mb-3"><i class="bi bi-search text-gold me-2"></i>Lacak Status Order</h5>
+                        <div class="input-group mb-3">
+                            <input type="text" id="trackingInput" class="form-control bg-dark border-secondary text-white" placeholder="Masukkan Username / Link">
+                            <button class="btn btn-gold" type="button" onclick="checkOrderStatus()">Cek Status</button>
+                        </div>
+                        <div id="trackingResult" style="display:none;">
+                            <span class="text-muted small">Status Pesanan:</span><br>
+                            <span class="tracking-status-badge bg-warning text-dark" id="statusBadge">PENDING</span>
+                            <p class="small text-secondary mt-2 mb-0" id="statusMsg">Sedang dalam antrian server...</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -775,10 +860,26 @@
 
                         <form id="nativeOrderForm" onsubmit="submitOrder(event)">
                             
-                            <div class="mb-3">
-                                <label class="text-gold small mb-2 text-uppercase fw-bold" style="font-size:0.7rem;">Pilih Layanan</label>
+                            <label class="text-gold small mb-2 text-uppercase fw-bold" style="font-size:0.7rem;">Pilih Kategori</label>
+                            <div class="visual-selector">
+                                <div class="selector-item" onclick="selectCategory('instagram', this)">
+                                    <i class="bi bi-instagram"></i>
+                                    <span>Instagram</span>
+                                </div>
+                                <div class="selector-item" onclick="selectCategory('tiktok', this)">
+                                    <i class="bi bi-tiktok"></i>
+                                    <span>TikTok</span>
+                                </div>
+                                <div class="selector-item" onclick="selectCategory('shopee', this)">
+                                    <i class="bi bi-bag-fill"></i>
+                                    <span>Shopee</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-3" id="inputServiceGroup">
+                                <label class="text-gold small mb-2 text-uppercase fw-bold" style="font-size:0.7rem;">Pilih Paket Layanan</label>
                                 <select class="form-select bg-dark text-white border-secondary small" id="inputService" required onchange="calcTotal()" style="font-size:0.9rem;">
-                                    <option value="" selected disabled>-- Pilih Paket --</option>
+                                    <option value="" selected disabled>-- Pilih Kategori Diatas Dulu --</option>
                                 </select>
                             </div>
 
@@ -795,6 +896,11 @@
                                 <div class="col-6 mb-3">
                                     <label class="text-secondary small mb-2 text-uppercase fw-bold" style="font-size:0.7rem;">Total Harga</label>
                                     <input type="text" class="form-control bg-black text-gold border-gold fw-bold p-2" id="displayTotal" value="Rp 0" readonly style="font-size:0.9rem;">
+                                    
+                                    <small id="liveSales" class="text-secondary small d-block mt-1 animate__animated animate__fadeIn" style="display:none; font-size: 0.65rem;">
+                                        🔥 Dipesan <span class="text-white fw-bold">145x</span> hari ini
+                                    </small>
+
                                     <small id="discountMsg" class="text-success fw-bold mt-1 d-block" style="display:none; font-size:0.7rem;"></small>
                                 </div>
                             </div>
@@ -858,18 +964,8 @@
             window.addEventListener('load', hidePreloader);
             setTimeout(hidePreloader, 3000); 
 
-            // Populate Service
-            const select = document.getElementById('inputService');
-            select.innerHTML = '<option value="" selected disabled>-- Pilih Paket --</option>';
+            // Populate Service (Default hidden/empty now handled by selector)
             
-            servicesData.forEach(item => {
-                const option = document.createElement('option');
-                option.value = `${item.name}`; 
-                option.setAttribute('data-price', item.price);
-                option.textContent = `${item.category.toUpperCase()} - ${item.name} (${formatRupiah(item.price)}/1k)`;
-                select.appendChild(option);
-            });
-
             renderServices('all');
             
             // Start Features
@@ -878,37 +974,174 @@
             loadParticles();
         });
 
-        // --- 2. HITUNG HARGA (Updated with 10% Discount logic) ---
+        // --- 2. NEW FEATURE LOGIC: VISUAL SELECTOR ---
+        function selectCategory(category, element) {
+            // Reset active style
+            document.querySelectorAll('.selector-item').forEach(el => {
+                el.classList.remove('active');
+                el.querySelector('i').style.color = ''; 
+            });
+
+            // Set active
+            element.classList.add('active');
+            
+            // Filter Dropdown
+            const select = document.getElementById('inputService');
+            select.innerHTML = '<option value="" selected disabled>-- Pilih Paket ' + category.charAt(0).toUpperCase() + category.slice(1) + ' --</option>';
+            
+            const filteredServices = servicesData.filter(item => item.category === category);
+            
+            filteredServices.forEach(item => {
+                const option = document.createElement('option');
+                option.value = `${item.name}`; 
+                option.setAttribute('data-price', item.price);
+                option.textContent = `${item.name} - ${formatRupiah(item.price)}/1k`;
+                select.appendChild(option);
+            });
+
+            // Show Dropdown
+            const group = document.getElementById('inputServiceGroup');
+            group.style.display = 'block';
+            
+            // Reset fields
+            document.getElementById('inputQuantity').value = '';
+            document.getElementById('displayTotal').value = 'Rp 0';
+            document.getElementById('liveSales').style.display = 'none';
+        }
+
+        // =========================================
+        // FITUR MONSTER: LACAK ORDER REAL-TIME
+        // =========================================
+        
+        // 1. LINK CSV GOOGLE SHEET ANDA:
+        const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSHy3Ly1WlQ72OBWvLmuNtsKqL6kkicUHkX2HzForygUKMV0jt6Ti7l3zH02fxqtR4jcpMfwH51qSdd/pub?gid=961326959&single=true&output=csv";
+
+        // 2. POSISI KOLOM (Hitungan mulai dari 0)
+        // Kolom Target/Link ada di urutan ke-3 (Index 2)
+        const COL_TARGET = 2; 
+        // Kolom Status ada di urutan ke-8 (Index 7)
+        const COL_STATUS = 7; 
+
+        async function checkOrderStatus() {
+            const input = document.getElementById('trackingInput').value.trim();
+            const resultBox = document.getElementById('trackingResult');
+            const badge = document.getElementById('statusBadge');
+            const msg = document.getElementById('statusMsg');
+
+            if(!input) { alert("Masukkan username atau link dulu!"); return; }
+
+            // Tampilan Loading
+            resultBox.style.display = 'block';
+            badge.className = 'tracking-status-badge bg-secondary text-white';
+            badge.innerText = 'MENCARI DATA...';
+            msg.innerText = 'Menghubungkan ke database...';
+
+            try {
+                const response = await fetch(SHEET_CSV_URL);
+                const data = await response.text();
+                
+                // Parse CSV menjadi Baris
+                const rows = data.split('\n').map(row => row.split(','));
+                
+                let found = false;
+                let statusOrder = "PENDING"; // Default jika status kosong
+
+                // Loop mencari data (Mulai i=1 untuk skip Header)
+                for (let i = 1; i < rows.length; i++) {
+                    const columns = rows[i];
+                    
+                    // Cek apakah kolom Target/Link ada isinya dan Index Valid
+                    if (columns[COL_TARGET]) {
+                        // Bersihkan tanda kutip (") jika ada dari CSV
+                        const dbTarget = columns[COL_TARGET].replace(/['"]+/g, '').trim();
+                        
+                        // Cek kecocokan (Case insensitive)
+                        if (dbTarget.toLowerCase() === input.toLowerCase()) {
+                            found = true;
+                            // Ambil status jika ada, bersihkan tanda kutip
+                            if(columns[COL_STATUS]) {
+                                statusOrder = columns[COL_STATUS].replace(/['"]+/g, '').trim().toUpperCase();
+                            }
+                            break; // Berhenti mencari jika sudah ketemu
+                        }
+                    }
+                }
+
+                if (found) {
+                    // Update UI Berdasarkan Status Real
+                    if (statusOrder.includes("SUKSES") || statusOrder.includes("COMPLETED")) {
+                        badge.className = 'tracking-status-badge bg-success text-white';
+                        badge.innerText = 'SUKSES / COMPLETED';
+                        msg.innerText = 'Orderan telah selesai dikirim! Terima kasih.';
+                    } else if (statusOrder.includes("PROSES") || statusOrder.includes("PROCESSING")) {
+                        badge.className = 'tracking-status-badge bg-warning text-dark';
+                        badge.innerText = 'SEDANG DIPROSES';
+                        msg.innerText = 'Orderan sedang dikerjakan server. Mohon ditunggu.';
+                    } else if (statusOrder.includes("GAGAL") || statusOrder.includes("CANCELED") || statusOrder.includes("PARTIAL")) {
+                        badge.className = 'tracking-status-badge bg-danger text-white';
+                        badge.innerText = statusOrder;
+                        msg.innerText = 'Ada kendala. Silakan hubungi Admin WhatsApp.';
+                    } else {
+                        badge.className = 'tracking-status-badge bg-info text-dark';
+                        badge.innerText = statusOrder || 'PENDING';
+                        msg.innerText = 'Pesanan sudah masuk antrian sistem.';
+                    }
+                } else {
+                    // Jika Username tidak ditemukan
+                    badge.className = 'tracking-status-badge bg-dark text-secondary border border-secondary';
+                    badge.innerText = 'DATA TIDAK DITEMUKAN';
+                    msg.innerText = 'Cek kembali Username/Link. Pastikan sama persis saat order.';
+                }
+
+            } catch (error) {
+                console.error("Gagal ambil data:", error);
+                badge.className = 'tracking-status-badge bg-danger text-white';
+                badge.innerText = 'ERROR SYSTEM';
+                msg.innerText = 'Gagal terhubung ke server database.';
+            }
+        }
+
+        // --- 4. HITUNG HARGA & LIVE SALES ---
         function calcTotal() {
             const serviceSelect = document.getElementById('inputService');
             const qtyInput = document.getElementById('inputQuantity');
             const discountMsg = document.getElementById('discountMsg');
+            const liveSales = document.getElementById('liveSales');
             
-            if(serviceSelect.selectedIndex > 0 && qtyInput.value) {
-                const selectedOption = serviceSelect.options[serviceSelect.selectedIndex];
-                const pricePerK = selectedOption.getAttribute('data-price');
-                const serviceName = selectedOption.value.toLowerCase();
-                const qty = parseInt(qtyInput.value);
-                
-                let total = (pricePerK / 1000) * qty;
-
-                // Logic Diskon: Jika layanan mengandung kata "Followers" dan jumlah > 1000
-                if(serviceName.includes("followers") && qty > 1000) {
-                    total = total * 0.9; // Potongan 10%
-                    discountMsg.innerHTML = `<i class="bi bi-tags-fill"></i> Diskon Flash Sale 10% Diterapkan!`;
-                    discountMsg.style.display = 'block';
-                } else {
-                    discountMsg.style.display = 'none';
+            if(serviceSelect.selectedIndex > 0) {
+                // Show Live Sales Gamification
+                if(liveSales.style.display === 'none') {
+                    const randomOrders = Math.floor(Math.random() * (300 - 50 + 1)) + 50;
+                    liveSales.innerHTML = `🔥 Dipesan <span class="text-white fw-bold">${randomOrders}x</span> hari ini`;
+                    liveSales.style.display = 'block';
                 }
 
-                document.getElementById('displayTotal').value = formatRupiah(Math.ceil(total));
+                if (qtyInput.value) {
+                    const selectedOption = serviceSelect.options[serviceSelect.selectedIndex];
+                    const pricePerK = selectedOption.getAttribute('data-price');
+                    const serviceName = selectedOption.value.toLowerCase();
+                    const qty = parseInt(qtyInput.value);
+                    
+                    let total = (pricePerK / 1000) * qty;
+
+                    if(serviceName.includes("followers") && qty > 1000) {
+                        total = total * 0.9; 
+                        discountMsg.innerHTML = `<i class="bi bi-tags-fill"></i> Diskon Flash Sale 10% Diterapkan!`;
+                        discountMsg.style.display = 'block';
+                    } else {
+                        discountMsg.style.display = 'none';
+                    }
+
+                    document.getElementById('displayTotal').value = formatRupiah(Math.ceil(total));
+                }
             } else {
                 document.getElementById('displayTotal').value = 'Rp 0';
                 discountMsg.style.display = 'none';
+                liveSales.style.display = 'none';
             }
         }
 
-        // --- 3. SUBMIT ORDER ---
+        // --- 5. SUBMIT ORDER ---
         function submitOrder(e) {
             e.preventDefault(); 
 
@@ -974,7 +1207,7 @@ Mohon diproses, bukti transfer saya lampirkan dibawah ini 👇
             });
         }
         
-        // --- 4. RENDER SERVICES & FEATURES ---
+        // --- 6. RENDER SERVICES & FEATURES ---
         function filterServices(category, btnElement) {
             if(btnElement) {
                 document.querySelectorAll('.platform-tab').forEach(el => el.classList.remove('active'));
