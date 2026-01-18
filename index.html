@@ -8,6 +8,38 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Ridho Store | Premium Digital Branding Solution</title>
     
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Store",
+      "name": "Ridho Store",
+      "image": "https://ui-avatars.com/api/?name=Ridho+Store&background=FFD700&color=000",
+      "description": "Jual Followers Instagram, TikTok Likes, Shopee, dan Layanan Sosmed Lainnya. Proses Instan & Aman.",
+      "telephone": "+6287879842395",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Surakarta",
+        "addressRegion": "Jawa Tengah",
+        "addressCountry": "ID"
+      },
+      "priceRange": "$",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      }
+    }
+    </script>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syncopate:wght@700&display=swap" rel="stylesheet">
@@ -43,7 +75,7 @@
             --brand-sp: #EE4D2D;
             --text-main: #F8F9FA;
             --text-secondary: #B0B3B8;
-            --text-muted: #6C757D;
+            --text-muted: #c2c8cd;
             --text-gold: #FFD700;
             --spacing-xs: 0.25rem;
             --spacing-sm: 0.5rem;
@@ -80,10 +112,8 @@
             width: 100%;
         }
 
-        /* Prevent iOS Zoom on Input Focus */
         input, select, textarea { font-size: 16px !important; }
 
-        /* PARTICLES CONTAINER */
         #particles-js {
             position: fixed;
             width: 100%;
@@ -113,18 +143,17 @@
         .text-high-contrast { color: #FFFFFF !important; }
         .bg-glass { background: rgba(20, 20, 20, 0.6); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur); border: var(--border-glass); }
         .z-index-fixed { z-index: 1000; }
-        .z-index-modal { z-index: 9999; }
 
         /* =========================================
            3. UI COMPONENTS
            ========================================= */
         
-        /* FLOATING WA BUTTON (Dinaikkan sedikit agar tidak menabrak chat Tawk.to jika ada) */
+        /* FLOATING WA BUTTON */
         .float-wa {
             position: fixed;
             width: 55px;
             height: 55px;
-            bottom: 150px; /* Dinaikkan */
+            bottom: 150px; 
             right: 20px;
             background-color: #25d366;
             color: #FFF;
@@ -271,11 +300,10 @@
         .mobile-nav-item i { font-size: 1.2rem; margin-bottom: 2px; }
         .mobile-nav-item.active, .mobile-nav-item:hover { color: var(--gold-primary); }
         
-        /* NEW: GLOWING ACTIVE ICON */
         .mobile-nav-item.active i {
             color: #FFD700;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.6); /* Efek Glowing */
-            transform: translateY(-3px); /* Naik sedikit */
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+            transform: translateY(-3px);
             transition: all 0.3s ease;
         }
 
@@ -290,14 +318,15 @@
         .trust-badge i { color: var(--gold-primary); }
 
         .pricing-controls { display: flex; justify-content: center; gap: 10px; margin-bottom: 2rem; flex-wrap: wrap; }
-        .platform-tab { background: var(--bg-surface-2); color: var(--text-secondary); border: 1px solid rgba(255, 255, 255, 0.1); padding: 8px 20px; border-radius: 30px; cursor: pointer; transition: var(--transition-fast); font-weight: 600; display: flex; align-items: center; gap: 8px; font-size: 0.9rem; white-space: nowrap; flex-shrink: 0; }
-        .platform-tab:hover { background: var(--bg-surface-3); color: #FFF; }
-        .platform-tab.active { background: #FFF; color: #000; border-color: #FFF; }
-        .platform-tab.active[data-target="instagram"] { background: var(--brand-ig); color: #FFF; border: none; }
-        .platform-tab.active[data-target="tiktok"] { background: var(--brand-tt); color: #000; border: none; }
-        .platform-tab.active[data-target="shopee"] { background: var(--brand-sp); color: #FFF; border: none; }
         
-        .service-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; }
+        /* LAYANAN GRID DEFAULT HIDDEN */
+        .service-grid { 
+            display: none; /* Awalnya sembunyi */
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+            gap: 15px; 
+            animation: fadeIn 0.5s;
+        }
+        
         .price-card { background: var(--bg-surface-2); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 20px; transition: var(--transition-smooth); display: flex; flex-direction: column; justify-content: space-between; }
         .price-card:hover { border-color: var(--gold-primary); transform: translateY(-5px); }
         .price-header { margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 15px; }
@@ -306,24 +335,18 @@
         .price-tag { font-size: 1.2rem; color: var(--gold-primary); font-weight: 700; margin-bottom: 15px; display: block; }
         .add-cart-btn { width: 100%; background: rgba(255,255,255,0.05); color: #FFF; border: 1px solid rgba(255,255,255,0.1); padding: 10px; border-radius: 8px; font-weight: 600; transition: 0.2s; font-size: 0.9rem; }
         .add-cart-btn:hover { background: #FFF; color: #000; }
-        .add-cart-btn.added { background: #28a745; border-color: #28a745; color: #FFF; }
-
+        
         .payment-card { background: var(--bg-surface-2); padding: 15px; border-radius: 12px; display: flex; align-items: center; justify-content: space-between; border: 1px solid rgba(255,255,255,0.05); margin-bottom: 10px; }
         .copy-btn { background: transparent; border: 1px solid var(--text-muted); color: var(--text-secondary); padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; transition: 0.2s; }
         .copy-btn:hover { border-color: #FFF; color: #FFF; }
 
         .swiper { width: 100%; padding-bottom: 40px; }
         
-        /* NEW: GLASSMORPHISM CARD & SLIDE */
         .swiper-slide, .card {
-            /* Background semi transparan */
             background: rgba(30, 30, 30, 0.4) !important; 
-            /* Efek Blur di belakang kaca */
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            /* Border tipis transparan */
             border: 1px solid rgba(255, 255, 255, 0.1) !important;
-            /* Bayangan lembut */
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
             border-radius: 20px; 
             padding: 25px; 
@@ -333,24 +356,90 @@
         .swiper-pagination-bullet { background: #FFF; opacity: 0.3; }
         .swiper-pagination-bullet-active { background: var(--gold-primary); opacity: 1; }
 
-        /* NEW: EMPHASIZE USER NAME */
         .swiper-slide h6 {
-            color: #FFD700 !important; /* Warna Emas */
+            color: #FFD700 !important;
             font-weight: 800;
             letter-spacing: 0.5px;
         }
 
-        .cta-instagram-wrapper { margin-top: 3rem; position: relative; z-index: 2; }
-        .btn-ig-official { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 12px 24px; background: rgba(20, 20, 20, 0.6); border-radius: 50px; color: #FFF; text-decoration: none; overflow: hidden; backdrop-filter: blur(10px); transition: all 0.4s; border: 1px solid rgba(255, 255, 255, 0.1); max-width: 100%; }
-        .btn-ig-official::before { content: ""; position: absolute; inset: 0; border-radius: 50px; padding: 2px; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0.6; transition: opacity 0.4s ease; mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); }
-        .ig-icon-box { width: 32px; height: 32px; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; color: white; box-shadow: 0 4px 10px rgba(220, 39, 67, 0.4); flex-shrink: 0; }
-        .btn-ig-official:hover { transform: translateY(-3px) scale(1.02); }
-        .btn-ig-official:hover::before { opacity: 1; }
-        .ig-text-group { text-align: left; line-height: 1.2; }
-        .ig-label { display: block; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; color: #B0B0B0; margin-bottom: 2px; }
-        .ig-main-text { font-weight: 700; font-size: 0.9rem; color: #FFF; }
+        /* --- IG BUTTON PREMIUM STYLE --- */
+        .cta-instagram-wrapper { 
+            margin-top: 3rem; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            gap: 15px;
+        }
 
-        /* --- VISUAL SELECTOR STYLES (NEW) --- */
+        .btn-ig-premium {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 50px;
+            padding: 10px 25px 10px 10px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+            max-width: 90%;
+        }
+
+        .btn-ig-premium::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border-radius: 50px;
+            padding: 1.5px;
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        .ig-premium-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #fff;
+            margin-right: 15px;
+            box-shadow: 0 0 15px rgba(220, 39, 67, 0.4);
+        }
+
+        .ig-premium-text {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            line-height: 1.2;
+        }
+
+        .ig-premium-subtitle {
+            font-size: 0.7rem;
+            color: #bbb;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .ig-premium-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .btn-ig-premium:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(220, 39, 67, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* --- VISUAL SELECTOR STYLES --- */
         .visual-selector {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -396,7 +485,64 @@
             animation: fadeIn 0.5s;
         }
 
-        /* --- ORDER TRACKING STYLES (NEW) --- */
+        /* --- DROPDOWN CUSTOM STYLE (BLACK BG) --- */
+        .dropdown-menu-dark-custom {
+            background-color: #000000 !important;
+            border: 1px solid rgba(255,255,255,0.15) !important;
+        }
+        .dropdown-menu-dark-custom .dropdown-item {
+            color: #ffffff !important;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .dropdown-menu-dark-custom .dropdown-item:last-child {
+            border-bottom: none;
+        }
+        .dropdown-menu-dark-custom .dropdown-item:hover {
+            background-color: #1a1a1a !important;
+            color: var(--gold-primary) !important;
+        }
+
+        /* --- HOW TO ORDER STEPS --- */
+        .step-card {
+            background: var(--bg-surface-2);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 20px;
+            border-radius: 16px;
+            text-align: center;
+            height: 100%;
+            position: relative;
+            transition: 0.3s;
+        }
+        .step-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold-primary);
+        }
+        .step-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.4);
+            position: absolute;
+            top: 0;
+            right: 15px;
+            line-height: 1;
+        }
+        .step-icon {
+            font-size: 2rem;
+            color: var(--gold-primary);
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        .step-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+        .step-card p {
+            font-size: 0.8rem;
+            margin-bottom: 0;
+            color: var(--text-secondary);
+        }
+
+        /* --- ORDER TRACKING STYLES --- */
         .tracking-box {
             background: var(--bg-surface-2);
             border: 1px solid rgba(255,255,255,0.1);
@@ -426,29 +572,13 @@
         }
         
         @media (max-width: 768px) {
-            body { padding-bottom: 70px; } /* Prevent footer hidden by mobile nav */
+            body { padding-bottom: 70px; } 
             .mobile-nav { display: flex; }
             h1 { font-size: 2.2rem; }
             .container { padding-left: 20px; padding-right: 20px; }
             
-            /* Fix Pricing Tabs Horizontal Scroll */
-            .pricing-controls { 
-                justify-content: flex-start; 
-                overflow-x: auto; 
-                padding-bottom: 10px; 
-                white-space: nowrap; 
-                -webkit-overflow-scrolling: touch; 
-                padding-left: 5px;
-                scrollbar-width: none; /* Firefox */
-            }
-            .pricing-controls::-webkit-scrollbar { display: none; } /* Chrome/Safari */
-            
-            .cart-overlay { display: none !important; }
-            
-            /* Adjust padding for mobile neatness */
             section { padding-top: 3rem !important; padding-bottom: 3rem !important; }
             
-            /* UPDATED: FIXED BANNER OVERLAP & HERO SPACING */
             .flash-sale-banner {
                 margin-top: 75px; 
             }
@@ -460,7 +590,6 @@
             
             .fake-notification { bottom: 80px; left: 15px; right: 15px; width: auto; max-width: none; }
             
-            /* FIX POSISI TOMBOL WA AGAR TIDAK KETUTUPAN CHAT */
             .float-wa { bottom: 160px; right: 15px; width: 50px; height: 50px; font-size: 24px; }
         }
     </style>
@@ -500,7 +629,7 @@
             <div class="collapse navbar-collapse" id="navContent">
                 <ul class="navbar-nav ms-auto nav-links align-items-center">
                     <li class="nav-item"><a class="nav-link active" href="#hero">Beranda</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#features">Keunggulan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#how-to-order">Cara Order</a></li>
                     <li class="nav-item"><a class="nav-link" href="#testimonials">Testimoni</a></li>
                     <li class="nav-item"><a class="nav-link" href="#pricing">Harga</a></li>
                     <li class="nav-item ms-3">
@@ -520,12 +649,9 @@
             <i class="bi bi-tags-fill"></i>
             <span>Harga</span>
         </a>
-        <a href="#" class="mobile-nav-item" onclick="openCart()">
-            <div style="position:relative;">
-                <i class="bi bi-calculator-fill"></i>
-                <div class="cart-count" id="mobile-cart-count" style="top:-8px; right:-8px; width:16px; height:16px; font-size:9px; display:none;">0</div>
-            </div>
-            <span>Hitung</span>
+        <a href="#faq" class="mobile-nav-item">
+            <i class="bi bi-question-circle-fill"></i>
+            <span>Tanya Jawab</span>
         </a>
         <a href="#order" class="mobile-nav-item">
             <i class="bi bi-bag-check-fill"></i>
@@ -548,7 +674,7 @@
                     <div class="trust-badge-container animate__animated animate__fadeInDown">
                         <div class="trust-badge"><i class="bi bi-shield-fill-check"></i> 100% Aman</div>
                         <div class="trust-badge"><i class="bi bi-lightning-fill"></i> Proses Kilat</div>
-                        <div class="trust-badge"><i class="bi bi-star-fill"></i> 4.9/5 Rating</div>
+                        <div class="trust-badge"><i class="bi bi-star-fill"></i> Trusted & Amanah</div>
                     </div>
                     
                     <h1 class="mb-4 animate__animated animate__fadeInUp">
@@ -573,21 +699,45 @@
         </div>
     </section>
 
-    <section id="tracking" class="py-4">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6 col-md-8">
-                    <div class="tracking-box bg-glass animate__animated animate__fadeInUp">
-                        <h5 class="text-white mb-3"><i class="bi bi-search text-gold me-2"></i>Lacak Status Order</h5>
-                        <div class="input-group mb-3">
-                            <input type="text" id="trackingInput" class="form-control bg-dark border-secondary text-white" placeholder="Masukkan Username / Link">
-                            <button class="btn btn-gold" type="button" onclick="checkOrderStatus()">Cek Status</button>
-                        </div>
-                        <div id="trackingResult" style="display:none;">
-                            <span class="text-muted small">Status Pesanan:</span><br>
-                            <span class="tracking-status-badge bg-warning text-dark" id="statusBadge">PENDING</span>
-                            <p class="small text-secondary mt-2 mb-0" id="statusMsg">Sedang dalam antrian server...</p>
-                        </div>
+    <section id="how-to-order" class="py-5">
+        <div class="container py-5">
+            <div class="section-header">
+                <span class="section-label">GAK PAKE RIBET</span>
+                <h2>Alur Pembelian</h2>
+                <p>Cukup 4 langkah mudah untuk menaikkan branding sosial media Anda.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-6 col-md-3">
+                    <div class="step-card">
+                        <div class="step-number">01</div>
+                        <i class="bi bi-grid-fill step-icon"></i>
+                        <h4>Pilih Paket</h4>
+                        <p>Cek katalog, pilih layanan yang Anda butuhkan.</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="step-card">
+                        <div class="step-number">02</div>
+                        <i class="bi bi-pencil-square step-icon"></i>
+                        <h4>Isi Data</h4>
+                        <p>Masukkan Username/Link target & jumlah order.</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="step-card">
+                        <div class="step-number">03</div>
+                        <i class="bi bi-wallet2 step-icon"></i>
+                        <h4>Pembayaran</h4>
+                        <p>Bayar via QRIS/E-Wallet sesuai total harga.</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="step-card">
+                        <div class="step-number">04</div>
+                        <i class="bi bi-whatsapp step-icon"></i>
+                        <h4>Konfirmasi</h4>
+                        <p>Klik tombol order & kirim bukti transfer di WA.</p>
                     </div>
                 </div>
             </div>
@@ -687,31 +837,45 @@
                 <div class="swiper-pagination mt-4"></div>
             </div>
 
-            <div class="container mt-5">
-                <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+            <div class="cta-instagram-wrapper animate__animated animate__fadeInUp animate__delay-2s">
                 
-                <div class="elfsight-app-WIDGET-ID-ANDA" data-elfsight-app-lazy></div> 
-            </div>
-
-            <div class="cta-instagram-wrapper text-center animate__animated animate__fadeInUp animate__delay-2s">
-                <a href="https://instagram.com/ridho.store17" target="_blank" class="btn-ig-official">
-                    <div class="ig-icon-box">
+                <a href="https://instagram.com/ridho.store17" target="_blank" class="btn-ig-premium">
+                    <div class="ig-premium-icon">
                         <i class="bi bi-instagram"></i>
                     </div>
-                    
-                    <div class="ig-text-group">
-                        <span class="ig-label">Masih Ragu?</span>
-                        <span class="ig-main-text">Cek 1.000+ Testimoni di IG</span>
+                    <div class="ig-premium-text">
+                        <span class="ig-premium-subtitle">Masih Ragu?</span>
+                        <span class="ig-premium-title">Cek 1.000+ Testimoni di IG</span>
                     </div>
-        
-                    <i class="bi bi-arrow-right text-white opacity-50 ms-2"></i>
+                    <i class="bi bi-chevron-right ms-3 text-white opacity-50"></i>
                 </a>
-                
-                <p class="mt-3 text-muted small" style="font-size: 0.7rem;">
+
+                <p class="text-secondary small mb-0" style="font-size: 0.7rem; opacity: 0.7;">
                     <i class="bi bi-info-circle me-1"></i> Klik untuk melihat Highlight "Testimoni"
                 </p>
             </div>
 
+        </div>
+    </section>
+
+    <section id="tracking" class="py-4">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8">
+                    <div class="tracking-box bg-glass animate__animated animate__fadeInUp">
+                        <h5 class="text-white mb-3"><i class="bi bi-search text-gold me-2"></i>Lacak Status Order</h5>
+                        <div class="input-group mb-3">
+                            <input type="text" id="trackingInput" class="form-control bg-dark border-secondary text-white" placeholder="Masukkan Username / Link">
+                            <button class="btn btn-gold" type="button" onclick="checkOrderStatus()">Cek Status</button>
+                        </div>
+                        <div id="trackingResult" style="display:none;">
+                            <span class="text-muted small">Status Pesanan:</span><br>
+                            <span class="tracking-status-badge bg-warning text-dark" id="statusBadge">PENDING</span>
+                            <p class="small text-secondary mt-2 mb-0" id="statusMsg">Sedang dalam antrian server...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -720,7 +884,7 @@
             <div class="section-header">
                 <span class="section-label">KATALOG LENGKAP</span>
                 <h2>Pilih Layanan</h2>
-                <p>Gunakan filter di bawah untuk menemukan layanan.</p>
+                <p>Silakan pilih kategori di bawah untuk melihat daftar harga.</p>
             </div>
 
             <div class="search-container animate__animated animate__fadeIn">
@@ -728,23 +892,20 @@
                 <input type="text" id="serviceSearch" class="search-input" placeholder="Cari layanan (Contoh: Followers)..." onkeyup="searchServices()">
             </div>
 
-            <div class="pricing-controls">
-                <div class="platform-tab active" data-target="all" onclick="filterServices('all', this)">
-                    <i class="bi bi-grid-fill"></i> Semua
-                </div>
-                <div class="platform-tab" data-target="instagram" onclick="filterServices('instagram', this)">
-                    <i class="bi bi-instagram"></i> Instagram
-                </div>
-                <div class="platform-tab" data-target="tiktok" onclick="filterServices('tiktok', this)">
-                    <i class="bi bi-tiktok"></i> TikTok
-                </div>
-                <div class="platform-tab" data-target="shopee" onclick="filterServices('shopee', this)">
-                    <i class="bi bi-bag-fill"></i> Shopee
-                </div>
+            <div class="dropdown d-grid gap-2 col-lg-6 mx-auto mb-4">
+                <button class="btn btn-gold dropdown-toggle py-3 fw-bold rounded-pill shadow-glow" type="button" id="catalogDropdownBtn" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-grid-fill me-2"></i> PILIH KATEGORI LAYANAN
+                </button>
+                <ul class="dropdown-menu w-100 dropdown-menu-dark-custom shadow-glow" aria-labelledby="catalogDropdownBtn">
+                    <li><a class="dropdown-item py-3" href="javascript:void(0)" onclick="selectCatalog(event, 'all', 'Semua Layanan')">Semua Layanan</a></li>
+                    <li><a class="dropdown-item py-3" href="javascript:void(0)" onclick="selectCatalog(event, 'instagram', 'Layanan Instagram')"><i class="bi bi-instagram me-2 text-danger"></i> Instagram</a></li>
+                    <li><a class="dropdown-item py-3" href="javascript:void(0)" onclick="selectCatalog(event, 'tiktok', 'Layanan TikTok')"><i class="bi bi-tiktok me-2 text-white"></i> TikTok</a></li>
+                    <li><a class="dropdown-item py-3" href="javascript:void(0)" onclick="selectCatalog(event, 'shopee', 'Layanan Shopee')"><i class="bi bi-bag-fill me-2 text-warning"></i> Shopee</a></li>
+                </ul>
             </div>
 
             <div id="service-container" class="service-grid">
-            </div>
+                </div>
         </div>
     </section>
 
@@ -847,11 +1008,10 @@
                      <div class="p-4 rounded-4" style="background: linear-gradient(135deg, #1a1a1a, #000); border: 1px solid #333;">
                         <h5 class="text-white mb-3 h6"><i class="bi bi-info-circle text-gold me-2"></i>Cara Pemesanan</h5>
                         <ol class="text-secondary ps-3 mb-0" style="font-size: 0.85rem;">
-                            <li class="mb-2">Pilih layanan di menu "Daftar Harga".</li>
-                            <li class="mb-2">Gunakan fitur "Hitung" untuk estimasi biaya.</li>
-                            <li class="mb-2">Lakukan pembayaran ke metode yang tersedia.</li>
-                            <li class="mb-2">Isi formulir order di bawah ini.</li>
-                            <li class="mb-2">Upload bukti transfer dan tunggu proses selesai.</li>
+                            <li class="mb-2">Pilih kategori layanan di atas.</li>
+                            <li class="mb-2">Isi username/link & jumlah order.</li>
+                            <li class="mb-2">Pilih metode pembayaran (QRIS/E-Wallet).</li>
+                            <li class="mb-2">Klik Order & kirim bukti transfer di WhatsApp.</li>
                         </ol>
                      </div>
                 </div>
@@ -912,6 +1072,16 @@
                                     <input type="number" class="form-control bg-dark text-white border-secondary p-2" id="inputQuantity" placeholder="Min: 100" min="100" required oninput="calcTotal()" style="font-size:0.9rem;">
                                 </div>
                                 <div class="col-6 mb-3">
+                                    
+                                    <div class="mb-2">
+                                        <label class="text-secondary small mb-1 text-uppercase fw-bold" style="font-size:0.6rem;">Kode Promo</label>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control bg-dark text-white border-secondary" id="inputPromo" placeholder="Punya kode?" style="font-size:0.8rem;">
+                                            <button class="btn btn-outline-warning text-gold" type="button" onclick="applyPromo()">Pakai</button>
+                                        </div>
+                                        <small id="promoMessage" class="d-block mt-1" style="font-size: 0.65rem;"></small>
+                                    </div>
+
                                     <label class="text-secondary small mb-2 text-uppercase fw-bold" style="font-size:0.7rem;">Total Harga</label>
                                     <input type="text" class="form-control bg-black text-gold border-gold fw-bold p-2" id="displayTotal" value="Rp 0" readonly style="font-size:0.9rem;">
                                     
@@ -954,6 +1124,44 @@
         </div>
     </section>
 
+    <div class="modal fade" id="exitModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-surface-2 border border-warning">
+          <div class="modal-body text-center p-4">
+            <h3 class="text-gold fw-bold mb-2">Tunggu Dulu! ✋</h3>
+            <p class="text-white small">Jangan lewatkan kesempatan menaikkan brandingmu hari ini.</p>
+            <div class="p-3 bg-black rounded-3 border border-secondary border-opacity-25 mb-3">
+                <span class="text-muted small d-block mb-1">Gunakan Kode Voucher:</span>
+                <h2 class="text-white letter-spacing-2 m-0 border-bottom border-warning d-inline-block border-2">RIDHO10</h2>
+                <span class="text-success small d-block mt-1">Diskon 10% All Item</span>
+            </div>
+            <button type="button" class="btn btn-gold w-100 fw-bold" data-bs-dismiss="modal">Ambil Diskon Sekarang</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="tosModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content bg-surface-2 text-secondary border-glass">
+          <div class="modal-header border-bottom border-secondary border-opacity-25">
+            <h5 class="modal-title text-white">Syarat & Ketentuan</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body small">
+            <h6 class="text-gold">1. Umum</h6>
+            <p>Dengan memesan di Ridho Store, Anda dianggap telah membaca dan menyetujui ketentuan ini.</p>
+            <h6 class="text-gold">2. Layanan</h6>
+            <p>Kami hanya menjamin proses pengiriman followers/likes. Kami tidak menjamin interaksi (likes/komen) dari followers pasif.</p>
+            <h6 class="text-gold">3. Garansi (Refill)</h6>
+            <p>Garansi hanya berlaku untuk layanan bertanda "Refill". Komplain drop hanya diterima jika followers turun di bawah jumlah awal + jumlah order.</p>
+            <h6 class="text-gold">4. Pengembalian Dana</h6>
+            <p>Tidak ada refund jika kesalahan input username dari pembeli, atau jika akun di-private saat proses.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script>
         // =========================================
         // 1. DATA CENTER
@@ -970,8 +1178,6 @@
             { id: 9, category: 'shopee', name: 'Shopee Likes Produk', price: 40000 }
         ];
 
-        let cart = []; // Required for compatibility
-
         // --- 1. DATA LAYANAN ---
         document.addEventListener("DOMContentLoaded", function() {
             // Anti Stuck Preloader
@@ -982,274 +1188,61 @@
             window.addEventListener('load', hidePreloader);
             setTimeout(hidePreloader, 3000); 
 
-            // Populate Service (Default hidden/empty now handled by selector)
-            
-            renderServices('all');
-            
             // Start Features
             startFakeNotif();
             startCountdown();
             loadParticles();
+
+            // INIT SWIPER UNTUK TESTIMONI
+            var swiper = new Swiper(".mySwiper", {
+                slidesPerView: 1.1,
+                spaceBetween: 20,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                breakpoints: {
+                    640: { slidesPerView: 2, spaceBetween: 20 },
+                    768: { slidesPerView: 3, spaceBetween: 30 },
+                },
+            });
         });
 
-        // --- 2. NEW FEATURE LOGIC: VISUAL SELECTOR ---
-        function selectCategory(category, element) {
-            // Reset active style
-            document.querySelectorAll('.selector-item').forEach(el => {
-                el.classList.remove('active');
-                el.querySelector('i').style.color = ''; 
-            });
+        // --- 2. LOGIC CATALOG DROPDOWN (NEW) ---
+        // Fungsi ini mengontrol tampilan grid harga agar tersembunyi/muncul
+        function selectCatalog(event, category, labelText) {
+            // MENCEGAH SCROLL JUMP KE ATAS
+            event.preventDefault(); 
 
-            // Set active
-            element.classList.add('active');
+            // Update Label Tombol
+            const btn = document.getElementById('catalogDropdownBtn');
+            btn.innerHTML = `<i class="bi bi-grid-fill me-2"></i> ${labelText}`;
             
-            // Filter Dropdown
-            const select = document.getElementById('inputService');
-            select.innerHTML = '<option value="" selected disabled>-- Pilih Paket ' + category.charAt(0).toUpperCase() + category.slice(1) + ' --</option>';
+            // Tampilkan Grid yang tadinya hidden
+            const container = document.getElementById('service-container');
+            container.style.display = 'grid'; // Munculkan Grid
             
-            const filteredServices = servicesData.filter(item => item.category === category);
-            
-            filteredServices.forEach(item => {
-                const option = document.createElement('option');
-                option.value = `${item.name}`; 
-                option.setAttribute('data-price', item.price);
-                option.textContent = `${item.name} - ${formatRupiah(item.price)}/1k`;
-                select.appendChild(option);
-            });
-
-            // Show Dropdown
-            const group = document.getElementById('inputServiceGroup');
-            group.style.display = 'block';
-            
-            // Reset fields
-            document.getElementById('inputQuantity').value = '';
-            document.getElementById('displayTotal').value = 'Rp 0';
-            document.getElementById('liveSales').style.display = 'none';
-        }
-
-        // =========================================
-        // FITUR MONSTER: LACAK ORDER REAL-TIME
-        // =========================================
-        
-        // 1. LINK CSV GOOGLE SHEET ANDA:
-        const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSHy3Ly1WlQ72OBWvLmuNtsKqL6kkicUHkX2HzForygUKMV0jt6Ti7l3zH02fxqtR4jcpMfwH51qSdd/pub?gid=961326959&single=true&output=csv";
-
-        // 2. POSISI KOLOM (Hitungan mulai dari 0)
-        // Kolom Target/Link ada di urutan ke-3 (Index 2)
-        const COL_TARGET = 2; 
-        // Kolom Status ada di urutan ke-8 (Index 7)
-        const COL_STATUS = 7; 
-
-        async function checkOrderStatus() {
-            const input = document.getElementById('trackingInput').value.trim();
-            const resultBox = document.getElementById('trackingResult');
-            const badge = document.getElementById('statusBadge');
-            const msg = document.getElementById('statusMsg');
-
-            if(!input) { 
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Oops...',
-                    text: 'Masukkan Username atau Link dulu ya!',
-                    background: '#1e1e1e',
-                    color: '#fff',
-                    confirmButtonColor: '#FFD700'
-                });
-                return; 
-            }
-
-            // Tampilan Loading
-            resultBox.style.display = 'block';
-            badge.className = 'tracking-status-badge bg-secondary text-white';
-            badge.innerText = 'MENCARI DATA...';
-            msg.innerText = 'Menghubungkan ke database...';
-
-            try {
-                const response = await fetch(SHEET_CSV_URL);
-                const data = await response.text();
-                
-                // Parse CSV menjadi Baris
-                const rows = data.split('\n').map(row => row.split(','));
-                
-                let found = false;
-                let statusOrder = "PENDING"; // Default jika status kosong
-
-                // Loop mencari data (Mulai i=1 untuk skip Header)
-                for (let i = 1; i < rows.length; i++) {
-                    const columns = rows[i];
-                    
-                    // Cek apakah kolom Target/Link ada isinya dan Index Valid
-                    if (columns[COL_TARGET]) {
-                        // Bersihkan tanda kutip (") jika ada dari CSV
-                        const dbTarget = columns[COL_TARGET].replace(/['"]+/g, '').trim();
-                        
-                        // Cek kecocokan (Case insensitive)
-                        if (dbTarget.toLowerCase() === input.toLowerCase()) {
-                            found = true;
-                            // Ambil status jika ada, bersihkan tanda kutip
-                            if(columns[COL_STATUS]) {
-                                statusOrder = columns[COL_STATUS].replace(/['"]+/g, '').trim().toUpperCase();
-                            }
-                            break; // Berhenti mencari jika sudah ketemu
-                        }
-                    }
-                }
-
-                if (found) {
-                    // Update UI Berdasarkan Status Real
-                    if (statusOrder.includes("SUKSES") || statusOrder.includes("COMPLETED")) {
-                        badge.className = 'tracking-status-badge bg-success text-white';
-                        badge.innerText = 'SUKSES / COMPLETED';
-                        msg.innerText = 'Orderan telah selesai dikirim! Terima kasih.';
-                    } else if (statusOrder.includes("PROSES") || statusOrder.includes("PROCESSING")) {
-                        badge.className = 'tracking-status-badge bg-warning text-dark';
-                        badge.innerText = 'SEDANG DIPROSES';
-                        msg.innerText = 'Orderan sedang dikerjakan server. Mohon ditunggu.';
-                    } else if (statusOrder.includes("GAGAL") || statusOrder.includes("CANCELED") || statusOrder.includes("PARTIAL")) {
-                        badge.className = 'tracking-status-badge bg-danger text-white';
-                        badge.innerText = statusOrder;
-                        msg.innerText = 'Ada kendala. Silakan hubungi Admin WhatsApp.';
-                    } else {
-                        badge.className = 'tracking-status-badge bg-info text-dark';
-                        badge.innerText = statusOrder || 'PENDING';
-                        msg.innerText = 'Pesanan sudah masuk antrian sistem.';
-                    }
-                } else {
-                    // Jika Username tidak ditemukan
-                    badge.className = 'tracking-status-badge bg-dark text-secondary border border-secondary';
-                    badge.innerText = 'DATA TIDAK DITEMUKAN';
-                    msg.innerText = 'Cek kembali Username/Link. Pastikan sama persis saat order.';
-                }
-
-            } catch (error) {
-                console.error("Gagal ambil data:", error);
-                badge.className = 'tracking-status-badge bg-danger text-white';
-                badge.innerText = 'ERROR SYSTEM';
-                msg.innerText = 'Gagal terhubung ke server database.';
-            }
-        }
-
-        // --- 4. HITUNG HARGA & LIVE SALES ---
-        function calcTotal() {
-            const serviceSelect = document.getElementById('inputService');
-            const qtyInput = document.getElementById('inputQuantity');
-            const discountMsg = document.getElementById('discountMsg');
-            const liveSales = document.getElementById('liveSales');
-            
-            if(serviceSelect.selectedIndex > 0) {
-                // Show Live Sales Gamification
-                if(liveSales.style.display === 'none') {
-                    const randomOrders = Math.floor(Math.random() * (300 - 50 + 1)) + 50;
-                    liveSales.innerHTML = `🔥 Dipesan <span class="text-white fw-bold">${randomOrders}x</span> hari ini`;
-                    liveSales.style.display = 'block';
-                }
-
-                if (qtyInput.value) {
-                    const selectedOption = serviceSelect.options[serviceSelect.selectedIndex];
-                    const pricePerK = selectedOption.getAttribute('data-price');
-                    const serviceName = selectedOption.value.toLowerCase();
-                    const qty = parseInt(qtyInput.value);
-                    
-                    let total = (pricePerK / 1000) * qty;
-
-                    if(serviceName.includes("followers") && qty > 1000) {
-                        total = total * 0.9; 
-                        discountMsg.innerHTML = `<i class="bi bi-tags-fill"></i> Diskon Flash Sale 10% Diterapkan!`;
-                        discountMsg.style.display = 'block';
-                    } else {
-                        discountMsg.style.display = 'none';
-                    }
-
-                    document.getElementById('displayTotal').value = formatRupiah(Math.ceil(total));
-                }
-            } else {
-                document.getElementById('displayTotal').value = 'Rp 0';
-                discountMsg.style.display = 'none';
-                liveSales.style.display = 'none';
-            }
-        }
-
-        // --- 5. SUBMIT ORDER ---
-        function submitOrder(e) {
-            e.preventDefault(); 
-
-            document.getElementById('loadingOverlay').style.display = 'flex';
-
-            const GFORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSesAKeDg2Uh1dQTELBuMghZrT31yJV6B1rpGQHrYnvRZsAE0w/formResponse'; 
-            
-            const formMap = {
-                service:  'entry.398242453',  
-                target:   'entry.1311683536', 
-                quantity: 'entry.1805710612', 
-                total:    'entry.2074942859', 
-                payment:  'entry.371390371',  
-                whatsapp: 'entry.1404986427'  
-            };
-
-            const data = {
-                service: document.getElementById('inputService').value,
-                target: document.getElementById('inputTarget').value,
-                quantity: document.getElementById('inputQuantity').value,
-                total: document.getElementById('displayTotal').value.replace(/\D/g, ''),
-                payment: document.getElementById('inputPayment').value,
-                whatsapp: document.getElementById('inputWhatsapp').value
-            };
-
-            const formData = new FormData();
-            formData.append(formMap.service, data.service);
-            formData.append(formMap.target, data.target);
-            formData.append(formMap.quantity, data.quantity);
-            formData.append(formMap.total, data.total);
-            formData.append(formMap.payment, data.payment);
-            formData.append(formMap.whatsapp, data.whatsapp);
-
-            fetch(GFORM_URL, {
-                method: 'POST',
-                mode: 'no-cors',
-                body: formData
-            }).then(() => {
-                document.getElementById('loadingOverlay').style.display = 'none';
-                
-                const adminWA = "6287879842395"; 
-                const textWA = `
-*Halo Admin Ridho Store!* 👋
-Saya sudah isi form order, ini detailnya:
-
-📦 *Layanan:* ${data.service}
-🎯 *Target:* ${data.target}
-🔢 *Jumlah:* ${data.quantity}
-💰 *Total:* Rp ${new Intl.NumberFormat('id-ID').format(data.total)}
-💳 *Bayar Via:* ${data.payment}
-📱 *No WA:* ${data.whatsapp}
-
-Mohon diproses, bukti transfer saya lampirkan dibawah ini 👇
-                `.trim();
-
-                window.location.href = `https://wa.me/${adminWA}?text=${encodeURIComponent(textWA)}`;
-                
-                document.getElementById('nativeOrderForm').reset();
-                document.getElementById('displayTotal').value = 'Rp 0';
-            }).catch(err => {
-                // Ganti alert biasa dengan SweetAlert
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Gagal',
-                    text: 'Gagal mengirim data. Cek koneksi internet.',
-                    background: '#1e1e1e',
-                    color: '#fff',
-                    confirmButtonColor: '#d33'
-                });
-                document.getElementById('loadingOverlay').style.display = 'none';
-            });
-        }
-        
-        // --- 6. RENDER SERVICES & FEATURES ---
-        function filterServices(category, btnElement) {
-            if(btnElement) {
-                document.querySelectorAll('.platform-tab').forEach(el => el.classList.remove('active'));
-                btnElement.classList.add('active');
-            }
+            // Render Data Sesuai Pilihan
             renderServices(category);
+        }
+
+        // --- FITUR DETAIL LAYANAN (INFO ICON) ---
+        function showServiceInfo(serviceName) {
+            Swal.fire({
+                title: serviceName,
+                html: `
+                    <div class="text-start small">
+                        <p class="mb-2">⚡ <strong>Estimasi Masuk:</strong> 1-2 Jam (Max 24 Jam)</p>
+                        <p class="mb-2">📉 <strong>Drop Rate:</strong> Rendah (Low Drop)</p>
+                        <p class="mb-0">👤 <strong>Tipe Akun:</strong> Campuran (Bot & Pasif)</p>
+                    </div>
+                `,
+                icon: 'info',
+                background: '#1e1e1e',
+                color: '#fff',
+                confirmButtonColor: '#FFD700',
+                confirmButtonText: 'Oke, Paham'
+            });
         }
 
         function renderServices(filter) {
@@ -1267,12 +1260,17 @@ Mohon diproses, bukti transfer saya lampirkan dibawah ini 👇
             filteredData.forEach(item => {
                 const card = document.createElement('div');
                 card.className = 'col animate__animated animate__fadeIn';
+                
+                // MENAMBAHKAN ICON INFO DI SEBELAH NAMA LAYANAN
                 card.innerHTML = `
                     <div class="price-card h-100">
                         <div>
                             <div class="price-header">
                                 <span class="badge bg-secondary mb-2 text-uppercase" style="font-size:0.6rem;">${item.category}</span>
-                                <div class="service-name">${item.name}</div>
+                                <div class="service-name d-flex align-items-center justify-content-between">
+                                    <span>${item.name}</span>
+                                    <i class="bi bi-info-circle-fill text-secondary" style="font-size:0.9rem; cursor:pointer;" onclick="showServiceInfo('${item.name}')"></i>
+                                </div>
                                 <span class="service-meta">Harga per 1.000 Pcs</span>
                             </div>
                             <span class="price-tag">${formatRupiah(item.price)}</span>
@@ -1285,69 +1283,262 @@ Mohon diproses, bukti transfer saya lampirkan dibawah ini 👇
                 container.appendChild(card);
             });
         }
+        
+        // --- 3. LOGIC ORDER FORM (VISUAL SELECTOR) ---
+        function selectCategory(category, element) {
+            // Reset active style
+            document.querySelectorAll('.selector-item').forEach(el => {
+                el.classList.remove('active');
+                el.querySelector('i').style.color = ''; 
+            });
 
+            // Set active
+            element.classList.add('active');
+            
+            // Filter Dropdown Order
+            const select = document.getElementById('inputService');
+            select.innerHTML = '<option value="" selected disabled>-- Pilih Paket ' + category.charAt(0).toUpperCase() + category.slice(1) + ' --</option>';
+            
+            const filteredServices = servicesData.filter(item => item.category === category);
+            
+            filteredServices.forEach(item => {
+                const option = document.createElement('option');
+                option.value = `${item.name}`; 
+                option.setAttribute('data-price', item.price);
+                option.textContent = `${item.name} - ${formatRupiah(item.price)}/1k`;
+                select.appendChild(option);
+            });
+
+            // TAMPILKAN DROPDOWN DI FORM
+            const group = document.getElementById('inputServiceGroup');
+            group.style.display = 'block';
+            
+            // Reset fields
+            document.getElementById('inputQuantity').value = '';
+            document.getElementById('displayTotal').value = 'Rp 0';
+            document.getElementById('liveSales').style.display = 'none';
+        }
+
+        // =========================================
+        // TRACKING SYSTEM
+        // =========================================
+        const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSHy3Ly1WlQ72OBWvLmuNtsKqL6kkicUHkX2HzForygUKMV0jt6Ti7l3zH02fxqtR4jcpMfwH51qSdd/pub?gid=961326959&single=true&output=csv";
+        const COL_TARGET = 2; 
+        const COL_STATUS = 7; 
+
+        async function checkOrderStatus() {
+            const input = document.getElementById('trackingInput').value.trim();
+            const resultBox = document.getElementById('trackingResult');
+            const badge = document.getElementById('statusBadge');
+            const msg = document.getElementById('statusMsg');
+
+            if(!input) { 
+                Swal.fire({ icon: 'warning', title: 'Oops...', text: 'Masukkan Username atau Link dulu ya!', background: '#1e1e1e', color: '#fff', confirmButtonColor: '#FFD700' });
+                return; 
+            }
+
+            resultBox.style.display = 'block';
+            badge.className = 'tracking-status-badge bg-secondary text-white';
+            badge.innerText = 'MENCARI DATA...';
+            msg.innerText = 'Menghubungkan ke database...';
+
+            try {
+                const response = await fetch(SHEET_CSV_URL);
+                const data = await response.text();
+                const rows = data.split('\n').map(row => row.split(','));
+                let found = false;
+                let statusOrder = "PENDING"; 
+
+                for (let i = 1; i < rows.length; i++) {
+                    const columns = rows[i];
+                    if (columns[COL_TARGET]) {
+                        const dbTarget = columns[COL_TARGET].replace(/['"]+/g, '').trim();
+                        if (dbTarget.toLowerCase() === input.toLowerCase()) {
+                            found = true;
+                            if(columns[COL_STATUS]) { statusOrder = columns[COL_STATUS].replace(/['"]+/g, '').trim().toUpperCase(); }
+                            break; 
+                        }
+                    }
+                }
+
+                if (found) {
+                    if (statusOrder.includes("SUKSES") || statusOrder.includes("COMPLETED")) {
+                        badge.className = 'tracking-status-badge bg-success text-white';
+                        badge.innerText = 'SUKSES / COMPLETED';
+                        msg.innerText = 'Orderan telah selesai dikirim! Terima kasih.';
+                    } else if (statusOrder.includes("PROSES") || statusOrder.includes("PROCESSING")) {
+                        badge.className = 'tracking-status-badge bg-warning text-dark';
+                        badge.innerText = 'SEDANG DIPROSES';
+                        msg.innerText = 'Orderan sedang dikerjakan server. Mohon ditunggu.';
+                    } else {
+                        badge.className = 'tracking-status-badge bg-info text-dark';
+                        badge.innerText = statusOrder || 'PENDING';
+                        msg.innerText = 'Pesanan sudah masuk antrian sistem.';
+                    }
+                } else {
+                    badge.className = 'tracking-status-badge bg-dark text-secondary border border-secondary';
+                    badge.innerText = 'DATA TIDAK DITEMUKAN';
+                    msg.innerText = 'Cek kembali Username/Link. Pastikan sama persis saat order.';
+                }
+
+            } catch (error) {
+                console.error("Gagal ambil data:", error);
+                badge.className = 'tracking-status-badge bg-danger text-white';
+                badge.innerText = 'ERROR SYSTEM';
+                msg.innerText = 'Gagal terhubung ke server database.';
+            }
+        }
+
+        // --- CALC & SUBMIT & PROMO CODE ---
+        let activeDiscount = 0;
+
+        function applyPromo() {
+            const code = document.getElementById('inputPromo').value.toUpperCase().trim();
+            const msg = document.getElementById('promoMessage');
+            
+            // Database Kode Promo Sederhana
+            const promos = {
+                'RIDHO10': 0.10, // Diskon 10%
+                'DISKON5': 0.05, // Diskon 5%
+                'JUMATBERKAH': 0.15 // Diskon 15%
+            };
+
+            if (promos[code]) {
+                activeDiscount = promos[code];
+                msg.style.color = '#4ade80'; // Hijau
+                msg.innerHTML = `<i class="bi bi-check-circle-fill"></i> Kode berhasil! Diskon ${(activeDiscount*100)}% diterapkan.`;
+                calcTotal(); // Hitung ulang harga
+            } else {
+                activeDiscount = 0;
+                msg.style.color = '#ef4444'; // Merah
+                msg.innerText = 'Kode tidak valid atau kadaluarsa.';
+                calcTotal();
+            }
+        }
+
+        function calcTotal() {
+            const serviceSelect = document.getElementById('inputService');
+            const qtyInput = document.getElementById('inputQuantity');
+            const discountMsg = document.getElementById('discountMsg');
+            const liveSales = document.getElementById('liveSales');
+            
+            if(serviceSelect.selectedIndex > 0) {
+                if(liveSales.style.display === 'none') {
+                    const randomOrders = Math.floor(Math.random() * (300 - 50 + 1)) + 50;
+                    liveSales.innerHTML = `🔥 Dipesan <span class="text-white fw-bold">${randomOrders}x</span> hari ini`;
+                    liveSales.style.display = 'block';
+                }
+
+                if (qtyInput.value) {
+                    const selectedOption = serviceSelect.options[serviceSelect.selectedIndex];
+                    const pricePerK = selectedOption.getAttribute('data-price');
+                    const serviceName = selectedOption.value.toLowerCase();
+                    const qty = parseInt(qtyInput.value);
+                    let total = (pricePerK / 1000) * qty;
+
+                    // Logika Diskon Flash Sale (Auto)
+                    if(serviceName.includes("followers") && qty > 1000) {
+                        total = total * 0.9; 
+                        discountMsg.innerHTML = `<i class="bi bi-tags-fill"></i> Diskon Flash Sale 10% Diterapkan!`;
+                        discountMsg.style.display = 'block';
+                    } else {
+                        discountMsg.style.display = 'none';
+                    }
+
+                    // Logika Kode Promo (Manual - Overwrites/Stacks based on logic)
+                    // Disini kita tumpuk (Additional Discount)
+                    if(activeDiscount > 0) {
+                        total = total - (total * activeDiscount);
+                    }
+
+                    document.getElementById('displayTotal').value = formatRupiah(Math.ceil(total));
+                }
+            } else {
+                document.getElementById('displayTotal').value = 'Rp 0';
+            }
+        }
+
+        function submitOrder(e) {
+            e.preventDefault(); 
+            document.getElementById('loadingOverlay').style.display = 'flex';
+            const GFORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSesAKeDg2Uh1dQTELBuMghZrT31yJV6B1rpGQHrYnvRZsAE0w/formResponse'; 
+            const formMap = { service: 'entry.398242453', target: 'entry.1311683536', quantity: 'entry.1805710612', total: 'entry.2074942859', payment: 'entry.371390371', whatsapp: 'entry.1404986427' };
+            const data = {
+                service: document.getElementById('inputService').value,
+                target: document.getElementById('inputTarget').value,
+                quantity: document.getElementById('inputQuantity').value,
+                total: document.getElementById('displayTotal').value.replace(/\D/g, ''),
+                payment: document.getElementById('inputPayment').value,
+                whatsapp: document.getElementById('inputWhatsapp').value
+            };
+            const formData = new FormData();
+            for (const key in data) formData.append(formMap[key], data[key]);
+
+            fetch(GFORM_URL, { method: 'POST', mode: 'no-cors', body: formData }).then(() => {
+                document.getElementById('loadingOverlay').style.display = 'none';
+                const adminWA = "6287879842395"; 
+                const textWA = `*Halo Admin Ridho Store!* 👋\nSaya sudah isi form order, ini detailnya:\n\n📦 *Layanan:* ${data.service}\n🎯 *Target:* ${data.target}\n🔢 *Jumlah:* ${data.quantity}\n💰 *Total:* Rp ${new Intl.NumberFormat('id-ID').format(data.total)}\n💳 *Bayar Via:* ${data.payment}\n📱 *No WA:* ${data.whatsapp}\n\nMohon diproses, bukti transfer saya lampirkan dibawah ini 👇`;
+                window.location.href = `https://wa.me/${adminWA}?text=${encodeURIComponent(textWA)}`;
+                document.getElementById('nativeOrderForm').reset();
+            }).catch(err => {
+                Swal.fire({ icon: 'error', title: 'Gagal', text: 'Gagal mengirim data.', background: '#1e1e1e', color: '#fff' });
+                document.getElementById('loadingOverlay').style.display = 'none';
+            });
+        }
+        
         function searchServices() {
-            const activeTab = document.querySelector('.platform-tab.active');
-            const category = activeTab ? activeTab.getAttribute('data-target') : 'all';
-            renderServices(category);
+            // Jika container hidden, otomatis buka saat search
+            document.getElementById('service-container').style.display = 'grid';
+            renderServices('all');
         }
 
         function startFakeNotif() {
-            // UPDATED: MORE NAMES, CITIES, AND ITEMS
-            const names = ["Andi", "Budi", "Citra", "Dewi", "Eka", "Fajar", "Gilang", "Hesti", "Intan", "Joko", "Kiki", "Laras", "Mamat", "Nanda", "Oki", "Putri", "Qori", "Rizky", "Sari", "Tio", "Umar", "Vina", "Wahyu", "Xena", "Yoga", "Zahra", "Bambang", "Lestari", "Agus", "Rina", "Dimas", "Bayu", "Aditya", "Kurnia", "Santoso", "Wulan", "Indah", "Mega", "Sapto", "Dwi"];
-            const cities = ["Jakarta", "Surabaya", "Bandung", "Medan", "Semarang", "Makassar", "Palembang", "Batam", "Pekanbaru", "Malang", "Denpasar", "Samarinda", "Tasikmalaya", "Pontianak", "Banjarmasin", "Balikpapan", "Jambi", "Surakarta", "Manado", "Mataram", "Yogyakarta", "Cirebon", "Sukabumi", "Tegal", "Kediri", "Binjai", "Purwokerto"];
-            const items = ["1000 Followers IG", "500 Likes TikTok", "1000 Views Reels", "2000 Followers Shopee", "Paket Sultan IG", "5000 Views TikTok", "100 Subscribers YouTube", "500 Likes IG", "10k Views TikTok", "Jam Tayang YouTube", "200 Followers Tokopedia", "Review Google Maps", "1000 Likes Fanpage", "5000 Followers IG (Promo)"];
-            
+            const names = ["Andi", "Budi", "Citra", "Dewi", "Eka", "Fajar"];
+            const items = ["1000 Followers IG", "500 Likes TikTok", "1000 Views Reels"];
             const notif = document.getElementById('fakeNotif');
-
             setInterval(() => {
                 notif.classList.remove('show');
                 setTimeout(() => {
                     const randomName = names[Math.floor(Math.random() * names.length)];
-                    const randomCity = cities[Math.floor(Math.random() * cities.length)];
                     const randomItem = items[Math.floor(Math.random() * items.length)];
-                    
-                    document.getElementById('notifName').innerText = `${randomName} dari ${randomCity}`;
-                    document.getElementById('notifAction').innerText = `Baru saja membeli ${randomItem}`;
+                    document.getElementById('notifName').innerText = `${randomName}`;
+                    document.getElementById('notifAction').innerText = `Membeli ${randomItem}`;
                     document.getElementById('notifImg').src = `https://ui-avatars.com/api/?name=${randomName}&background=random`;
-                    
                     notif.classList.add('show');
                 }, 1000); 
             }, 8000); 
         }
 
         function startCountdown() {
-            let timeInSecs = 2 * 60 * 60 + 45 * 60 + 10; 
+            let timeInSecs = 7200; 
             setInterval(() => {
                 timeInSecs--;
-                if(timeInSecs < 0) timeInSecs = 2 * 60 * 60; 
-
+                if(timeInSecs < 0) timeInSecs = 7200; 
                 const h = Math.floor(timeInSecs / 3600).toString().padStart(2,'0');
                 const m = Math.floor((timeInSecs % 3600) / 60).toString().padStart(2,'0');
                 const s = Math.floor(timeInSecs % 60).toString().padStart(2,'0');
-                
                 document.getElementById('countdownTimer').innerText = `${h}:${m}:${s}`;
             }, 1000);
         }
 
+        // --- EXIT INTENT POPUP LOGIC ---
+        let exitIntentShown = false;
+        // Trigger saat mouse keluar window (Desktop)
+        document.addEventListener('mouseleave', e => {
+            if (e.clientY < 0 && !exitIntentShown) {
+                showExitModal();
+            }
+        });
+
+        function showExitModal() {
+            const modal = new bootstrap.Modal(document.getElementById('exitModal'));
+            modal.show();
+            exitIntentShown = true; // Biar ga muncul terus-terusan
+        }
+
         function loadParticles() {
             if(window.particlesJS) {
-                particlesJS("particles-js", {
-                    "particles": {
-                        "number": { "value": 30, "density": { "enable": true, "value_area": 800 } },
-                        "color": { "value": "#ffffff" },
-                        "shape": { "type": "circle" },
-                        "opacity": { "value": 0.2, "random": true },
-                        "size": { "value": 3, "random": true },
-                        "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.1, "width": 1 },
-                        "move": { "enable": true, "speed": 1.5, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
-                    },
-                    "interactivity": {
-                        "detect_on": "canvas",
-                        "events": { "onhover": { "enable": false }, "onclick": { "enable": true, "mode": "push" }, "resize": true }
-                    },
-                    "retina_detect": true
-                });
+                particlesJS("particles-js", { "particles": { "number": { "value": 30 }, "color": { "value": "#ffffff" }, "opacity": { "value": 0.2 }, "size": { "value": 3 }, "line_linked": { "enable": true, "color": "#ffffff" }, "move": { "enable": true, "speed": 1.5 } } });
             }
         }
 
@@ -1357,25 +1548,8 @@ Mohon diproses, bukti transfer saya lampirkan dibawah ini 👇
         
         function copyToClipboard(text) {
             navigator.clipboard.writeText(text);
-            // Ganti alert biasa dengan SweetAlert
-            Swal.fire({
-                icon: 'success',
-                title: 'Berhasil!',
-                text: 'Nomor tersalin: ' + text,
-                timer: 1500,
-                showConfirmButton: false,
-                background: '#1e1e1e',
-                color: '#fff'
-            });
+            Swal.fire({ icon: 'success', title: 'Berhasil!', text: 'Nomor tersalin: ' + text, timer: 1500, showConfirmButton: false, background: '#1e1e1e', color: '#fff' });
         }
-
-        function openCart() { document.getElementById('cart-modal').classList.add('active'); document.getElementById('backdrop').classList.add('active'); }
-        function closeCart() { document.getElementById('cart-modal').classList.remove('active'); document.getElementById('backdrop').classList.remove('active'); }
-        function copyCartTotal() { }
-        function addToCart(id) { }
-        function removeFromCart(index) { }
-        function updateCartUI() { }
-
     </script>
     
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
@@ -1398,33 +1572,23 @@ Mohon diproses, bukti transfer saya lampirkan dibawah ini 👇
             <p class="text-secondary small mx-auto mb-4" style="max-width: 500px;">
                 Platform Social Media Marketing terpercaya membantu UMKM dan Kreator Indonesia berkembang sejak 2022.
             </p>
-            
             <div class="server-status">
                 <div class="status-dot"></div>
                 <span>Server Status: Operational / Fast Speed ⚡</span>
             </div>
+            
+            <div class="mt-3">
+                <a href="#" class="text-secondary small text-decoration-none me-3" data-bs-toggle="modal" data-bs-target="#tosModal">Syarat & Ketentuan</a>
+                <a href="#" class="text-secondary small text-decoration-none" data-bs-toggle="modal" data-bs-target="#tosModal">Kebijakan Privasi</a>
+            </div>
 
             <div class="d-flex justify-content-center gap-3 my-4">
-                <a href="#" class="btn btn-icon-only btn-glass d-flex align-items-center justify-content-center"><i class="bi bi-instagram"></i></a>
-                <a href="#" class="btn btn-icon-only btn-glass d-flex align-items-center justify-content-center"><i class="bi bi-tiktok"></i></a>
+                <a href="https://instagram.com/ridho.store17" class="btn btn-icon-only btn-glass d-flex align-items-center justify-content-center"><i class="bi bi-instagram"></i></a>
                 <a href="https://wa.me/6287879842395" class="btn btn-icon-only btn-glass d-flex align-items-center justify-content-center"><i class="bi bi-whatsapp"></i></a>
             </div>
-            <small class="text-muted d-block">&copy; 2026 Ridho Store. All rights reserved.</small>
+            <small class="text-secondary d-block">&copy; 2026 Ridho Store. All rights reserved.</small>
         </div>
     </footer>
-
-    <div class="cart-overlay animate__animated animate__bounceIn" id="cart-overlay" style="display:none;"></div>
-    <div class="backdrop" id="backdrop" onclick="closeCart()"></div>
-    <div class="cart-modal" id="cart-modal">
-        <div class="d-flex justify-content-between align-items-center border-bottom border-secondary border-opacity-25 pb-3">
-            <h5 class="text-white m-0">Hitung Cepat</h5>
-            <button class="btn-close btn-close-white" onclick="closeCart()"></button>
-        </div>
-        <div class="p-3 text-center">
-            <p class="text-muted small">Silakan langsung gunakan Formulir Pemesanan di bawah untuk menghitung harga otomatis.</p>
-            <a href="#order" class="btn btn-gold w-100" onclick="closeCart()">Ke Form Order</a>
-        </div>
-    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
