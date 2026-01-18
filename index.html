@@ -260,6 +260,14 @@
         .mobile-nav-item { display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--text-secondary); font-size: 0.65rem; gap: 4px; transition: 0.3s; flex: 1; }
         .mobile-nav-item i { font-size: 1.2rem; margin-bottom: 2px; }
         .mobile-nav-item.active, .mobile-nav-item:hover { color: var(--gold-primary); }
+        
+        /* NEW: GLOWING ACTIVE ICON */
+        .mobile-nav-item.active i {
+            color: #FFD700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.6); /* Efek Glowing */
+            transform: translateY(-3px); /* Naik sedikit */
+            transition: all 0.3s ease;
+        }
 
         .mobile-top-bar { position: fixed; top: 0; left: 0; width: 100%; padding: 15px 0; z-index: 1002; background: rgba(5, 5, 5, 0.9); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255, 255, 255, 0.08); text-align: center; display: none; padding-top: max(15px, env(safe-area-inset-top)); }
 
@@ -295,9 +303,32 @@
         .copy-btn:hover { border-color: #FFF; color: #FFF; }
 
         .swiper { width: 100%; padding-bottom: 40px; }
-        .swiper-slide { background: var(--bg-surface-2); border-radius: 20px; padding: 25px; border: 1px solid rgba(255,255,255,0.05); height: auto; }
+        
+        /* NEW: GLASSMORPHISM CARD & SLIDE */
+        .swiper-slide, .card {
+            /* Background semi transparan */
+            background: rgba(30, 30, 30, 0.4) !important; 
+            /* Efek Blur di belakang kaca */
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            /* Border tipis transparan */
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            /* Bayangan lembut */
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            border-radius: 20px; 
+            padding: 25px; 
+            height: auto; 
+        }
+
         .swiper-pagination-bullet { background: #FFF; opacity: 0.3; }
         .swiper-pagination-bullet-active { background: var(--gold-primary); opacity: 1; }
+
+        /* NEW: EMPHASIZE USER NAME */
+        .swiper-slide h6 {
+            color: #FFD700 !important; /* Warna Emas */
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
 
         .cta-instagram-wrapper { margin-top: 3rem; position: relative; z-index: 2; }
         .btn-ig-official { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 12px 24px; background: rgba(20, 20, 20, 0.6); border-radius: 50px; color: #FFF; text-decoration: none; overflow: hidden; backdrop-filter: blur(10px); transition: all 0.4s; border: 1px solid rgba(255, 255, 255, 0.1); max-width: 100%; }
@@ -342,7 +373,16 @@
             
             /* Adjust padding for mobile neatness */
             section { padding-top: 3rem !important; padding-bottom: 3rem !important; }
-            .hero-section { min-height: auto; padding-top: 110px !important; padding-bottom: 60px !important; }
+            
+            /* UPDATED: FIXED BANNER OVERLAP & HERO SPACING */
+            .flash-sale-banner {
+                margin-top: 75px; 
+            }
+            .hero-section { 
+                min-height: auto; 
+                padding-top: 20px !important; 
+                padding-bottom: 60px !important; 
+            }
             
             .fake-notification { bottom: 80px; left: 15px; right: 15px; width: auto; max-width: none; }
             .float-wa { bottom: 90px; right: 15px; width: 50px; height: 50px; font-size: 24px; }
@@ -984,9 +1024,11 @@ Mohon diproses, bukti transfer saya lampirkan dibawah ini 👇
         }
 
         function startFakeNotif() {
-            const names = ["Andi", "Siska", "Budi", "Dewi", "Rizky", "Putri", "Agus", "Sari"];
-            const cities = ["Jakarta", "Surabaya", "Bandung", "Medan", "Bali", "Makassar", "Jogja"];
-            const items = ["1000 Followers IG", "5000 Views TikTok", "100 Likes IG", "Shopee Followers"];
+            // UPDATED: MORE NAMES, CITIES, AND ITEMS
+            const names = ["Andi", "Budi", "Citra", "Dewi", "Eka", "Fajar", "Gilang", "Hesti", "Intan", "Joko", "Kiki", "Laras", "Mamat", "Nanda", "Oki", "Putri", "Qori", "Rizky", "Sari", "Tio", "Umar", "Vina", "Wahyu", "Xena", "Yoga", "Zahra", "Bambang", "Lestari", "Agus", "Rina", "Dimas", "Bayu", "Aditya", "Kurnia", "Santoso", "Wulan", "Indah", "Mega", "Sapto", "Dwi"];
+            const cities = ["Jakarta", "Surabaya", "Bandung", "Medan", "Semarang", "Makassar", "Palembang", "Batam", "Pekanbaru", "Malang", "Denpasar", "Samarinda", "Tasikmalaya", "Pontianak", "Banjarmasin", "Balikpapan", "Jambi", "Surakarta", "Manado", "Mataram", "Yogyakarta", "Cirebon", "Sukabumi", "Tegal", "Kediri", "Binjai", "Purwokerto"];
+            const items = ["1000 Followers IG", "500 Likes TikTok", "1000 Views Reels", "2000 Followers Shopee", "Paket Sultan IG", "5000 Views TikTok", "100 Subscribers YouTube", "500 Likes IG", "10k Views TikTok", "Jam Tayang YouTube", "200 Followers Tokopedia", "Review Google Maps", "1000 Likes Fanpage", "5000 Followers IG (Promo)"];
+            
             const notif = document.getElementById('fakeNotif');
 
             setInterval(() => {
