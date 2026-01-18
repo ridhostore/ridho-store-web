@@ -14,6 +14,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "v39bdkhu4m");
+    </script>
+
     <style>
         /* =========================================
            1. ROOT VARIABLES & DESIGN TOKENS
@@ -109,12 +119,12 @@
            3. UI COMPONENTS
            ========================================= */
         
-        /* FLOATING WA BUTTON */
+        /* FLOATING WA BUTTON (Dinaikkan sedikit agar tidak menabrak chat Tawk.to jika ada) */
         .float-wa {
             position: fixed;
             width: 55px;
             height: 55px;
-            bottom: 90px; /* Above bottom nav on mobile */
+            bottom: 150px; /* Dinaikkan */
             right: 20px;
             background-color: #25d366;
             color: #FFF;
@@ -449,7 +459,9 @@
             }
             
             .fake-notification { bottom: 80px; left: 15px; right: 15px; width: auto; max-width: none; }
-            .float-wa { bottom: 90px; right: 15px; width: 50px; height: 50px; font-size: 24px; }
+            
+            /* FIX POSISI TOMBOL WA AGAR TIDAK KETUTUPAN CHAT */
+            .float-wa { bottom: 160px; right: 15px; width: 50px; height: 50px; font-size: 24px; }
         }
     </style>
 </head>
@@ -673,6 +685,12 @@
                     </div>
                 </div>
                 <div class="swiper-pagination mt-4"></div>
+            </div>
+
+            <div class="container mt-5">
+                <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+                
+                <div class="elfsight-app-WIDGET-ID-ANDA" data-elfsight-app-lazy></div> 
             </div>
 
             <div class="cta-instagram-wrapper text-center animate__animated animate__fadeInUp animate__delay-2s">
@@ -1028,7 +1046,17 @@
             const badge = document.getElementById('statusBadge');
             const msg = document.getElementById('statusMsg');
 
-            if(!input) { alert("Masukkan username atau link dulu!"); return; }
+            if(!input) { 
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Oops...',
+                    text: 'Masukkan Username atau Link dulu ya!',
+                    background: '#1e1e1e',
+                    color: '#fff',
+                    confirmButtonColor: '#FFD700'
+                });
+                return; 
+            }
 
             // Tampilan Loading
             resultBox.style.display = 'block';
@@ -1202,7 +1230,15 @@ Mohon diproses, bukti transfer saya lampirkan dibawah ini 👇
                 document.getElementById('nativeOrderForm').reset();
                 document.getElementById('displayTotal').value = 'Rp 0';
             }).catch(err => {
-                alert("Gagal mengirim data. Cek koneksi internet.");
+                // Ganti alert biasa dengan SweetAlert
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Gagal',
+                    text: 'Gagal mengirim data. Cek koneksi internet.',
+                    background: '#1e1e1e',
+                    color: '#fff',
+                    confirmButtonColor: '#d33'
+                });
                 document.getElementById('loadingOverlay').style.display = 'none';
             });
         }
@@ -1321,7 +1357,16 @@ Mohon diproses, bukti transfer saya lampirkan dibawah ini 👇
         
         function copyToClipboard(text) {
             navigator.clipboard.writeText(text);
-            alert('Nomor tersalin: ' + text);
+            // Ganti alert biasa dengan SweetAlert
+            Swal.fire({
+                icon: 'success',
+                title: 'Berhasil!',
+                text: 'Nomor tersalin: ' + text,
+                timer: 1500,
+                showConfirmButton: false,
+                background: '#1e1e1e',
+                color: '#fff'
+            });
         }
 
         function openCart() { document.getElementById('cart-modal').classList.add('active'); document.getElementById('backdrop').classList.add('active'); }
@@ -1334,6 +1379,18 @@ Mohon diproses, bukti transfer saya lampirkan dibawah ini 👇
     </script>
     
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/696c89dce9768b197f031135/1jf7vl215/default';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
 
     <footer class="py-5 bg-black border-top border-secondary border-opacity-25 text-center">
         <div class="container">
